@@ -1,0 +1,26 @@
+/*왜 .arousel-slide 로는 안되는가*/
+#demo {
+    width: 100%;
+}
+/* 왜 .carousel-slide 로는 하위연산자(Descendant Selector)가 안먹히는가 */
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    min-height: 200px;
+}
+
+@media only screen and (max-width: 550px) {
+   .carousel-inner h3 ,p {
+       display: none;
+   }
+}
+
+.card {
+    margin-top: 30px;
+    height: 500px;
+}
+.card-img-top{
+    width: 100%;
+}
+
