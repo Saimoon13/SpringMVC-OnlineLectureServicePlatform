@@ -29,7 +29,7 @@
             crossorigin="anonymous"></script>
 
     <script defer src="../../resources/fontawesome-all.js"></script>
-    <link rel="stylesheet" href="../../resources/CSS/header.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+    <link rel="stylesheet" href="../../resources/CSS/header.css?d" type="text/css" media="screen" title="no title" charset="utf-8"/>
 </head>
 <body>
 
@@ -57,12 +57,112 @@
             </ul>
 
             <ul class="navbar-nav" id="alignneeded">
+                <!-- 로그인 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a class="nav-link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal" href="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
                 </li>
+                    <!-- 로그인 모달-->
+                <div class="modal fade" id="loginModal">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title text-center">Login</h4>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="name" class="cols-sm-2 control-label">Your ID</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="fas fas fa-user" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="name"  placeholder="Enter your Name"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="password"  placeholder="Enter your Password"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <!-- 회원가입 -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/register') }}"><i class="fas far fa-user"></i> Register</a>
+                    <a class="nav-link" data-dismiss="modal" data-toggle="modal" data-target="#regiModal" href="#regiModal">
+                        <i class="fas far fa-user"></i> Register</a>
                 </li>
+                    <!-- 회원가입 모달 -->
+                <div class="modal fade" id="regiModal">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title text-center">Registration</h4>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="name" class="cols-sm-2 control-label">Your ID</label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fas fas fa-user" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                                        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                            <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Register</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"

@@ -15,7 +15,7 @@ public class HomeController {
     public String test(){
         logger.info("아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아");
 
-        return "discuss/newTopic";
+        return "index";
 
     }
 }
