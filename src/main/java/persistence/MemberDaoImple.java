@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public class MemberDaoImple implements MemberDao {
 	private static final String NAMESPACE =
-			"mappers.MemberMapper";
+			"MemberMapper";
 
 	private static final Logger logger =
 			LoggerFactory.getLogger(MemberDaoImple.class);

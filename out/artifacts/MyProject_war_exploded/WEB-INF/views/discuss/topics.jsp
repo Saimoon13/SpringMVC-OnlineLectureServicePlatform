@@ -134,7 +134,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <h3 class="h6 mb-0"><a href="#0">Forum name title with a complex and long question</a></h3>
+                        <h3 class="h6 mb-0"><a href="/discuss/post">Forum name title with a complex and long question</a></h3>
                     </td>
                     <td>
                         <div>by <a href="#0">Author name</a></div>

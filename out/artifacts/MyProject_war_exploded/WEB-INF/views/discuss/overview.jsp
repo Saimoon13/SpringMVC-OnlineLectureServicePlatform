@@ -51,7 +51,171 @@
     </nav>
     <div class="row">
         <div class="col-12 col-xl-9">
-            <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">forum category</h2>
+            <h2 class="h4 text-white bg-warning mb-0 p-4 rounded-top">Basic</h2>
+            <table class="table table-striped table-bordered table-responsive mb-xl-0">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col" class="forum-col">forum</th>
+                    <th scope="col">topics</th>
+                    <th scope="col">posts</th>
+                    <th scope="col" class="last-post-col">last post</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="/discuss/topics" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top mt-3">Advanced</h2>
+            <table class="table table-striped table-bordered table-responsive mb-xl-0">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col" class="forum-col">forum</th>
+                    <th scope="col">topics</th>
+                    <th scope="col">posts</th>
+                    <th scope="col" class="last-post-col">last post</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
+                        <p class="mb-0">ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    </td>
+                    <td>
+                        <div>5</div>
+                    </td>
+                    <td>
+                        <div>18</div>
+                    </td>
+                    <td>
+                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
+                        <div>by <a href="#0">author name</a></div>
+                        <div>05 apr 2017, 20:07</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h2 class="h4 text-white bg-dark mb-0 p-4 rounded-top mt-3">Superior</h2>
             <table class="table table-striped table-bordered table-responsive mb-xl-0">
                 <thead class="thead-light">
                 <tr>

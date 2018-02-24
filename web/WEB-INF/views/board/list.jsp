@@ -18,6 +18,18 @@
         }
     </style>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+
+    <script defer src="../../resources/fontawesome-all.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../resources/CSS/list.css">
 </head>
 <body>
 
@@ -25,8 +37,6 @@
 <header>
     <%@ include file="../subPage/header.jsp" %>
 
-    <link rel="stylesheet" type="text/css" href="../../../resources/lib/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../../resources/CSS/list.css">
 </header>
 
 <div class="container my-3">
@@ -40,7 +50,7 @@
     <div class="row">
         <div class="col-12">
             <div class="input-group mb-3">
-                <form class="form-inline mb-3" action="search" method="get">
+                <form class="form-inline mb-3 float-lg-right" action="search" method="get">
                     <select class="form-group custom-select" name="searchType">
                         <option value="1">작성자</option>
                         <option value="2">제목</option>
@@ -48,17 +58,18 @@
                     </select>
                     <%--<input class="form-group mx-sm-3 mb-2" type="text" name="searchKeyword" placeholder="검색어"/>--%>
                     <%--<input type="submit" value="검색"/>--%>
-                    <input type="text" class="form-group form-control" aria-label="Text input with segmented dropdown button">
+                    <input type="text" class="form-group form-control"
+                           aria-label="Text input with segmented dropdown button">
                 </form>
             </div>
 
             <table class="table table-hover table-striped table-bordered table-responsive-lg">
                 <thead class="thead table-primary">
                 <tr>
-                    <th scope="col" class="w-15">글번호</th>
-                    <th scope="col" class="w-50">제목</th>
+                    <th scope="col" class="w-10">글번호</th>
+                    <th scope="col" class="w-65">제목</th>
                     <th scope="col" class="w-15">작성자</th>
-                    <th scope="col" class="w-20">수정시간</th>
+                    <th scope="col" class="w-10">수정시간</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -79,25 +90,25 @@
                 </c:forEach>
                 </tbody>
             </table>
+            <nav aria-label="Navigate post pages" class="float-lg-right">
+                <ul class="pagination pagination-sm mb-lg-0">
+                    <c:if test="${pageMaker.prev}">
+                        <!-- 이전 버튼은 (startPage - 1)로 이동 -->
+                        <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
+                    </c:if>
 
-            <ul class="pagination">
-                <c:if test="${pageMaker.prev}">
-                    <!-- 이전 버튼은 (startPage - 1)로 이동 -->
-                    <li><a href="${pageMaker.startPage - 1}">이전</a></li>
-                </c:if>
+                    <c:forEach var="num"
+                               begin="${pageMaker.startPage}"
+                               end="${pageMaker.endPage}">
+                        <li class="page-item"><a class="page-link" href="${num}">${num}</a></li>
+                    </c:forEach>
 
-                <c:forEach var="num"
-                           begin="${pageMaker.startPage}"
-                           end="${pageMaker.endPage}">
-                    <li><a href="${num}">${num}</a></li>
-                </c:forEach>
-
-                <c:if test="${pageMaker.next}">
-                    <!-- 다음 버튼은 (endPage + 1)으로 이동 -->
-                    <li><a href="${pageMaker.endPage + 1}">다음</a></li>
-                </c:if>
-            </ul>
-
+                    <c:if test="${pageMaker.next}">
+                        <!-- 다음 버튼은 (endPage + 1)으로 이동 -->
+                        <li class="page-item"><a class="page-link" href="${pageMaker.endPage + 1}">다음</a></li>
+                    </c:if>
+                </ul>
+            </nav>
             <form id="pageForm" action="list" method="get">
                 <input type="hidden" id="page" name="page"
                        value="${pageMaker.criteria.page}"/>
@@ -129,7 +140,6 @@
 </script>
 
 
-<script src="../../../resources/lib/jquery-3.3.1.slim.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 
 
