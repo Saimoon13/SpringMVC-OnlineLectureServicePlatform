@@ -28,4 +28,5 @@
 
     <mybatis:scan base-package="mappers"/>
     <!--이거 빼면 replyDaoImple에서 mapper 빈 못받음-->
+
 </beans>

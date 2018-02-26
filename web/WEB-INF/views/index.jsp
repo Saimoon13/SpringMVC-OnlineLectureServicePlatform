@@ -37,7 +37,10 @@
 
 <!-- 머리글 -->
 <header>
-    <%@ include file="subPage/header.jsp" %>
+    <%--<%@ include file="subPage/header.jsp" %>--%>
+    <jsp:include page="subPage/header.jsp">
+        <jsp:param name="before" value="null"></jsp:param>
+    </jsp:include>
 </header>
 
 <!-- carousel -->

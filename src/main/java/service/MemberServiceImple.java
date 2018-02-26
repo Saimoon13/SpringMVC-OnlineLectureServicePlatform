@@ -46,4 +46,10 @@ public class MemberServiceImple implements MemberService {
 		return memberDao.delete(userid);
 	}
 
+	@Override
+	public Member login(Member m) {
+
+		return memberDao.login(m);
+	}
+
 } // end class MemberServiceImple

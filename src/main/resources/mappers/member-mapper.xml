@@ -32,4 +32,8 @@
     WHERE ${colUserid} = #{userid}
     </delete>
 
+    <select id="login_Member" resultType="Member">
+        SELECT * FROM ${tblMember} where ${colUserid} = #{userid} AND ${colPassword} = #{password}
+    </select>
+
 </mapper>

@@ -95,5 +95,8 @@ public class BoardController {
         logger.info("type: {}, keyword: {}", searchType, searchKeyword);
         List<Board> list = boardService.search(searchType, searchKeyword);
         model.addAttribute("boardList", list);
+
+
+
     }
 }

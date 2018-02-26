@@ -50,4 +50,9 @@ public class MemberDaoImple implements MemberDao {
 		return session.delete(NAMESPACE + ".delete", userid);
 	}
 
+	@Override
+	public Member login(Member m) {
+		return session.selectOne(NAMESPACE+".login_Member", m);
+	}
+
 } // end class MemberDaoImple

@@ -35,8 +35,9 @@
 
 <!-- 머리글 -->
 <header>
-    <%@ include file="../subPage/header.jsp" %>
-
+    <jsp:include page="../subPage/header.jsp">
+        <jsp:param name="before" value="first"></jsp:param>
+    </jsp:include>
 </header>
 
 <div class="container my-3">
@@ -49,21 +50,7 @@
     <hr/>
     <div class="row">
         <div class="col-12">
-            <div class="input-group mb-3">
-                <form class="form-inline mb-3 float-lg-right" action="search" method="get">
-                    <select class="form-group custom-select" name="searchType">
-                        <option value="1">작성자</option>
-                        <option value="2">제목</option>
-                        <option value="3">제목 + 내용</option>
-                    </select>
-                    <%--<input class="form-group mx-sm-3 mb-2" type="text" name="searchKeyword" placeholder="검색어"/>--%>
-                    <%--<input type="submit" value="검색"/>--%>
-                    <input type="text" class="form-group form-control"
-                           aria-label="Text input with segmented dropdown button">
-                </form>
-            </div>
-
-            <table class="table table-hover table-striped table-bordered table-responsive-lg">
+            <table class="table table-hover table-striped table-bordered table-responsive-es">
                 <thead class="thead table-primary">
                 <tr>
                     <th scope="col" class="w-10">글번호</th>
@@ -90,32 +77,54 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <nav aria-label="Navigate post pages" class="float-lg-right">
-                <ul class="pagination pagination-sm mb-lg-0">
-                    <c:if test="${pageMaker.prev}">
-                        <!-- 이전 버튼은 (startPage - 1)로 이동 -->
-                        <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
-                    </c:if>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 input-group">
+                    <div class="row-fluid">
+                        <form class="form-inline mb-3" action="search" method="get">
+                            <div class="row pl-3">
+                            <select class="form-control custom-select mr-1 col-5" name="searchType">
+                                <option value="1">작성자</option>
+                                <option value="2">제목</option>
+                                <option value="3">제목 + 내용</option>
+                            </select>
+                            <input class="form-control col-6" type="text" name="searchKeyword" placeholder="Keyword"/>
+                            </div>
+                            <%--<input type="submit" class="btn btn-primary" value="Search"/>--%>
+                            <%--<input type="text" class="form-group form-control"--%>
+                            <%--aria-label="Text input with segmented dropdown button">--%>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <nav aria-label="Navigate post pages" class="float-lg-right">
+                        <ul class="pagination pagination-sm mb-lg-0">
+                            <c:if test="${pageMaker.prev}">
+                                <!-- 이전 버튼은 (startPage - 1)로 이동 -->
+                                <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
+                            </c:if>
 
-                    <c:forEach var="num"
-                               begin="${pageMaker.startPage}"
-                               end="${pageMaker.endPage}">
-                        <li class="page-item"><a class="page-link" href="${num}">${num}</a></li>
-                    </c:forEach>
+                            <c:forEach var="num"
+                                       begin="${pageMaker.startPage}"
+                                       end="${pageMaker.endPage}">
+                                <li class="page-item"><a class="page-link" href="${num}">${num}</a></li>
+                            </c:forEach>
 
-                    <c:if test="${pageMaker.next}">
-                        <!-- 다음 버튼은 (endPage + 1)으로 이동 -->
-                        <li class="page-item"><a class="page-link" href="${pageMaker.endPage + 1}">다음</a></li>
-                    </c:if>
-                </ul>
-            </nav>
-            <form id="pageForm" action="list" method="get">
-                <input type="hidden" id="page" name="page"
-                       value="${pageMaker.criteria.page}"/>
-                <input type="hidden" id="perPage" name="perPage"
-                       value="${pageMaker.criteria.numsPerPage}"/>
-            </form>
-
+                            <c:if test="${pageMaker.next}">
+                                <!-- 다음 버튼은 (endPage + 1)으로 이동 -->
+                                <li class="page-item"><a class="page-link" href="${pageMaker.endPage + 1}">다음</a></li>
+                            </c:if>
+                        </ul>
+                    </nav>
+                    <form id="pageForm" action="list" method="get">
+                        <input type="hidden" id="page" name="page"
+                               value="${pageMaker.criteria.page}"/>
+                        <input type="hidden" id="perPage" name="perPage"
+                               value="${pageMaker.criteria.numsPerPage}"/>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -135,7 +144,6 @@
             $('#page').val(target);
             $('#pageForm').submit();
         });
-
     });
 </script>
 

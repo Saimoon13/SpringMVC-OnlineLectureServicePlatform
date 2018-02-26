@@ -11,5 +11,6 @@ public interface MemberDao {
 	int create(Member m);
 	int update(Member m);
 	int delete(String userid);
-	
+	Member login (Member m);
+
 } // end interface MemberDao

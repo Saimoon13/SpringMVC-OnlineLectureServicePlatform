@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import service.MemberService;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class MemberController {
 
@@ -30,5 +32,28 @@ public class MemberController {
 
         service.insert(m);
         return "index";
-    }//end MemberRegister
+    }
+
+    @RequestMapping(value="/login", method = RequestMethod.POST)
+    private String memberLogin(@ModelAttribute("Member")Member m, HttpSession session){
+
+        logger.info("--- userID: " + m.getUserid());
+        logger.info("--- userPasswordt: " + m.getPassword());
+        logger.info("--- userEmail: " + m.getEmail());
+
+        Member result = service.login(m);
+
+        if(result != null){
+            session.setAttribute("loginResult",result);
+            return "redirect:/";
+        } else {
+            return "member/loginFail";
+        }
+    }
+
+    @RequestMapping(value="/logout", method=RequestMethod.GET)
+    private String memberLogout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
+    }//end memberLogout
 }

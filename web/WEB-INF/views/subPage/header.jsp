@@ -1,4 +1,4 @@
-<%--
+<%@ page import="domain.Member" %><%--
   Created by IntelliJ IDEA.
   User: PC
   Date: 2018-02-08
@@ -42,25 +42,67 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <%
+            String criterion = null;
+            criterion = request.getParameter("before");
+
+            System.out.println(criterion+"criterion");
+        %>
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
+                <%--<li class="nav-item active">--%>
+                    <%
+                        if (criterion.equals("first")) {
+                            out.print("<li class=\"nav-item active\">");
+                        } else {
+                            out.print("<li class=\"nav-item\">");
+                        }
+                    %>
                     <a class="nav-link" href="/board/list">Board</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/lecture//">Lecture</a>
+                <%--<li class="nav-item active">--%>
+                    <%
+                        if (criterion.equals("second")) {
+                            out.print("<li class=\"nav-item active\">");
+                        } else {
+                            out.print("<li class=\"nav-item\">");
+                        }
+                    %>
+                    <a class="nav-link" href="/lecture/">Lecture</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/discuss/" target="_blank">Discuss</a>
+                <%--<li class="nav-item">--%>
+                    <%
+                        if (criterion.equals("third")) {
+                            out.print("<li class=\"nav-item active\">");
+                        } else {
+                            out.print("<li class=\"nav-item\">");
+                        }
+                    %>
+                    <a class="nav-link" href="/discuss/">Discuss</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav" id="alignneeded">
                 <!-- 로그인 -->
-                <li class="nav-item">
-                    <a class="nav-link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal"
-                       href="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>
-                </li>
+                <%
+                    Member member = (Member) session.getAttribute("loginResult");
+                    if(member == null) {
+                        out.print("<li class=\"nav-item\">\n" +
+                                "<a class=\"nav-link\" data-dismiss=\"modal\" data-toggle=\"modal\" data-target=\"#loginModal\"\n" +
+                                "href=\"#loginModal\"><i class=\"fas fa-sign-in-alt\"></i> Login</a>\n" +
+                                "</li>");
+                    } else {
+                        out.print("<li class=\"nav-item\">\n" +
+                                "<a class=\"nav-link\"nav-item\">\n" +
+                                "Welcome! " + member.getUserid() +"</a>\n" +
+                                "</li>");
+                    }
+                %>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal"--%>
+                       <%--href="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>--%>
+                <%--</li>--%>
+
                 <!-- 로그인 모달-->
                 <div class="modal fade" id="loginModal">
                     <div class="modal-dialog modal-dialog-centered">
@@ -72,44 +114,64 @@
                             </div>
 
                             <!-- Modal body -->
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label for="uid" class="cols-sm-2 control-label">Your ID</label>
-                                    <div class="input-group mb-3">
+                            <form action="/login" method="post" id="login">
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="uid" class="cols-sm-2 control-label">Your ID</label>
+                                        <div class="input-group mb-3">
                                         <span class="input-group-text"><i class="fas fas fa-user"
                                                                           aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="name" id="uid"
-                                               placeholder="Enter your Name"/>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upw" class="cols-sm-2 control-label">Password</label>
-                                    <div class="cols-sm-10">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
-                                                                              aria-hidden="true"></i></span>
-                                            <input type="password" class="form-control" name="password" id="upw"
-                                                   placeholder="Enter your Password"/>
+                                            <input type="text" class="form-control" name="userid" id="uid" path="userid"
+                                                   placeholder="Enter your Name"/>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="form-group">
+                                        <label for="upw" class="cols-sm-2 control-label">Password</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
+                                                                              aria-hidden="true"></i></span>
+                                                <input type="password" class="form-control" name="password" id="upw"
+                                                       path="password" placeholder="Enter your Password"/>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <p class="mt-3 mr-3"><span id="loginForm">ddddddddddddddddddd</span></p>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                                id="loginConfirm">Login
+                                        </button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel
+                                        </button>
+                                    </div>
                                 </div>
-
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
+
                 <!-- 회원가입 -->
-                <li class="nav-item">
-                    <a class="nav-link" data-dismiss="modal" data-toggle="modal" data-target="#regiModal"
-                       href="#regiModal">
-                        <i class="fas far fa-user"></i> Register</a>
-                </li>
+                <%
+                    if(member == null) {
+                        out.print("<li class=\"nav-item\">\n" +
+                                "<a class=\"nav-link\" data-dismiss=\"modal\" data-toggle=\"modal\" data-target=\"#regiModal\"\n" +
+                                "href=\"#regiModal\">\n" +
+                                "<i class=\"fas far fa-user\"></i> Register</a>\n" +
+                                "</li>");
+                    } else {
+                        out.print("<li class=\"nav-item\">\n" +
+                                "<a class=\"nav-link\" href=\"/logout/\">\n" +
+                                "<i class=\"fas fa-sign-out-alt\"></i> Logout</a>\n" +
+                                "</li>");
+                    }
+                %>
+                <%--<li class="nav-item">--%>
+                    <%--<a class="nav-link">--%>
+                        <%--<i class="fas fa-sign-out-alt"></i> Register</a>--%>
+                <%--</li>--%>
+
                 <!-- 회원가입 모달 -->
                 <div class="modal fade" id="regiModal">
                     <div class="modal-dialog modal-dialog-centered">
@@ -170,7 +232,7 @@
                                 <div class="modal-footer">
                                     <p class="mt-3 mr-3"><span id="signupForm">ddddddddddddddddddd</span></p>
                                     <input type="submit" class="btn btn-primary" data-dismiss="modal"
-                                            id="signupConfirm" value="Register">
+                                           id="signupConfirm" value="Register">
                                     </input>
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
@@ -207,6 +269,21 @@
     $(document).ready(function () {
 
 //        로그인
+
+        var signupConfirm = $('#loginConfirm'),
+            uid = $('#uid'),
+            upw = $('#upw');
+
+        signupConfirm.click(function () {
+            if (uid.val() === '' || upw.val() === '') {
+                $('#loginForm').html('Fill the all blanks');
+                return false;
+            } else {
+                $('#loginForm').html('sdffffffffffffffffffffffffffff');
+                document.getElementById("login").submit();
+
+            }
+        })
 
 //        회원가입
 
