@@ -48,7 +48,6 @@ public class MemberServiceImple implements MemberService {
 
 	@Override
 	public Member login(Member m) {
-
 		return memberDao.login(m);
 	}
 

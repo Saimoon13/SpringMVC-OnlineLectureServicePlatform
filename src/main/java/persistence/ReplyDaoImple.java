@@ -19,7 +19,7 @@ public class ReplyDaoImple implements ReplyDao {
 	
 	@Override
 	public List<Reply> read() {
-		return session.selectList(NAMESPACE + ".selectAll");
+		return session.selectList(NAMESPACE + ".selectAllcate");
 	}
 	
 	@Override

@@ -6,6 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -35,15 +38,11 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <h1><a href="0" class="navbar-brand">Discuss board</a></h1>
-        <form class="form-inline">
-            <input type="text" class="form-control mr-3 mb-2 mb-sm-0" placeholder="Search">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-</nav>
+<header>
+    <jsp:include page="../subPage/header.jsp">
+        <jsp:param name="before" value="third"></jsp:param>
+    </jsp:include>
+</header>
 
 <%--my margin top and bottom--%>
 <div class="container my-3">
@@ -54,7 +53,7 @@
     </nav>
     <div class="row">
         <div class="col-12">
-            <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">forum name</h2>
+            <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">forum name, ${lid}</h2>
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
@@ -90,12 +89,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0"
-                                                                                            class="text-uppercase">forum
-                            post title with a complex and long question</a></h3>
-                        <div class="small">Go to page: <a href="#0">1</a>, <a href="#0">2</a>, <a href="#0">3</a>
-                            &hellip;
-                            <a href="#0">7</a>, <a href="#0">8</a>, <a href="#0">9</a></div>
+                        <h3 class="h6 mb-0"><a href="/discuss/detail">Forum name title with a complex and long
+                            question</a></h3>
                     </td>
                     <td>
                         <div>by <a href="#0">Author name</a></div>
@@ -110,45 +105,26 @@
                         <div>05 apr 2017, 20:07</div>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0"
-                                                                                            class="text-uppercase">forum
-                            post title with a complex and long question</a></h3>
-                        <div class="small">Go to page: <a href="#0">1</a>, <a href="#0">2</a>, <a href="#0">3</a>
-                            &hellip;
-                            <a href="#0">7</a>, <a href="#0">8</a>, <a href="#0">9</a></div>
-                    </td>
-                    <td>
-                        <div>by <a href="#0">Author name</a></div>
-                        <div>03 Apr 2017, 13:46</div>
-                    </td>
-                    <td>
-                        <div>5 replies</div>
-                        <div>137 views</div>
-                    </td>
-                    <td>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 class="h6 mb-0"><a href="/discuss/post">Forum name title with a complex and long question</a></h3>
-                    </td>
-                    <td>
-                        <div>by <a href="#0">Author name</a></div>
-                        <div>03 Apr 2017, 13:46</div>
-                    </td>
-                    <td>
-                        <div>5 replies</div>
-                        <div>137 views</div>
-                    </td>
-                    <td>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
+                <c:forEach var="topic" items="${topicList}">
+                    <tr>
+                        <td>
+                            <h3 class="h6 mb-0"><a href="/discuss/detail?tnumber=${topic.tnumber}">${topic.title}, ${topic.tnumber}</a></h3>
+                        </td>
+                        <td>
+                            <div>by <a href="#0">${topic.writer}</a></div>
+                            <div><fmt:formatDate var="topicdate" value="${topic.topicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    ${topicdate}</div>
+                        </td>
+                        <td>
+                            <div>${topic.rlycount}</div>
+                            <div>137 views</div>
+                        </td>
+                        <td>
+                            <div>by <a href="#0">author name</a></div>
+                            <div>05 apr 2017, 20:07</div>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>
@@ -163,8 +139,32 @@
                 <li class="page-item"><a href="#0" class="page-link">5</a></li>
                 <li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>
                 <li class="page-item"><a href="#0" class="page-link">Next</a></li>
+                <c:if test="${pageMaker.prev}">
+                    <!-- 이전 버튼은 (startPage - 1)로 이동 -->
+                    <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
+                </c:if>
+
+                <c:forEach var="num"
+                           begin="${pageMaker.startPage}"
+                           end="${pageMaker.endPage}">
+                    <li class="page-item"><a class="page-link" href="${num}">${num}</a></li>
+                </c:forEach>
+
+                <c:if test="${pageMaker.next}">
+                    <!-- 다음 버튼은 (endPage + 1)으로 이동 -->
+                    <li class="page-item"><a class="page-link" href="${pageMaker.endPage + 1}">다음</a></li>
+                </c:if>
             </ul>
         </nav>
+
+        <form id="pageForm" action="/discuss/topics" method="get">
+            <input type="hidden" id="page" name="page"
+                   value="${pageMaker.criteria.page}"/>
+            <input type="hidden" id="perPage" name="perPage"
+                   value="${pageMaker.criteria.numsPerPage}"/>
+            <input type="hidden" id="lid" name="lid" path="lid" value="${lid}"/>
+        </form>
+
         <form class="form-inline float-lg-left d-block d-sm-flex">
             <div class="mb-2 mb-sm-0 mr-2">Display posts from previous:</div>
             <div class="form-group mr-2">
@@ -198,7 +198,7 @@
             <button type="submit" class="btn btn-sm btn-primary">Go</button>
         </form>
     </div>
-    <a href="#0" class="btn btn-lg btn-primary">New topic</a>
+    <a href="/discuss/newtopic?lid=${lid}" class="btn btn-lg btn-primary">New topic</a>
 </div>
 <footer class="small bg-dark text-white">
     <div class="container py-4">
@@ -209,6 +209,20 @@
         </ul>
     </div>
 </footer>
+
+<script>
+    $(document).ready(function () {
+        $('.pagination li a').click(function () {
+            // <a> 태그의 기본 동작(페이지 이동)을 막아버림
+            event.preventDefault();
+
+            // 이동할 페이지
+            var target = $(this).attr('href');
+            $('#page').val(target);
+            $('#pageForm').submit();
+        });
+    });
+</script>
 
 <script src="../../../resources/lib/jquery-3.3.1.slim.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>

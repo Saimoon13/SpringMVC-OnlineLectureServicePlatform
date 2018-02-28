@@ -5,5 +5,11 @@
 
 <mapper namespace="mappers.LectureMapper">
 
+    <!--<select id="selectPage" resultType="Topics">-->
+            <!--select b.writer, b.title, b.topicdate, b.lecturekey, b.tcontent-->
+            <!--from (select rownum rn, a.* from (select * from topics where lecturekey = #{lid}-->
+            <!--order by topicdate desc) a) b-->
+            <!--where rn between #{c.start} and #{c.end}-->
+    <!--</select>-->
 
 </mapper>

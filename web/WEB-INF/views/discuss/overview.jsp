@@ -78,7 +78,7 @@
                         <c:when test="${lecture.lcategory eq 'basic'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
@@ -139,7 +139,7 @@
                         <c:when test="${lecture.lcategory eq 'advanced'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
@@ -199,7 +199,7 @@
                         <c:when test="${lecture.lcategory eq 'superior'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>

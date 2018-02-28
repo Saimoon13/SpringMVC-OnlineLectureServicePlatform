@@ -46,10 +46,10 @@
             <input type="text" name="userid" id="userid"
                    value="${board.userid}" readonly/>
             <br/>
-            <label for="regdate">작성 시간</label><br/>
-            <fmt:formatDate value="${board.regdate}" var="regdate"
+            <label for="topicdate">작성 시간</label><br/>
+            <fmt:formatDate value="${board.topicdate}" var="topicdate"
                             pattern="yyyy/MM/dd HH:mm:ss"/>
-            <input type="text" id="regdate" value="${regdate}" readonly/>
+            <input type="text" id="topicdate" value="${topicdate}" readonly/>
             <br/>
         </form>
 

@@ -23,7 +23,7 @@ public class MemberDaoImple implements MemberDao {
 	@Override
 	public List<Member> read() {
 		logger.info("read() 호출");
-		return session.selectList(NAMESPACE + ".selectAll");
+		return session.selectList(NAMESPACE + ".selectAllcate");
 	}
 
 	@Override

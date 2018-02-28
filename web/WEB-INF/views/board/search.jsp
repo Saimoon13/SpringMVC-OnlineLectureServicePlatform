@@ -94,10 +94,10 @@
                 </td>
                 <td>${board.userid}</td>
                 <td>
-                    <fmt:formatDate var="regdate" 
-                        value="${board.regdate}"
+                    <fmt:formatDate var="topicdate"
+                        value="${board.topicdate}"
                         pattern="yyyy/MM/dd HH:mm:ss"/>
-                    ${regdate}
+                    ${topicdate}
                 </td>
             </tr>
         </c:forEach>

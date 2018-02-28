@@ -24,15 +24,11 @@
 
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <h1><a href="0" class="navbar-brand">Discuss board</a></h1>
-        <form class="form-inline">
-            <input type="text" class="form-control mr-3 mb-2 mb-sm-0" placeholder="Search">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-</nav>
+<header>
+    <jsp:include page="../subPage/header.jsp">
+        <jsp:param name="before" value="third"></jsp:param>
+    </jsp:include>
+</header>
 
 <%--my margin top and bottom--%>
 <div class="container my-3">
@@ -44,18 +40,19 @@
     </nav>
     <div class="row">
         <div class="col-12">
-            <h2 class="h4 text-white bg-info mb-3 p-4 rounded">Create new topic</h2>
+            <h2 class="h4 text-white bg-info mb-3 p-4 rounded">Create new topic, ${lid}</h2>
         </div>
     </div>
-    <form class="mb-3">
+    <form class="mb-3" action="/discuss/post?lid=${lid}" method="post">
         <div class="form-group">
             <label for="topic">Topic:</label>
-            <input type="text" class="form-control" id="topic" placeholder="Give your topic a title." required>
+            <input type="text" class="form-control" name="title" path="title"
+                   id="topic" placeholder="Give your topic a title." required>
         </div>
         <div class="form-group">
             <label for="comment">Comment:</label>
-            <textarea class="form-control" id="comment" rows="10" placeholder="Write your comment here"
-                      required></textarea>
+            <textarea class="form-control"  name="tcontent" path="tcontent"
+                      id="comment" rows="10" placeholder="Write your comment here" required></textarea>
         </div>
         <div class="form-check">
             <label class="form-check-label">

@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c"
-           uri="http://java.sun.com/jsp/jstl/core" %>
+           uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt"
            uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
@@ -75,10 +75,10 @@
 
                 <c:forEach var="lecture" items="${lectureList}">
                     <c:choose>
-                        <c:when test="#{'basic' eq lecture.lcategory}">
+                        <c:when test="${lecture.lcategory eq 'basic'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
@@ -95,45 +95,12 @@
                                 </td>
                             </tr>
                         </c:when>
+                        <c:otherwise>
+
+                        </c:otherwise>
                     </c:choose>
                 </c:forEach>
 
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
                 <tr>
                     <td>
                         <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
@@ -167,60 +134,33 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
+                <c:forEach var="lecture" items="${lectureList}">
+                    <c:choose>
+                        <c:when test="${lecture.lcategory eq 'advanced'}">
+                            <tr>
+                                <td>
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
+                                                           class="text-uppercase">${lecture.lname}</a></h3>
+                                    <p class="mb-0">${lecture.lexplain}</p>
+                                </td>
+                                <td>
+                                    <div>5</div>
+                                </td>
+                                <td>
+                                    <div>18</div>
+                                </td>
+                                <td>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0">${lecture.lecturer}</a></h4>
+                                    <div>by <a href="#0">author name</a></div>
+                                    <div>05 apr 2017, 20:07</div>
+                                </td>
+                            </tr>
+                        </c:when>
+                        <c:otherwise>
+
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
                 <tr>
                     <td>
                         <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
@@ -254,60 +194,33 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
+                <c:forEach var="lecture" items="${lectureList}">
+                    <c:choose>
+                        <c:when test="${lecture.lcategory eq 'superior'}">
+                            <tr>
+                                <td>
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
+                                                           class="text-uppercase">${lecture.lname}</a></h3>
+                                    <p class="mb-0">${lecture.lexplain}</p>
+                                </td>
+                                <td>
+                                    <div>5</div>
+                                </td>
+                                <td>
+                                    <div>18</div>
+                                </td>
+                                <td>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0">${lecture.lecturer}</a></h4>
+                                    <div>by <a href="#0">author name</a></div>
+                                    <div>05 apr 2017, 20:07</div>
+                                </td>
+                            </tr>
+                        </c:when>
+                        <c:otherwise>
+
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
                 <tr>
                     <td>
                         <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>

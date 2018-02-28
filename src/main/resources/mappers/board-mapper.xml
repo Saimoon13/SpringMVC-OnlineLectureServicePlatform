@@ -97,7 +97,7 @@
      <!--</select>-->
 
     <select id="selectPage" resultType="Board">
-    select b.bno, b.title, b.content, b.userid, b.regdate
+    select b.bno, b.title, b.content, b.userid, b.topicdate
     from (
         select rownum rn, a.*
         from (
