@@ -7,26 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86e953fa-a38a-4376-9a2e-7a8edc87d7b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/lib/jquery-3.3.1.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/MyProject_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/MyProject_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyProject.iml" afterPath="$PROJECT_DIR$/MyProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/overview.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/overview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/topics.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/topics.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/DiscussController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/DiscussController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Lecture.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Lecture.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java" afterPath="$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/DiscussService.java" afterPath="$PROJECT_DIR$/src/main/java/service/DiscussService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java" afterPath="$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/newTopic.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/newTopic.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,8 +34,8 @@
       <file leaf-file-name="overview.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="91" column="97" lean-forward="false" selection-start-line="91" selection-start-column="97" selection-end-line="91" selection-end-column="97" />
+            <state relative-caret-position="462">
+              <caret line="98" column="41" lean-forward="true" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -745,7 +726,7 @@
       <workItem from="1519433737398" duration="35909000" />
       <workItem from="1519605460330" duration="39435000" />
       <workItem from="1519691268388" duration="40680000" />
-      <workItem from="1519782872903" duration="32296000" />
+      <workItem from="1519782872903" duration="33073000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1517537962351</created>
@@ -824,11 +805,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519807889845</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test">
+      <created>1519824456412</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1519824456412</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="302708000" />
+    <option name="totallyTimeSpent" value="303485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="0" width="1938" height="1048" extended-state="0" />
@@ -1356,8 +1344,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="91" column="97" lean-forward="false" selection-start-line="91" selection-start-column="97" selection-end-line="91" selection-end-column="97" />
+        <state relative-caret-position="462">
+          <caret line="98" column="41" lean-forward="true" selection-start-line="98" selection-start-column="41" selection-end-line="98" selection-end-column="41" />
           <folding />
         </state>
       </provider>
