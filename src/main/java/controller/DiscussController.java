@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import pageutil.PageNumberMaker;
 import pageutil.PaginationCriteria;
 import service.DiscussService;
+import service.MemberService;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -20,8 +21,8 @@ import java.util.List;
 @RequestMapping(value = "/discuss")
 public class DiscussController {
 
-    @Autowired
-    DiscussService discussService;
+    @Autowired DiscussService discussService;
+    @Autowired MemberService memberService;
 
     @RequestMapping(value = "/")
     public String overview(Model model){
@@ -84,7 +85,8 @@ public class DiscussController {
         System.out.println(lid+ " 수정 후");
 
         if(m != null){
-                discussService.insertTopic(topics);
+            discussService.insertTopic(topics);
+            memberService.addOnePostNum(m.getUserid());
         } else if (m == null){
             try {
                 throw new Exception();
@@ -106,9 +108,10 @@ public class DiscussController {
 
         Topics topic = discussService.selectTopicByTnumber(tnumber);
 
-        System.out.println(topic.getTitle()+" - 제목, " + topic.getWriter() + " - 작성자");
+        Member writer = memberService.select(topic.getWriter());
 
         model.addAttribute("topic",topic);
+        model.addAttribute("writer", writer);
 
         return "discuss/detail";
     }

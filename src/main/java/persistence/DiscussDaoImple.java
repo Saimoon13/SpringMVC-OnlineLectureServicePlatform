@@ -2,9 +2,7 @@ package persistence;
 
 import domain.Lecture;
 import domain.Topics;
-import mappers.LectureMapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.session.SqlSession;
+import mappers.DiscussMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pageutil.PaginationCriteria;
@@ -14,10 +12,7 @@ import java.util.List;
 @Repository
 public class DiscussDaoImple implements DiscussDao {
 
-    @Autowired private LectureMapper mapper;
-
-//    private static final String NAMESPACE = "mappers.LectureMapperxml";
-//    @Autowired private SqlSession session;
+    @Autowired private DiscussMapper mapper;
 
     @Override
     public List<Lecture> selectAllcate() {

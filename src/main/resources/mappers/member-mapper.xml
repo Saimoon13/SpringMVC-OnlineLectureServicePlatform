@@ -8,16 +8,15 @@
     <select id="selectAll" resultType="Member">
     SELECT * FROM ${tblMember}
     </select>
-    
-    
+
     <select id="selectById" resultType="Member">
     SELECT * FROM ${tblMember}
     WHERE ${colUserid} = #{userid}
     </select>
     
     <insert id="insert">
-    INSERT INTO ${tblMember}
-    VALUES (#{userid}, #{password}, #{email})
+    INSERT INTO ${tblMember}(${colUserid}, ${colPassword}, ${colEmail}, regdate)
+    VALUES (#{userid}, #{password}, #{email}, sysdate)
     </insert>
     
     
@@ -35,5 +34,9 @@
     <select id="login_Member" resultType="Member">
         SELECT * FROM ${tblMember} where ${colUserid} = #{userid} AND ${colPassword} = #{password}
     </select>
+
+    <update id="addOnePostNum">
+        UPDATE ${tblMember} set postnum = postnum + 1 WHERE ${colUserid} = #{userid}
+    </update>
 
 </mapper>

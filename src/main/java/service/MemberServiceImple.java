@@ -51,4 +51,9 @@ public class MemberServiceImple implements MemberService {
 		return memberDao.login(m);
 	}
 
+	@Override
+	public int addOnePostNum(String userid) {
+		return memberDao.addOnePostNum(userid);
+	}
+
 } // end class MemberServiceImple

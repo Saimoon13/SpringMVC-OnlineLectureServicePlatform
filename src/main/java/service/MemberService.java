@@ -12,5 +12,6 @@ public interface MemberService {
 	int update(Member m);
 	int delete(String userid);
 	Member login(Member m);
+	int addOnePostNum(String userid);
 
 } //end interface MemberService

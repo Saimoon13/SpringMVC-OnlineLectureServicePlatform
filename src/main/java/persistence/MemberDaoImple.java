@@ -18,7 +18,6 @@ public class MemberDaoImple implements MemberDao {
 			LoggerFactory.getLogger(MemberDaoImple.class);
 	
 	@Autowired private SqlSession session;
-//	@Autowired private MemberMapper mapper;
 	
 	@Override
 	public List<Member> read() {
@@ -54,5 +53,11 @@ public class MemberDaoImple implements MemberDao {
 	public Member login(Member m) {
 		return session.selectOne(NAMESPACE+".login_Member", m);
 	}
+
+	@Override
+	public int addOnePostNum(String userid) {
+		return session.update(NAMESPACE+".addOnePostNum", userid);
+	}
+
 
 } // end class MemberDaoImple

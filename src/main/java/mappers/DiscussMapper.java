@@ -5,11 +5,12 @@ import domain.Topics;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import pageutil.PaginationCriteria;
 
 import java.util.List;
 
-public interface LectureMapper {
+public interface DiscussMapper {
 
     String SQL_GETALLCATE =
             "SELECT * FROM LECTURE";
@@ -44,4 +45,5 @@ public interface LectureMapper {
 
     @Select(SQL_SELECTTOPICBYTNUMBER)
     Topics selectTopicByTnumber(int tnumber);
+
 }

@@ -44,4 +44,7 @@ public class DiscussServiceimple implements DiscussService {
         return discussDao.selectTopicByTnumber(tnumber);
     }
 
+
+
+
 }

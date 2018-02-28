@@ -8,6 +8,7 @@ public class Board {
 	private String content;
 	private String userid;
 	private Date regdate;
+	private int postNum;
 	
 	public Board() {}
 
@@ -58,7 +59,15 @@ public class Board {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	
+
+	public int getPostNum() {
+		return postNum;
+	}
+
+	public void setPostNum(int postNum) {
+		this.postNum = postNum;
+	}
+
 	@Override
 	public String toString() {
 		return "Board{"

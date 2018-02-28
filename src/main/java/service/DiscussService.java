@@ -14,4 +14,5 @@ public interface DiscussService {
     int getCountByLid(String lid);
     List<Topics> selectPage(String lid, PaginationCriteria c);
     Topics selectTopicByTnumber(int tnumber);
+
 }

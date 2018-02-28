@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 
@@ -34,15 +36,11 @@
     </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-        <h1><a href="0" class="navbar-brand">Discuss board</a></h1>
-        <form class="form-inline">
-            <input type="text" class="form-control mr-3 mb-2 mb-sm-0" placeholder="Search">
-            <button type="submit" class="btn btn-primary">Search</button>
-        </form>
-    </div>
-</nav>
+<header>
+    <jsp:include page="../subPage/header.jsp">
+        <jsp:param name="before" value="third"></jsp:param>
+    </jsp:include>
+</header>
 
 <%--my margin top and bottom--%>
 <div class="container my-3">
@@ -50,7 +48,7 @@
         <a href="#0" class="breadcrumb-item">Board index</a>
         <a href="#0" class="breadcrumb-item">Forum category</a>
         <a href="#0" class="breadcrumb-item">Forum name</a>
-        <span class="breadcrumb-item active">forum post title with a complex and long question</span>
+        <span class="breadcrumb-item active">${topic.title}</span>
     </nav>
     <div class="row">
         <div class="col-12">
@@ -58,32 +56,31 @@
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col" class="topic-col">Author</th>
-                    <th scope="col" class="created-col">Message</th>
+                    <th scope="col" class="topic-col" style="width: 18%">Author</th>
+                    <th scope="col" class="created-col" style="width: 75%;">Message</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
                     <td class="author-col">
-                        <div>by <a href="#0">Author name</a></div>
+                        <div>by <a href="#0">${writer.userid}</a></div>
                     </td>
                     <td class="post-col d-lg-flex justify-content-lg-between">
-                        <div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and long questio</div>
-                        <div><span class="font-weight-bold">Posted:</span> 05 apr 2017, 20:07</div>
+                        <div><span class="font-weight-bold">Post subject:</span> ${topic.title}</div>
+                        <fmt:formatDate var="topicdate" value="${topic.topicdate}" pattern="yy/MM/dd HH:mm:ss"/>
+                        <div><span class="font-weight-bold">Posted:</span>${topicdate}</div>
                     </td>
+
                 </tr>
                 <tr>
                     <td>
-                        <div><span class="font-weight-bold">Joined:</span> 05 apr 2017, 20:07</div>
-                        <div><span class="font-weight-bold">Posts:</span> 123</div>
+                        <fmt:formatDate var="regdate" value="${writer.regdate}" pattern="yy/MM/dd HH:mm:ss"/>
+                        <div><span class="font-weight-bold">Joined:</span> ${regdate}</div>
+                        <div><span class="font-weight-bold">Posts:</span> ${writer.postnum}</div>
                     </td>
                     <td>
-                        <p>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dddddddddddddddddddddddddddddddddddddd</p>
+                        <p>${topic.tcontent}</p>
                     </td>
                 </tr>
                 </tbody>
@@ -102,7 +99,9 @@
                         <div>by <a href="#0">Author name</a></div>
                     </td>
                     <td class="post-col d-lg-flex justify-content-lg-between">
-                        <div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and long questio</div>
+                        <div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and long
+                            questio
+                        </div>
                         <div><span class="font-weight-bold">Posted:</span> 05 apr 2017, 20:07</div>
                     </td>
                 </tr>
@@ -141,7 +140,8 @@
     <form class="mb-3">
         <div class="form-group">
             <label for="comment">Reply to this post:</label>
-            <textarea class="form-control" id="comment" rows="10" placeholder="Write your comment here" required></textarea>
+            <textarea class="form-control" id="comment" rows="10" placeholder="Write your comment here"
+                      required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Reply</button>
         <button type="reset" class="btn btn-danger">Reset</button>
