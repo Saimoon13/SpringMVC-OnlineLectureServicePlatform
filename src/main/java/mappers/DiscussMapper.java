@@ -27,6 +27,8 @@ public interface DiscussMapper {
             "where rn between #{c.start} and #{c.end}";
     String SQL_SELECTTOPICBYTNUMBER =
             "SELECT * FROM topics WHERE tnumber = #{tnumber}";
+    String SQL_UPDATELASJSON =
+            "update lecture set lastjson = #{lastjson} where lid = #{lid}";
 
     @Select(SQL_GETALLCATE)
     List<Lecture> selectAllcate();
@@ -46,4 +48,6 @@ public interface DiscussMapper {
     @Select(SQL_SELECTTOPICBYTNUMBER)
     Topics selectTopicByTnumber(int tnumber);
 
+    @Update(SQL_UPDATELASJSON)
+    int updateLastJson(@Param("lastjson")String lastjson, @Param("lid") String lid);
 }

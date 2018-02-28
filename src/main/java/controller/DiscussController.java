@@ -1,5 +1,6 @@
 package controller;
 
+import com.google.gson.Gson;
 import domain.Lecture;
 import domain.Member;
 import domain.Topics;
@@ -30,15 +31,17 @@ public class DiscussController {
 
         model.addAttribute("lectureList",list);
         for(Lecture lecture: list) {
-            System.out.println(lecture.getLid());
+            System.out.println(lecture.getLastjson());
         }
         return "discuss/overview";
     }
 
     @RequestMapping(value = "/topics", method = RequestMethod.GET)
-    public String topics(String lid, Model model,Integer page, Integer perPage){
+    public String topics(String lid, String lname, String lcategory, Model model,Integer page, Integer perPage){
 
         System.out.println(lid);
+        System.out.println(lname);
+        System.out.println(lcategory);
 
         PaginationCriteria c = null;
         if (page != null && perPage != null) {
@@ -56,21 +59,29 @@ public class DiscussController {
         model.addAttribute("topicList",listtrue);
         model.addAttribute("pageMaker", maker);
         model.addAttribute("lid",lid);
+        model.addAttribute("lname",lname);
+        model.addAttribute("lcategory",lcategory);
 
         return "discuss/topics";
     }
 
     @RequestMapping(value = "/newtopic")
-    public String post(String lid, Model model){
+    public String post(String lname, String lcategory, String lid, Model model){
 
         System.out.println(lid);
         model.addAttribute("lid",lid);
+        model.addAttribute("lname", lname);
+        model.addAttribute("lcategory", lcategory);
+
+        System.out.println(lid);
+        System.out.println(lname);
+        System.out.println(lcategory);
 
         return "discuss/newTopic";
     }
 
-    @RequestMapping(value = "/post")
-    public String post(@ModelAttribute("Topics")Topics topics, HttpSession session, String lid){
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    public String post(@ModelAttribute("Topics")Topics topics, HttpSession session, String lid, String lname, String lcategory){
 
         Member m = (Member)session.getAttribute("loginResult");
         System.out.println(topics.getLecturekey()+" 전");
@@ -84,9 +95,14 @@ public class DiscussController {
         System.out.println(topics.getTcontent());
         System.out.println(lid+ " 수정 후");
 
+        Gson topicgson = new Gson();
+        String json = topicgson.toJson(topics);
+        System.out.println(json);
+
         if(m != null){
             discussService.insertTopic(topics);
             memberService.addOnePostNum(m.getUserid());
+            discussService.updateLastJson(json, lid);
         } else if (m == null){
             try {
                 throw new Exception();
@@ -97,14 +113,17 @@ public class DiscussController {
             System.out.println("/discuss/post 에러");
         }
 
-        String returnValue = "/discuss/topics?lid="+lid;
+        String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
         return "redirect:"+returnValue;
     }
 
     @RequestMapping(value = "/detail")
-    public String detail(int tnumber, Model model){
+    public String detail(int tnumber,String lname,String lid, String lcategory, Model model){
 
-        System.out.println(tnumber+":번 tnumber");
+        System.out.println(tnumber+": tnumber");
+        System.out.println(lcategory+": category");
+        System.out.println(lname+": lname");
+        System.out.println(lid+": lid");
 
         Topics topic = discussService.selectTopicByTnumber(tnumber);
 
@@ -112,6 +131,9 @@ public class DiscussController {
 
         model.addAttribute("topic",topic);
         model.addAttribute("writer", writer);
+        model.addAttribute("lname", lname);
+        model.addAttribute("lcategory",lcategory);
+        model.addAttribute("lid",lid);
 
         return "discuss/detail";
     }

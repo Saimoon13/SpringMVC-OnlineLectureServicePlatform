@@ -44,7 +44,10 @@ public class DiscussServiceimple implements DiscussService {
         return discussDao.selectTopicByTnumber(tnumber);
     }
 
-
+    @Override
+    public int updateLastJson(String lastjson, String lid) {
+        return discussDao.updateLastJson(lastjson, lid);
+    }
 
 
 }

@@ -22,7 +22,6 @@
           title="no title"
           charset="utf-8"/>
 
-
     <title>Forum - Topic overview</title>
 
     <style type="text/css">
@@ -47,13 +46,26 @@
 <%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
-        <a href="#0" class="breadcrumb-item">Board index</a>
-        <a href="#0" class="breadcrumb-item">Forum category</a>
-        <span class="breadcrumb-item active">Forum name</span>
+        <a href="/discuss/" class="breadcrumb-item">Discuss</a>
+        <span class="breadcrumb-item active">${lname}</span>
     </nav>
     <div class="row">
         <div class="col-12">
-            <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">forum name, ${lid}</h2>
+            <c:choose>
+                <c:when test="${lcategory eq 'basic'}">
+                    <h2 class="h4 text-white bg-warning mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:when test="${lcategory eq 'advanced'}">
+                    <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:when test="${lcategory eq 'superior'}">
+                    <h2 class="h4 text-white bg-dark mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:otherwise>
+                    <h2 class="h4 bg-light mb-0 p-4 rounded-top">Unknown Error</h2>
+                </c:otherwise>
+            </c:choose>
+            <%--<h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">${lname}</h2>--%>
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
@@ -108,7 +120,7 @@
                 <c:forEach var="topic" items="${topicList}">
                     <tr>
                         <td>
-                            <h3 class="h6 mb-0"><a href="/discuss/detail?tnumber=${topic.tnumber}">${topic.title}, ${topic.tnumber}</a></h3>
+                            <h3 class="h6 mb-0"><a href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">${topic.title}, ${topic.tnumber}</a></h3>
                         </td>
                         <td>
                             <div>by <a href="#0">${topic.writer}</a></div>
@@ -198,7 +210,7 @@
             <button type="submit" class="btn btn-sm btn-primary">Go</button>
         </form>
     </div>
-    <a href="/discuss/newtopic?lid=${lid}" class="btn btn-lg btn-primary">New topic</a>
+    <a href="/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>
 </div>
 <footer class="small bg-dark text-white">
     <div class="container py-4">
@@ -224,7 +236,7 @@
     });
 </script>
 
-<script src="../../../resources/lib/jquery-3.3.1.slim.js"></script>
+<script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 
 </body>

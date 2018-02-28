@@ -23,7 +23,6 @@
           title="no title"
           charset="utf-8"/>
 
-
     <title>Discuss-Board overview</title>
 
     <style type="text/css">
@@ -56,7 +55,7 @@
 <%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
-        <span class="breadcrumb-item active">board index</span>
+        <span class="breadcrumb-item active">Discuss</span>
     </nav>
     <div class="row">
         <div class="col-12 col-xl-9">
@@ -78,7 +77,7 @@
                         <c:when test="${lecture.lcategory eq 'basic'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}&lname=${lecture.lname}&lcategory=${lecture.lcategory}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
@@ -89,10 +88,15 @@
                                     <div>18</div>
                                 </td>
                                 <td>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0">${lecture.lecturer}</a></h4>
-                                    <div>by <a href="#0">author name</a></div>
-                                    <div>05 apr 2017, 20:07</div>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span id="lasttitle">not yet</span></a></h4>
+                                    <div>by <a href="#0"><span id="lastwriter">author name</span></a></div>
+                                    <div id="lastdate">05 apr 2017, 20:07</div>
                                 </td>
+                                <script>
+                                    var obj = JSON.parse(${lecture.lastjson})
+                                    $('#lasttitle').html(obj.title);
+                                    $('#lastwriter').html(obj.writer);
+                                </script>
                             </tr>
                         </c:when>
                         <c:otherwise>
@@ -139,7 +143,7 @@
                         <c:when test="${lecture.lcategory eq 'advanced'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}&lname=${lecture.lname}&lcategory=${lecture.lcategory}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
@@ -199,7 +203,7 @@
                         <c:when test="${lecture.lcategory eq 'superior'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}"
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}&lname=${lecture.lname}&lcategory=${lecture.lcategory}"
                                                            class="text-uppercase">${lecture.lname}</a></h3>
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
@@ -211,7 +215,7 @@
                                 </td>
                                 <td>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0">${lecture.lecturer}</a></h4>
-                                    <div>by <a href="#0">author name</a></div>
+                                    <div>by <a href="#0">${lecture.lastjson}</a></div>
                                     <div>05 apr 2017, 20:07</div>
                                 </td>
                             </tr>
@@ -315,7 +319,15 @@
     </div>
 </footer>
 
-<script src="../../../resources/lib/jquery-3.3.1.slim.js"></script>
+<script>
+    $(document).ready(function () {
+
+        var obj = JSON.parse(${})
+
+    });
+</script>
+
+<script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 
 </body>

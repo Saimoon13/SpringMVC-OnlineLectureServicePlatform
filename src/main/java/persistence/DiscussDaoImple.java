@@ -44,5 +44,10 @@ public class DiscussDaoImple implements DiscussDao {
         return mapper.selectTopicByTnumber(tnumber);
     }
 
+    @Override
+    public int updateLastJson(String lastjson, String lid) {
+        return mapper.updateLastJson(lastjson, lid);
+    }
+
 
 }

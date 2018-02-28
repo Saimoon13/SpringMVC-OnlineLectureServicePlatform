@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 
@@ -33,17 +35,30 @@
 <%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
-        <a href="#0" class="breadcrumb-item">Board index</a>
-        <a href="#0" class="breadcrumb-item">Forum category</a>
-        <a href="#0" class="breadcrumb-item">Forum name</a>
-        <span class="breadcrumb-item active">Create new topic</span>
+        <a href="/discuss/" class="breadcrumb-item">Discuss</a>
+        <a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>
+        <span class="breadcrumb-item active">${lname} New Topic</span>
     </nav>
     <div class="row">
         <div class="col-12">
-            <h2 class="h4 text-white bg-info mb-3 p-4 rounded">Create new topic, ${lid}</h2>
+            <c:choose>
+                <c:when test="${lcategory eq 'basic'}">
+                    <h2 class="h4 text-white bg-warning mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:when test="${lcategory eq 'advanced'}">
+                    <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:when test="${lcategory eq 'superior'}">
+                    <h2 class="h4 text-white bg-dark mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:otherwise>
+                    <h2 class="h4 bg-light mb-0 p-4 rounded-top">Unknown Error</h2>
+                </c:otherwise>
+            </c:choose>
+            <%--<h2 class="h4 text-white bg-info mb-3 p-4 rounded">Create new topic, ${lid}</h2>--%>
         </div>
     </div>
-    <form class="mb-3" action="/discuss/post?lid=${lid}" method="post">
+    <form class="mb-3" action="/discuss/post?lid=${lid}&lname=${lname}&lcategory=${lcategory}" method="post">
         <div class="form-group">
             <label for="topic">Topic:</label>
             <input type="text" class="form-control" name="title" path="title"
@@ -75,7 +90,7 @@
     </div>
 </footer>
 
-<script src="../../../resources/lib/jquery-3.3.1.slim.js"></script>
+<script src="../../../resources/lib/jquery-3.3.1.min.js"></script>>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 
 </body>

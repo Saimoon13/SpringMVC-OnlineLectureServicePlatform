@@ -45,14 +45,27 @@
 <%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
-        <a href="#0" class="breadcrumb-item">Board index</a>
-        <a href="#0" class="breadcrumb-item">Forum category</a>
-        <a href="#0" class="breadcrumb-item">Forum name</a>
+        <a href="/discuss/" class="breadcrumb-item">Discuss</a>
+        <a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>
         <span class="breadcrumb-item active">${topic.title}</span>
     </nav>
     <div class="row">
         <div class="col-12">
-            <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">forum post title with a complex and long questio</h2>
+            <c:choose>
+                <c:when test="${lcategory eq 'basic'}">
+                    <h2 class="h4 text-white bg-warning mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:when test="${lcategory eq 'advanced'}">
+                    <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:when test="${lcategory eq 'superior'}">
+                    <h2 class="h4 text-white bg-dark mb-0 p-4 rounded-top">${lname}</h2>
+                </c:when>
+                <c:otherwise>
+                    <h2 class="h4 bg-light mb-0 p-4 rounded-top">Unknown Error</h2>
+                </c:otherwise>
+            </c:choose>
+            <%--<h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">forum post title with a complex and long questio</h2>--%>
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
@@ -176,7 +189,7 @@
     </div>
 </footer>
 
-<script src="../../../resources/lib/jquery-3.3.1.slim.js"></script>
+<script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 
 </body>
