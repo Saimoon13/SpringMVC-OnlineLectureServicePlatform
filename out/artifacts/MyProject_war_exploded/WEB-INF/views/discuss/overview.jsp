@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.util.List" %>
+<%@ page import="domain.Lecture" %><%--
   Created by IntelliJ IDEA.
   User: PC
   Date: 2018-02-21
@@ -10,6 +11,7 @@
            uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt"
            uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html>
 <head>
 
@@ -88,15 +90,10 @@
                                     <div>18</div>
                                 </td>
                                 <td>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0" id="lasttitle">not yet</a></h4>
-                                    <div>by <a href="#0" id="lastwriter">author name</a></div>
-                                    <div id="lastdate">05 apr 2017, 20:07</div>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
+                                    <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <div>${lecture.lasttopicdate}</div>
                                 </td>
-                                <script>
-                                    var obj = JSON.parse(${lecture.lastjson})
-                                    $('#lasttitle').html(obj.title);
-                                    $('#lastwriter').html(obj.writer);
-                                </script>
                             </tr>
                         </c:when>
                         <c:otherwise>
@@ -154,9 +151,9 @@
                                     <div>18</div>
                                 </td>
                                 <td>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0">${lecture.lecturer}</a></h4>
-                                    <div>by <a href="#0">author name</a></div>
-                                    <div>05 apr 2017, 20:07</div>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
+                                    <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <div>${lecture.lasttopicdate}</div>
                                 </td>
                             </tr>
                         </c:when>
@@ -214,9 +211,9 @@
                                     <div>18</div>
                                 </td>
                                 <td>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0">${lecture.lecturer}</a></h4>
-                                    <div>by <a href="#0">${lecture.lastjson}</a></div>
-                                    <div>05 apr 2017, 20:07</div>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
+                                    <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <div>${lecture.lasttopicdate}</div>
                                 </td>
                             </tr>
                         </c:when>
@@ -318,14 +315,6 @@
         </ul>
     </div>
 </footer>
-
-<script>
-    $(document).ready(function () {
-
-        var obj = JSON.parse(${})
-
-    });
-</script>
 
 <script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>

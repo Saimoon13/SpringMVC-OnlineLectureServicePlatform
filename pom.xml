@@ -138,11 +138,7 @@
             <version>1</version>
         </dependency>
 
-        <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-            <version>1.1.2</version>
-        </dependency>
+
 
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -151,6 +147,7 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/atg.taglib.json/json-taglib -->
+
 
 
     </dependencies>

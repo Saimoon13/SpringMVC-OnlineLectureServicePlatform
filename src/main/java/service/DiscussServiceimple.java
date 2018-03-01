@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import pageutil.PaginationCriteria;
 import persistence.DiscussDao;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -45,8 +46,8 @@ public class DiscussServiceimple implements DiscussService {
     }
 
     @Override
-    public int updateLastJson(String lastjson, String lid) {
-        return discussDao.updateLastJson(lastjson, lid);
+    public int updateLast(String writer, int tnumber, String title, String lid) {
+        return discussDao.updateLast(writer, tnumber, title, lid);
     }
 
 

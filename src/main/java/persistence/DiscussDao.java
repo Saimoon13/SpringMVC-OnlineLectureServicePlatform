@@ -5,6 +5,7 @@ import domain.Topics;
 import org.apache.ibatis.annotations.Param;
 import pageutil.PaginationCriteria;
 
+import java.util.Date;
 import java.util.List;
 
 public interface DiscussDao {
@@ -15,5 +16,5 @@ public interface DiscussDao {
     int getCountByLid(String lid);
     List<Topics> selectPage(String lid, PaginationCriteria c);
     Topics selectTopicByTnumber(int tnumber);
-    int updateLastJson(String lastjson, String ld);
+    int updateLast(String writer, int tnumber, String title, String ld);
 }

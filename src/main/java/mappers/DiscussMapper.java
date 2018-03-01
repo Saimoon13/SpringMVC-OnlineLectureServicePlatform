@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import pageutil.PaginationCriteria;
 
+import java.util.Date;
 import java.util.List;
 
 public interface DiscussMapper {
@@ -27,8 +28,8 @@ public interface DiscussMapper {
             "where rn between #{c.start} and #{c.end}";
     String SQL_SELECTTOPICBYTNUMBER =
             "SELECT * FROM topics WHERE tnumber = #{tnumber}";
-    String SQL_UPDATELASJSON =
-            "update lecture set lastjson = #{lastjson} where lid = #{lid}";
+    String SQL_UPDATELAST =
+            "update lecture set lastwriter = #{writer}, lasttitle = #{title}, lasttopicdate = sysdate, lasttnumber = #{tnumber} where lid = #{lid}";
 
     @Select(SQL_GETALLCATE)
     List<Lecture> selectAllcate();
@@ -48,6 +49,7 @@ public interface DiscussMapper {
     @Select(SQL_SELECTTOPICBYTNUMBER)
     Topics selectTopicByTnumber(int tnumber);
 
-    @Update(SQL_UPDATELASJSON)
-    int updateLastJson(@Param("lastjson")String lastjson, @Param("lid") String lid);
+    @Update(SQL_UPDATELAST)
+    int updateLastJson(@Param("writer") String writer, @Param("tnumber") int tnumber,
+                       @Param("title") String title, @Param("lid") String lid);
 }

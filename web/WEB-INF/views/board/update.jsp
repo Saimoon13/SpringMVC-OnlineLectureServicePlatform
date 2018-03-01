@@ -36,10 +36,10 @@
     <input type="text" name="userid" id="userid"
         value="${board.userid}" readonly />
     <br/>
-    <label for="topicdate">작성 시간</label><br/>
-    <fmt:formatDate value="${board.topicdate}" var="topicdate"
+    <label for="replydate">작성 시간</label><br/>
+    <fmt:formatDate value="${board.replydate}" var="replydate"
         pattern="yyyy/MM/dd HH:mm:ss" />
-    <input type="text" id="topicdate" value="${topicdate}" readonly />
+    <input type="text" id="replydate" value="${replydate}" readonly />
     <br/>
     <input type="submit" value="수정 완료" />
 </form>

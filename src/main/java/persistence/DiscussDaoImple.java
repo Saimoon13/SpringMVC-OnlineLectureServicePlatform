@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pageutil.PaginationCriteria;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -45,8 +46,8 @@ public class DiscussDaoImple implements DiscussDao {
     }
 
     @Override
-    public int updateLastJson(String lastjson, String lid) {
-        return mapper.updateLastJson(lastjson, lid);
+    public int updateLast(String writer, int tnumber, String title, String lid) {
+        return mapper.updateLastJson(writer, tnumber, title, lid);
     }
 
 

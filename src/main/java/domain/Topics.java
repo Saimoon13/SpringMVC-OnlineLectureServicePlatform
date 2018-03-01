@@ -57,6 +57,7 @@ public class Topics{
         return tnumber;
     }
 
+
     public void setWriter(String writer) {
         this.writer = writer;
     }

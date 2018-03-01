@@ -49,7 +49,7 @@
         <a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>
         <span class="breadcrumb-item active">${topic.title}</span>
     </nav>
-    <div class="row">
+    <div class="row" id="replyTh-tables">
         <div class="col-12">
             <c:choose>
                 <c:when test="${lcategory eq 'basic'}">
@@ -70,7 +70,7 @@
                 <thead class="thead-light">
                 <tr>
                     <th scope="col" class="topic-col" style="width: 18%">Author</th>
-                    <th scope="col" class="created-col" style="width: 75%;">Message</th>
+                    <th scope="col" class="created-col" style="width: 72%;">Message</th>
                 </tr>
                 </thead>
 
@@ -101,8 +101,8 @@
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col" class="topic-col">Author</th>
-                    <th scope="col" class="created-col">Message</th>
+                    <th scope="col" class="topic-col" style="width: 18%">Author</th>
+                    <th scope="col" class="created-col" style="width: 72%">Message</th>
                 </tr>
                 </thead>
 
@@ -189,6 +189,181 @@
     </div>
 </footer>
 
+<%--핸들러--%>
+<script id="replyThread" type="text/x-handlebars-template">
+    <div class="col-12">
+        <table class="table table-striped table-bordered table-responsive-lg ">
+            <thead class="thead-light">
+            <tr>
+                <th scope="col" class="topic-col" style="width: 18%">Author${lid}</th>
+                <th scope="col" class="created-col" style="width: 72%">Message</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td class="author-col">
+                    <div>by <a href="#0">{{userid}}</a></div>
+                </td>
+                <td class="post-col d-lg-flex justify-content-lg-between">
+                    <div><span class="font-weight-bold">Post subject:</span>{{title}}</div>
+                    <div class="replydate"><span class="font-weight-bold">Posted:</span><a>{{replydate}}</a></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div><span class="font-weight-bold">Joined:</span> 05 apr 2017, 20:07</div>
+                    <div><span class="font-weight-bold">Posts:</span> 123</div>
+                </td>
+                <td>
+                    <p>{{rcontent}}</p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<script>
+    $(document).ready(function () {
+        // 검색할 댓글의 게시글 번호
+        var tnumber = ${topic.tnumber};
+
+        // jQuery를 사용해서 AJAX 요청을 보내는 함수들 중에서
+        // $.getJSON(url, data, callback)
+        // 해당 url로 HTTP GET 방식의 ajax 요청을 보내고,
+        // JSON 객체를 로드하는 함수
+        // url (필수): 서버로 요청을 보내는 주소
+        // data (선택): 요청과 함께 서버로 보내는 데이터. 생략 가능.
+        // callback (선택): 응답을 받았을 때 처리할 일을 정의하는 콜백 함수
+
+        function getAllReplies() {
+            $.getJSON('/rplyth/all/' + tnumber, function (data) {
+                // 매개변수 data: Ajax 요청에 대한 응답으로 온 데이터
+                console.log('댓글 갯수: ' + data.length);
+
+                $(data).each(function () {
+                    var templateResponse = Handlebars.compile($("#replyThread").html());
+                    var contextResponse = {
+                        userid: this.writer,
+                        title: JSON.parse(this.member).writer,
+                        replydate: this.replydate,
+                        rcontent: this.rcontent
+                    };
+
+                    $('#replyTh-tables').append(templateResponse(contextResponse));
+
+//                    var replyList = '';
+//                    $(data).each(function () {
+//                        replyList +=
+//                        '<div class="reply-item" data-rno="'
+//                        + this.rno
+//                        + '">'
+//                        + '<input type="hidden" id="rno" value="'
+//                        + this.rno
+//                        + '" readonly />'
+//                        + '<input type="text" id="rtext" value="'
+//                        + this.rtext
+//                        + '" />'
+//                        + '<input type="text" id="replier" value="'
+//                        + this.replier
+//                        + '" readonly />'
+//                        + '<button class="btn-update">수정</button>'
+//                        + '<button class="btn-delete">삭제</button>'
+//                        + '</div>';
+                });
+//                $('#replies').html(replyList);
+//                var replyThdate = $('.replydate a').html();
+//                var dateObj = new Date(replyThdate);
+//                $('.replydate a').html(dateObj);
+            });
+        } // end function getAllReplies()
+
+        getAllReplies(); // 함수 호출
+
+//        // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
+//        $('#btn-insert').click(function () {
+//            var rtext = $('#rtext').val();
+//            var replier = $('#replier').val();
+//            console.log('bno = ' + bno);
+//            $.ajax({
+//                type: 'post',
+//                url: '/replies',
+//                headers: {
+//                    'Content-Type': 'application/json',
+//                    'X-HTTP-Method-Override': 'POST'
+//                },
+//                data: JSON.stringify({
+//                    'bno': bno,
+//                    'rtext': rtext,
+//                    'replier': replier
+//                }),
+//                success: function (result) {
+//                    if (result === 1) {
+//                        alert("댓글 입력 성공");
+//                        getAllReplies();
+//                    } else {
+//                        alert("댓글 입력 실패");
+//                    }
+//                }
+//            });
+//        });
+//
+//        $('#replies').on('click', '.reply-item .btn-update',
+//            function () {
+//                var rno = $(this).prevAll('#rno').val();
+//                console.log('rno = ' + rno);
+//                var rtext = $(this).prevAll('#rtext').val();
+//                console.log('rtext = ' + rtext);
+//
+//                $.ajax({
+//                    type: 'PUT',
+//                    url: '/replies/' + rno,
+//                    headers: {
+//                        'Content-Type': 'application/json',
+//                        'X-HTTP-Method-Override': 'PUT'
+//                    },
+//                    data: JSON.stringify({
+//                        'rtext': rtext
+//                    }),
+//                    success: function (result) {
+//                        if (result === 'success') {
+//                            alert('댓글 수정 성공');
+//                            getAllReplies();
+//                        } else {
+//                            alert('댓글 수정 실패');
+//                        }
+//                    }
+//                });
+//
+//            });
+//
+//        $('#replies').on('click', '.reply-item .btn-delete',
+//            function () {
+//                var rno = $(this).prevAll('#rno').val();
+//
+//                $.ajax({
+//                    type: 'DELETE',
+//                    url: '/replies/' + rno,
+//                    headers: {
+//                        'Content-Type': 'application/json',
+//                        'X-HTTP-Method-Override': 'DELETE'
+//                    },
+//                    success: function (result) {
+//                        if (result === 'success') {
+//                            alert('댓글 삭제 성공');
+//                            getAllReplies();
+//                        } else {
+//                            alert('댓글 삭제 실패');
+//                        }
+//                    }
+//                });
+//            });
+
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
 <script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 

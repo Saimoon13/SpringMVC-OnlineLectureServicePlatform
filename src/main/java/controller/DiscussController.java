@@ -1,6 +1,8 @@
 package controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import domain.Lecture;
 import domain.Member;
 import domain.Topics;
@@ -16,6 +18,7 @@ import service.DiscussService;
 import service.MemberService;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -29,10 +32,10 @@ public class DiscussController {
     public String overview(Model model){
         List<Lecture> list = discussService.selectAll();
 
+        Gson gson = new Gson();
+
         model.addAttribute("lectureList",list);
-        for(Lecture lecture: list) {
-            System.out.println(lecture.getLastjson());
-        }
+
         return "discuss/overview";
     }
 
@@ -88,6 +91,7 @@ public class DiscussController {
 
         topics.setLecturekey(lid);
         topics.setWriter(m.getUserid());
+        topics.setTopicdate(new Date());
 
         System.out.println(topics.getWriter());
         System.out.println(topics.getTitle());
@@ -102,7 +106,14 @@ public class DiscussController {
         if(m != null){
             discussService.insertTopic(topics);
             memberService.addOnePostNum(m.getUserid());
-            discussService.updateLastJson(json, lid);
+
+            String changed = topics.getTitle();
+            if(topics.getTitle().length() >= 15){
+                changed = topics.getTitle().substring(0, 15)+"..";
+            }
+            //TODO: subString은 영어만 된다.. 길이제한 수정해야함
+            System.out.println(changed);
+            discussService.updateLast(topics.getWriter(), topics.getTnumber(), changed, lid);
         } else if (m == null){
             try {
                 throw new Exception();

@@ -1,5 +1,7 @@
 package domain;
 
+import java.util.Date;
+
 public class Lecture {
 
     String lid;
@@ -11,7 +13,10 @@ public class Lecture {
     int tnum;
     int rlycount;
     int topiccount;
-    String lastjson;
+    String lastwriter;
+    String lasttitle;
+
+    Date lasttopicdate;
 
     public Lecture() {}
     public Lecture(String lid, String lname, int lnum, String lcategory, String lexplain, String lecturer) {
@@ -22,7 +27,7 @@ public class Lecture {
         this.lexplain = lexplain;
         this.lecturer = lecturer;
     }
-    public Lecture(String lid, String lname, int lnum, String lcategory, String lexplain, String lecturer, int tnum) {
+    public Lecture(String lid, String lname, int lnum, String lcategory, String lexplain, String lecturer, int tnum, int rlycount, int topiccount, String lastwriter, String lasttitle, Date lasttopicdate) {
         this.lid = lid;
         this.lname = lname;
         this.lnum = lnum;
@@ -30,6 +35,11 @@ public class Lecture {
         this.lexplain = lexplain;
         this.lecturer = lecturer;
         this.tnum = tnum;
+        this.rlycount = rlycount;
+        this.topiccount = topiccount;
+        this.lastwriter = lastwriter;
+        this.lasttitle = lasttitle;
+        this.lasttopicdate = lasttopicdate;
     }
 
     public String getLid() {
@@ -59,8 +69,14 @@ public class Lecture {
     public int getTopiccount() {
         return topiccount;
     }
-    public String getLastjson() {
-        return lastjson;
+    public String getLastwriter() {
+        return lastwriter;
+    }
+    public String getLasttitle() {
+        return lasttitle;
+    }
+    public Date getLasttopicdate() {
+        return lasttopicdate;
     }
 
     public void setLid(String lid) {
@@ -90,7 +106,13 @@ public class Lecture {
     public void setTopiccount(int topiccount) {
         this.topiccount = topiccount;
     }
-    public void setLastjson(String lastjson) {
-        this.lastjson = lastjson;
+    public void setLastwriter(String lastwriter) {
+        this.lastwriter = lastwriter;
+    }
+    public void setLasttitle(String lasttitle) {
+        this.lasttitle = lasttitle;
+    }
+    public void setLasttopicdate(Date lasttopicdate) {
+        this.lasttopicdate = lasttopicdate;
     }
 }
