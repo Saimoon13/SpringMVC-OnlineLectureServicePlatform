@@ -10,7 +10,7 @@
         <property name="colTitle" value="title" />
         <property name="colContent" value="content" />
         <property name="colUserid" value="userid" />
-        <property name="colRegdate" value="topicdate" />
+        <property name="colRegdate" value="replydate" />
         <property name="colReplycnt" value="replycnt"/>
         
         <property name="tblMember" value="tbl_member"/>

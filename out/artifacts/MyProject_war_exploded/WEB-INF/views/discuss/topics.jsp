@@ -124,8 +124,8 @@
                         </td>
                         <td>
                             <div>by <a href="#0">${topic.writer}</a></div>
-                            <div><fmt:formatDate var="topicdate" value="${topic.topicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    ${topicdate}</div>
+                            <div><fmt:formatDate var="replydate" value="${topic.topicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    ${replydate}</div>
                         </td>
                         <td>
                             <div>${topic.rlycount}</div>

@@ -203,11 +203,11 @@
             <tbody>
             <tr>
                 <td class="author-col">
-                    <div>by <a href="#0">{{userid}}</a></div>
+                    <div>by <a href="#0"> {{userid}}</a></div>
                 </td>
                 <td class="post-col d-lg-flex justify-content-lg-between">
-                    <div><span class="font-weight-bold">Post subject:</span>{{title}}</div>
-                    <div class="replydate"><span class="font-weight-bold">Posted:</span><a>{{replydate}}</a></div>
+                    <div><span class="font-weight-bold">Post subject:</span> {{title}}</div>
+                    <div class="replydate"><span class="font-weight-bold">Posted:</span><a> {{replydate}}</a></div>
                 </td>
             </tr>
             <tr>
