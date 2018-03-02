@@ -1,4 +1,4 @@
-<%--
+<%@ page import="domain.Member" %><%--
   Created by IntelliJ IDEA.
   User: PC
   Date: 2018-02-21
@@ -21,6 +21,9 @@
           title="no title"
           charset="utf-8"/>
 
+    <script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
 
     <title>Forum - Topic overview</title>
 
@@ -212,17 +215,21 @@
             <tbody>
             <tr>
                 <td class="author-col">
-                    <div>by <a href="#0"> {{userid}}</a></div>
+                    <div class="replyUserid">by <a href="#0">{{userid}}</a></div>
                 </td>
                 <td class="post-col d-lg-flex justify-content-lg-between">
                     <div><span class="font-weight-bold">Post subject:</span> {{title}}</div>
-                    <div class="replydate"><span class="font-weight-bold">Posted:</span><a> {{replydate}}</a></div>
+                    <div><span class="font-weight-bold">Posted:</span><a> {{replydate}}</a></div>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="replyStatusBtn">
                     <div><span class="font-weight-bold">Joined:</span> {{signupdate}}</div>
                     <div><span class="font-weight-bold">Posts:</span> {{postnum}}</div>
+                    <div class="row">
+                        <div class="col-6">Update</div>
+                        <div class="col-6">Delete</div>
+                    </div>
                 </td>
                 <td>
                     <p>{{rcontent}}</p>
@@ -236,7 +243,10 @@
 <script>
     $(document).ready(function () {
         // 검색할 댓글의 게시글 번호
-        var tnumber = ${topic.tnumber};
+
+
+
+        <%--if($('.replyUserid a').html() == ${user.userid})--%>
 
         // jQuery를 사용해서 AJAX 요청을 보내는 함수들 중에서
         // $.getJSON(url, data, callback)
@@ -246,9 +256,10 @@
         // data (선택): 요청과 함께 서버로 보내는 데이터. 생략 가능.
         // callback (선택): 응답을 받았을 때 처리할 일을 정의하는 콜백 함수
 
+        var tnumber = ${topic.tnumber};
+
         function getAllReplies() {
             $.getJSON('/rplyth/all/' + tnumber, function (data) {
-                // 매개변수 data: Ajax 요청에 대한 응답으로 온 데이터
                 console.log('댓글 갯수: ' + data.length);
 
                 var temp = "";
@@ -264,11 +275,21 @@
                     };
                     temp += templateResponse(contextResponse);
                 });
-                $('#replyTh-tables').html(temp);
-            });
-        } // end function getAllReplies()
 
-        getAllReplies(); // 함수 호출
+                $('#replyTh-tables').html(temp);
+                // id 비교 로직
+                console.log($('.replyUserid a').html());
+
+                $('.replyStatusBtn div').hide()
+
+                console.log('${user.userid}' === $('.replyUserid a').html());
+                if('${user.userid}' === $('.replyUserid a').html()){
+                    $('.replyStatusBtn div').show();
+                }
+
+            });
+        } //
+        getAllReplies();
 
         // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
         $('#btn-insert').click(function () {
@@ -297,6 +318,10 @@
                 }
             });
         });
+
+
+
+
 //
 //        $('#replies').on('click', '.reply-item .btn-update',
 //            function () {
@@ -350,11 +375,10 @@
 //            });
 
     });
+
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-<script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
-<script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
+
 
 </body>
 </html>

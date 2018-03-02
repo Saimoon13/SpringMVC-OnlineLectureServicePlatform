@@ -10,10 +10,8 @@ import java.util.List;
 public interface ReplyThMapper {
 
     String SELECTBYTNUMBER =
-            "SELECT * FROM replythread WHERE tnumber = #{tnumber}";
+            "SELECT * FROM replythread WHERE tnumber = #{tnumber} ORDER BY replydate ASC";
     String REPLYTHINSERT =
-//            "INSERT INTO replythread(title, replydate, tnumber, rcontent, member) " +
-//                    "VALUES(#{title}, sysdate, #{tnumber}, #{recontent}, #{member})";
             "INSERT INTO replythread(title, replydate, tnumber, rcontent, member) "+
                             " VALUES(#{title}, sysdate, #{tnumber}, #{rcontent}, #{member})";
 

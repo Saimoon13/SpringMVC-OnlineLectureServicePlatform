@@ -129,7 +129,7 @@ public class DiscussController {
     }
 
     @RequestMapping(value = "/detail")
-    public String detail(int tnumber,String lname,String lid, String lcategory, Model model){
+    public String detail(int tnumber,String lname,String lid, String lcategory, Model model, HttpSession session){
 
         System.out.println(tnumber+": tnumber");
         System.out.println(lcategory+": category");
@@ -145,6 +145,7 @@ public class DiscussController {
         model.addAttribute("lname", lname);
         model.addAttribute("lcategory",lcategory);
         model.addAttribute("lid",lid);
+        model.addAttribute("user",(Member)session.getAttribute("loginResult"));
 
         return "discuss/detail";
     }

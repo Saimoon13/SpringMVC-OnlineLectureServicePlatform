@@ -27,10 +27,6 @@ public class ReplyThRestController {
 
         List<ReplyThread> list = replyThService.selectByTnumber(tnumber);
 
-//        for(ReplyThread replyThread:list){
-//            replyThread.getMember();
-//        }
-
         ResponseEntity<List<ReplyThread>> entity = null;
         if (list != null) {
             entity = new ResponseEntity<>(list, HttpStatus.OK);
