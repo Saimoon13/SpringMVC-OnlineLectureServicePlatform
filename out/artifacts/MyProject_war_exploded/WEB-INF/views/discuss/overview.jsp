@@ -7,10 +7,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c"
-           uri="http://java.sun.com/jstl/core_rt" %>
-<%@ taglib prefix="fmt"
-           uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
@@ -90,9 +88,10 @@
                                     <div>18</div>
                                 </td>
                                 <td>
+                                    <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
                                     <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
-                                    <div>${lecture.lasttopicdate}</div>
+                                    <div>${lasttopicdate}</div>
                                 </td>
                             </tr>
                         </c:when>
@@ -151,9 +150,10 @@
                                     <div>18</div>
                                 </td>
                                 <td>
+                                    <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
                                     <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
-                                    <div>${lecture.lasttopicdate}</div>
+                                    <div>${lasttopicdate}</div>
                                 </td>
                             </tr>
                         </c:when>
@@ -211,9 +211,10 @@
                                     <div>18</div>
                                 </td>
                                 <td>
+                                    <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
                                     <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
-                                    <div>${lecture.lasttopicdate}</div>
+                                    <div>${lasttopicdate}</div>
                                 </td>
                             </tr>
                         </c:when>

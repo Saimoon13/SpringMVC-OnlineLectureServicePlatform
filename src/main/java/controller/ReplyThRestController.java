@@ -1,17 +1,20 @@
 package controller;
 
-import domain.Reply;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import domain.Member;
 import domain.ReplyThread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import service.ReplyThService;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
+
+import static sun.plugin2.util.PojoUtil.toJson;
 
 @RestController
 @RequestMapping(value = "/rplyth")
@@ -24,9 +27,9 @@ public class ReplyThRestController {
 
         List<ReplyThread> list = replyThService.selectByTnumber(tnumber);
 
-        for(ReplyThread replyThread:list){
-            replyThread.getMember();
-        }
+//        for(ReplyThread replyThread:list){
+//            replyThread.getMember();
+//        }
 
         ResponseEntity<List<ReplyThread>> entity = null;
         if (list != null) {
@@ -39,4 +42,29 @@ public class ReplyThRestController {
 
      return entity;
     }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ResponseEntity<Integer> createReplyThread(@RequestBody ReplyThread r, HttpSession session) {
+
+        Member m = (Member)session.getAttribute("loginResult");
+
+        Gson gson = new GsonBuilder().setDateFormat("yy/MM/dd HH:mm:ss").create();
+        String member = gson.toJson(m);
+        r.setMember(member);
+
+        System.out.println(r.getTitle() + ", " + r.getRcontent() + ", " + r.getTnumber() + ", " + member);
+
+        int result = replyThService.replyInsert(r);
+
+        ResponseEntity<Integer> entity = null;
+        if (result == 1) {
+            entity = new ResponseEntity<Integer>(1, HttpStatus.CREATED);
+        } else {
+            entity = new ResponseEntity<Integer>(0, HttpStatus.BAD_REQUEST);
+        }
+
+        System.out.println(entity);
+
+        return entity;
+    } // end createReply
 }

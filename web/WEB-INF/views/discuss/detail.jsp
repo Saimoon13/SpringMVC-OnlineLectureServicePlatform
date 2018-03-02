@@ -49,7 +49,7 @@
         <a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>
         <span class="breadcrumb-item active">${topic.title}</span>
     </nav>
-    <div class="row" id="replyTh-tables">
+    <div class="row">
         <div class="col-12">
             <c:choose>
                 <c:when test="${lcategory eq 'basic'}">
@@ -112,7 +112,8 @@
                         <div>by <a href="#0">Author name</a></div>
                     </td>
                     <td class="post-col d-lg-flex justify-content-lg-between">
-                        <div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and long
+                        <div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and
+                            long
                             questio
                         </div>
                         <div><span class="font-weight-bold">Posted:</span> 05 apr 2017, 20:07</div>
@@ -124,7 +125,8 @@
                         <div><span class="font-weight-bold">Posts:</span> 123</div>
                     </td>
                     <td>
-                        <p>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+                        <p>
+                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
                             ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
                             dddddddddddddddddddddddddddddddddddddddddddddddddd</p>
                         <img src="https://placehold.it/600x400" class="img-flow">
@@ -135,6 +137,9 @@
                 </tr>
                 </tbody>
             </table>
+            <div class="row" id="replyTh-tables">
+
+            </div>
         </div>
     </div>
     <div class="mb-3 clearfix">
@@ -150,15 +155,18 @@
             </ul>
         </nav>
     </div>
-    <form class="mb-3">
-        <div class="form-group">
-            <label for="comment">Reply to this post:</label>
-            <textarea class="form-control" id="comment" rows="10" placeholder="Write your comment here"
+    <%--<form class="mb-3">--%>
+    <div class="form-group">
+        <input type="text" class="form-control" name="replyTitle" path="replyTitle"
+               id="replyTitle" placeholder="Give your a comment title." required>
+    </div>
+    <div class="form-group">
+            <textarea class="form-control" id="replyComment" rows="10" placeholder="Write your comment here"
                       required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Reply</button>
-        <button type="reset" class="btn btn-danger">Reset</button>
-    </form>
+    </div>
+    <button type="submit" class="btn btn-primary mb-3" id="btn-insert">Reply</button>
+    <button type="reset" class="btn btn-danger mb-3">Reset</button>
+    <%--</form>--%>
 
     <div>
         <div class="d-lg-flex align-items-lg-center mb-3">
@@ -179,6 +187,7 @@
         <p class="small"><a href="#0">Have you forgotten your account details?</a></p>
     </div>
 </div>
+
 <footer class="small bg-dark text-white">
     <div class="container py-4">
         <ul class="list-inline mb-0 text-center">
@@ -212,8 +221,8 @@
             </tr>
             <tr>
                 <td>
-                    <div><span class="font-weight-bold">Joined:</span> 05 apr 2017, 20:07</div>
-                    <div><span class="font-weight-bold">Posts:</span> 123</div>
+                    <div><span class="font-weight-bold">Joined:</span> {{signupdate}}</div>
+                    <div><span class="font-weight-bold">Posts:</span> {{postnum}}</div>
                 </td>
                 <td>
                     <p>{{rcontent}}</p>
@@ -242,72 +251,52 @@
                 // 매개변수 data: Ajax 요청에 대한 응답으로 온 데이터
                 console.log('댓글 갯수: ' + data.length);
 
+                var temp = "";
                 $(data).each(function () {
                     var templateResponse = Handlebars.compile($("#replyThread").html());
                     var contextResponse = {
-                        userid: this.writer,
-                        title: JSON.parse(this.member).writer,
+                        userid: JSON.parse(this.member).userid,
+                        signupdate: JSON.parse(this.member).regdate,
+                        postnum: JSON.parse(this.member).postnum,
+                        title: this.title,
                         replydate: this.replydate,
                         rcontent: this.rcontent
                     };
-
-                    $('#replyTh-tables').append(templateResponse(contextResponse));
-
-//                    var replyList = '';
-//                    $(data).each(function () {
-//                        replyList +=
-//                        '<div class="reply-item" data-rno="'
-//                        + this.rno
-//                        + '">'
-//                        + '<input type="hidden" id="rno" value="'
-//                        + this.rno
-//                        + '" readonly />'
-//                        + '<input type="text" id="rtext" value="'
-//                        + this.rtext
-//                        + '" />'
-//                        + '<input type="text" id="replier" value="'
-//                        + this.replier
-//                        + '" readonly />'
-//                        + '<button class="btn-update">수정</button>'
-//                        + '<button class="btn-delete">삭제</button>'
-//                        + '</div>';
+                    temp += templateResponse(contextResponse);
                 });
-//                $('#replies').html(replyList);
-//                var replyThdate = $('.replydate a').html();
-//                var dateObj = new Date(replyThdate);
-//                $('.replydate a').html(dateObj);
+                $('#replyTh-tables').html(temp);
             });
         } // end function getAllReplies()
 
         getAllReplies(); // 함수 호출
 
-//        // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
-//        $('#btn-insert').click(function () {
-//            var rtext = $('#rtext').val();
-//            var replier = $('#replier').val();
-//            console.log('bno = ' + bno);
-//            $.ajax({
-//                type: 'post',
-//                url: '/replies',
-//                headers: {
-//                    'Content-Type': 'application/json',
-//                    'X-HTTP-Method-Override': 'POST'
-//                },
-//                data: JSON.stringify({
-//                    'bno': bno,
-//                    'rtext': rtext,
-//                    'replier': replier
-//                }),
-//                success: function (result) {
-//                    if (result === 1) {
-//                        alert("댓글 입력 성공");
-//                        getAllReplies();
-//                    } else {
-//                        alert("댓글 입력 실패");
-//                    }
-//                }
-//            });
-//        });
+        // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
+        $('#btn-insert').click(function () {
+            var rtitle = $('#replyTitle').val();
+            var rcoment = $('#replyComment').val();
+            console.log('rtitle: ' + rtitle + ", " + "rcoment: " + rcoment);
+            $.ajax({
+                type: 'post',
+                url: '/rplyth',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-HTTP-Method-Override': 'POST'
+                },
+                data: JSON.stringify({
+                    'tnumber': tnumber,
+                    'title': rtitle,
+                    'rcontent': rcoment
+                }),
+                success: function (result) {
+                    if (result === 1) {
+                        alert("댓글 입력 성공");
+                        getAllReplies();
+                    } else {
+                        alert("댓글 입력 실패");
+                    }
+                }
+            });
+        });
 //
 //        $('#replies').on('click', '.reply-item .btn-update',
 //            function () {

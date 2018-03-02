@@ -6,20 +6,17 @@ import java.util.Date;
 
 public class ReplyThread {
 
-    private String writer;
     private String title;
     private String rcontent;
-    int tnumber;
-    int replynumber;
+    private long tnumber;
+    private int replynumber;
     private String member;
 
     @JsonFormat(pattern="yy/MM/dd HH:mm:ss")
     private Date replydate;
 
     public ReplyThread(){}
-
-    public ReplyThread(String writer, String title, String rcontent, int tnumber, int replynumber, String member, Date replydate) {
-        this.writer = writer;
+    public ReplyThread(String title, String rcontent, int tnumber, int replynumber, String member, Date replydate) {
         this.title = title;
         this.rcontent = rcontent;
         this.tnumber = tnumber;
@@ -28,9 +25,6 @@ public class ReplyThread {
         this.replydate = replydate;
     }
 
-    public String getWriter() {
-        return writer;
-    }
     public String getTitle() {
         return title;
     }
@@ -40,7 +34,7 @@ public class ReplyThread {
     public String getRcontent() {
         return rcontent;
     }
-    public int getTnumber() {
+    public long getTnumber() {
         return tnumber;
     }
     public int getReplynumber() {
@@ -50,9 +44,6 @@ public class ReplyThread {
         return member;
     }
 
-    public void setWriter(String writer) {
-        this.writer = writer;
-    }
     public void setTitle(String title) {
         this.title = title;
     }
@@ -62,7 +53,7 @@ public class ReplyThread {
     public void setRcontent(String rcontent) {
         this.rcontent = rcontent;
     }
-    public void setTnumber(int tnumber) {
+    public void setTnumber(long tnumber) {
         this.tnumber = tnumber;
     }
     public void setReplynumber(int replynumber) {

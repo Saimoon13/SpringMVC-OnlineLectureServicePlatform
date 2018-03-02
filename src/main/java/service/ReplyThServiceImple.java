@@ -16,4 +16,9 @@ public class ReplyThServiceImple implements ReplyThService {
     public List<ReplyThread> selectByTnumber(int tnumber) {
         return replyThDao.selectByTnumber(tnumber);
     }
+
+    @Override
+    public int replyInsert(ReplyThread replyThread) {
+        return replyThDao.replyInsert(replyThread);
+    }
 }

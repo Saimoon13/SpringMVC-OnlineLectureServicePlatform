@@ -69,18 +69,17 @@
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col" class="topic-col">Topic</th>
-                    <th scope="col" class="created-col">Created</th>
-                    <th scope="col">Statistics</th>
-                    <th scope="col" class="last-post-col">last post</th>
+                    <th scope="col" class="topic-col" style="width: 60%">Topic</th>
+                    <th scope="col" class="created-col" style="width: 15%">Created</th>
+                    <th scope="col" style="width: 10%">Statistics</th>
+                    <th scope="col" class="last-post-col" style="width: 15%">last post</th>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
                     <td>
-                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0"
-                                                                                            class="text-uppercase">forum
+                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0" class="text-uppercase">forum
                             post title with a complex and long question</a></h3>
                         <div class="small">Go to page: <a href="#0">1</a>, <a href="#0">2</a>, <a href="#0">3</a>
                             &hellip;
@@ -175,6 +174,8 @@
             <input type="hidden" id="perPage" name="perPage"
                    value="${pageMaker.criteria.numsPerPage}"/>
             <input type="hidden" id="lid" name="lid" path="lid" value="${lid}"/>
+            <input type="hidden" id="lname" name="lname" path="lname" value="${lname}">
+            <input type="hidden" id="lcategory" name="lcategory" path="lcategory" value="${lcategory}">
         </form>
 
         <form class="form-inline float-lg-left d-block d-sm-flex">

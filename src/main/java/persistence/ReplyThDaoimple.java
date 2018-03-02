@@ -16,4 +16,10 @@ public class ReplyThDaoimple implements ReplyThDao {
     public List<ReplyThread> selectByTnumber(int tnumber) {
         return mapper.selectByTnumber(tnumber);
     }
+
+    @Override
+    public int replyInsert(ReplyThread replyThread) {
+        System.out.println(replyThread.getTnumber()+"다오");
+        return mapper.replyInsert(replyThread);
+    }
 }
