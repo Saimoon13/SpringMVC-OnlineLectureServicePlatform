@@ -140,8 +140,10 @@
                 </tr>
                 </tbody>
             </table>
-            <div class="row" id="replyTh-tables">
+            <div>
+                <div class="row" id="replyTh-tables">
 
+                </div>
             </div>
         </div>
     </div>
@@ -227,8 +229,10 @@
                     <div><span class="font-weight-bold">Joined:</span> {{signupdate}}</div>
                     <div><span class="font-weight-bold">Posts:</span> {{postnum}}</div>
                     <div class="row">
-                        <div class="col-6">Update</div>
-                        <div class="col-6">Delete</div>
+                        <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
+                        <a class="col-6 updateReplyBtn"
+                           id="updateReply-{{replynumber}}">{{#noop}}{{Update}}{{/noop}}</a>
+                        <a class="col-6" href="#">{{#noop2}}{{Delete}}{{/noop2}}</a>
                     </div>
                 </td>
                 <td>
@@ -237,13 +241,17 @@
             </tr>
             </tbody>
         </table>
+        <div class="form-group updateReplyText" id="updateReply-{{replynumber}}text">
+            <textarea class="form-control" rows="5"
+                      placeholder="Write your update here" required>{{rcontent}}</textarea>
+            <button type="submit" class="btn btn-primary my-2" style="float: right">Change</button>
+        </div>
     </div>
 </script>
 
 <script>
     $(document).ready(function () {
         // 검색할 댓글의 게시글 번호
-
 
 
         <%--if($('.replyUserid a').html() == ${user.userid})--%>
@@ -271,25 +279,50 @@
                         postnum: JSON.parse(this.member).postnum,
                         title: this.title,
                         replydate: this.replydate,
-                        rcontent: this.rcontent
-                    };
+                        rcontent: this.rcontent,
+                        replynumber: this.replynumber
+                    }
+//                    자신의 댓글만 update/delete 뜨게 처리 start
+                    if ('${user.userid}' === JSON.parse(this.member).userid) {
+                        <%--console.log('${user.userid}' === JSON.parse(this.member).userid);--%>
+                        Handlebars.registerHelper('noop', function (options) {
+                            return options.fn(this) + "Update";
+                        });
+                        Handlebars.registerHelper('noop2', function (options) {
+                            return options.fn(this) + "Delete";
+                        });
+                    } else {
+                        Handlebars.registerHelper('noop', function (options) {
+                            return options.fn(this);
+                        });
+                        Handlebars.registerHelper('noop2', function (options) {
+                            return options.fn(this);
+                        });
+                    }
+//                    end
                     temp += templateResponse(contextResponse);
                 });
-
                 $('#replyTh-tables').html(temp);
-                // id 비교 로직
-                console.log($('.replyUserid a').html());
+                $('.updateReplyText').hide();
 
-                $('.replyStatusBtn div').hide()
+                $('.updateReplyBtn').click(function () {
+                    var id = this.id
+                    var id_change = id + "text";
 
-                console.log('${user.userid}' === $('.replyUserid a').html());
-                if('${user.userid}' === $('.replyUserid a').html()){
-                    $('.replyStatusBtn div').show();
-                }
+                    var textReply = document.getElementById(id_change.toString());
+                    if (textReply.style.display === "none") {
+                        textReply.style.display = "block";
+                    } else {
+                        textReply.style.display = "none";
+                    }
+                });
+
+                <%--console.log('${user.userid}', $('.replyUserid a').html());--%>
 
             });
         } //
         getAllReplies();
+
 
         // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
         $('#btn-insert').click(function () {
@@ -318,8 +351,6 @@
                 }
             });
         });
-
-
 
 
 //
@@ -377,7 +408,6 @@
     });
 
 </script>
-
 
 
 </body>
