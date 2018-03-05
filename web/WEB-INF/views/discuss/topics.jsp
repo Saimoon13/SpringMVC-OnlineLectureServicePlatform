@@ -155,9 +155,7 @@
                     <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
                 </c:if>
 
-                <c:forEach var="num"
-                           begin="${pageMaker.startPage}"
-                           end="${pageMaker.endPage}">
+                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
                     <li class="page-item"><a class="page-link" href="${num}">${num}</a></li>
                 </c:forEach>
 
@@ -211,7 +209,12 @@
             <button type="submit" class="btn btn-sm btn-primary">Go</button>
         </form>
     </div>
-    <a href="/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>
+    <%
+        if(session.getAttribute("loginResult") != null) {
+            out.print("<a href=\"/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}\" class=\"btn btn-lg btn-primary\">New topic</a>");
+        }
+    %>
+    <%--<a href="/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>--%>
 </div>
 <footer class="small bg-dark text-white">
     <div class="container py-4">

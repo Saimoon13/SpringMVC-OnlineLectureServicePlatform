@@ -37,7 +37,20 @@
     <nav class="breadcrumb">
         <a href="/discuss/" class="breadcrumb-item">Discuss</a>
         <a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>
-        <span class="breadcrumb-item active">${lname} New Topic</span>
+        <c:choose>
+            <c:when test="${empty topic.title}">
+                <span class="breadcrumb-item active">${lname} New Topic</span>
+            </c:when>
+            <c:when test="${not empty topic.title}">
+                <a href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="breadcrumb-item">${topic.title}</a>
+                <span class="breadcrumb-item active">Update</span>
+            </c:when>
+            <c:otherwise>
+                <span class="breadcrumb-item active">Unkown Error</span>
+            </c:otherwise>
+        </c:choose>
+        <%--<a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>--%>
+        <%--<span class="breadcrumb-item active">${lname} New Topic</span>--%>
     </nav>
     <div class="row">
         <div class="col-12">
@@ -58,16 +71,18 @@
             <%--<h2 class="h4 text-white bg-info mb-3 p-4 rounded">Create new topic, ${lid}</h2>--%>
         </div>
     </div>
+<c:choose>
+    <c:when test="${empty topic.title}">
     <form class="mb-3" action="/discuss/post?lid=${lid}&lname=${lname}&lcategory=${lcategory}" method="post">
         <div class="form-group">
             <label for="topic">Topic:</label>
             <input type="text" class="form-control" name="title" path="title"
-                   id="topic" placeholder="Give your topic a title." required>
+                   id="topic" placeholder="Give your topic a title." value="${topic.title}" required>
         </div>
         <div class="form-group">
             <label for="comment">Comment:</label>
             <textarea class="form-control"  name="tcontent" path="tcontent"
-                      id="comment" rows="10" placeholder="Write your comment here" required></textarea>
+                      id="comment" rows="10" placeholder="Write your comment here" required>${topic.tcontent}</textarea>
         </div>
         <div class="form-check">
             <label class="form-check-label">
@@ -78,7 +93,33 @@
         <button type="submit" class="btn btn-primary">Create topic</button>
         <button type="reset" class="btn btn-danger">Reset</button>
     </form>
-
+    </c:when>
+    <c:when test="${not empty topic.title}">
+        <form class="mb-3" action="/discuss/post?lid=${lid}&lname=${lname}&lcategory=${lcategory}" method="post">
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <input type="text" class="form-control" name="title" path="title" value="${topic.title}"
+                       placeholder="Give your topic a title." required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control"  name="tcontent" path="tcontent"
+                          rows="10" placeholder="Write your comment here" required>${topic.tcontent}</textarea>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="notification">
+                    Notify me upon replies.
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Update topic</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+    </c:when>
+    <c:otherwise>
+        Unkown Error
+    </c:otherwise>
+</c:choose>
 </div>
 <footer class="small bg-dark text-white">
     <div class="container py-4">

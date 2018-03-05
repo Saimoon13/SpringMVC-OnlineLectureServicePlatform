@@ -94,6 +94,15 @@
                         <fmt:formatDate var="regdate" value="${writer.regdate}" pattern="yy/MM/dd HH:mm:ss"/>
                         <div><span class="font-weight-bold">Joined:</span> ${regdate}</div>
                         <div><span class="font-weight-bold">Posts:</span> ${writer.postnum}</div>
+                        <c:choose>
+                            <c:when test="${user.userid eq writer.userid}">
+                                <div class="row">
+                                        <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
+                                    <a class="col-6" href="update?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">Update</a>
+                                    <a class="col-6" href="#">Delete</a>
+                                </div>
+                            </c:when>
+                        </c:choose>
                     </td>
                     <td>
                         <p>${topic.tcontent}</p>
@@ -161,36 +170,32 @@
         </nav>
     </div>
     <%--<form class="mb-3">--%>
-    <div class="form-group">
-        <input type="text" class="form-control" name="replyTitle" path="replyTitle"
-               id="replyTitle" placeholder="Give your a comment title." required>
-    </div>
-    <div class="form-group">
-            <textarea class="form-control" id="replyComment" rows="10" placeholder="Write your comment here"
-                      required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary mb-3" id="btn-insert">Reply</button>
-    <button type="reset" class="btn btn-danger mb-3">Reset</button>
+    <%
+        if ((Member) session.getAttribute("loginResult") != null) {
+            out.print("<div class=\"form-group\">\n" +
+                    "        <input type=\"text\" class=\"form-control\" name=\"replyTitle\" path=\"replyTitle\"\n" +
+                    "               id=\"replyTitle\" placeholder=\"Give your a comment title.\" required>\n" +
+                    "    </div>\n" +
+                    "    <div class=\"form-group\">\n" +
+                    "            <textarea class=\"form-control\" id=\"replyComment\" rows=\"10\" placeholder=\"Write your comment here\"\n" +
+                    "                      required></textarea>\n" +
+                    "    </div>\n" +
+                    "    <button type=\"submit\" class=\"btn btn-primary mb-3\" id=\"btn-insert\">Reply</button>\n" +
+                    "    <button type=\"reset\" class=\"btn btn-danger mb-3\">Reset</button>");
+        }
+    %>
+    <%--<div class="form-group">--%>
+    <%--<input type="text" class="form-control" name="replyTitle" path="replyTitle"--%>
+    <%--id="replyTitle" placeholder="Give your a comment title." required>--%>
+    <%--</div>--%>
+    <%--<div class="form-group">--%>
+    <%--<textarea class="form-control" id="replyComment" rows="10" placeholder="Write your comment here"--%>
+    <%--required></textarea>--%>
+    <%--</div>--%>
+    <%--<button type="submit" class="btn btn-primary mb-3" id="btn-insert">Reply</button>--%>
+    <%--<button type="reset" class="btn btn-danger mb-3">Reset</button>--%>
     <%--</form>--%>
 
-    <div>
-        <div class="d-lg-flex align-items-lg-center mb-3">
-            <form class="form-inline d-block d-sm-flex mr-2 mb-3 mb-lg-0">
-                <div class="form-group mr-2 mb-3 mb-md-0">
-                    <label for="email" class="mr-2">Email:</label>
-                    <input type="email" class="form-control" placeholder="Example@email.com" id="email" required>
-                </div>
-                <div class="form-group mr-2">
-                    <label for="password" class="mr-2">Password:</label>
-                    <input type="password" class="form-control" id="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
-            <span class="mr-2">or ...</span>
-            <a href="#0" class="btn btn-success">Create account</a>
-        </div>
-        <p class="small"><a href="#0">Have you forgotten your account details?</a></p>
-    </div>
 </div>
 
 <footer class="small bg-dark text-white">
@@ -230,8 +235,7 @@
                     <div><span class="font-weight-bold">Posts:</span> {{postnum}}</div>
                     <div class="row">
                         <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
-                        <a class="col-6 updateReplyBtn"
-                           id="updateReply-{{replynumber}}">{{#noop}}{{Update}}{{/noop}}</a>
+                        <a class="col-6 updateReplyBtn" id="updateReply-{{replynumber}}">{{#noop}}{{Update}}{{/noop}}</a>
                         <a class="col-6" href="#">{{#noop2}}{{Delete}}{{/noop2}}</a>
                     </div>
                 </td>
@@ -248,6 +252,10 @@
         </div>
     </div>
 </script>
+
+
+
+
 
 <script>
     $(document).ready(function () {
@@ -323,7 +331,6 @@
         } //
         getAllReplies();
 
-
         // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
         $('#btn-insert').click(function () {
             var rtitle = $('#replyTitle').val();
@@ -344,6 +351,8 @@
                 success: function (result) {
                     if (result === 1) {
                         alert("댓글 입력 성공");
+                        $('#replyTitle').val("");
+                        $('#replyComment').val("");
                         getAllReplies();
                     } else {
                         alert("댓글 입력 실패");
@@ -353,7 +362,6 @@
         });
 
 
-//
 //        $('#replies').on('click', '.reply-item .btn-update',
 //            function () {
 //                var rno = $(this).prevAll('#rno').val();

@@ -161,12 +161,22 @@ public class DiscussController {
         return "redirect:/";
     }
 
-    @RequestMapping(value = "lid")
-    public String insert(){
+    @RequestMapping(value = "update")
+    public String insert(int tnumber, String lname, String lcategory, String lid, Model model){
 
+        System.out.println("update 진입");
 
+        Topics topic = discussService.selectTopicByTnumber(tnumber);
 
-        return "/";
+        model.addAttribute("topic", topic);
+        model.addAttribute("lid",lid);
+        model.addAttribute("lname", lname);
+        model.addAttribute("lcategory", lcategory);
+
+        System.out.println(lname);
+        System.out.println(topic.getTitle()+"dfdfd");
+
+        return "/discuss/newTopic";
     }
 
 }
