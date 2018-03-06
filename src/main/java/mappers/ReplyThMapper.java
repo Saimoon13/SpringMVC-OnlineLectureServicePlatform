@@ -1,23 +1,47 @@
 package mappers;
 
 import domain.ReplyThread;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
 public interface ReplyThMapper {
 
-    String SELECTBYTNUMBER =
+    String SELECT_BY_TNUMBER =
             "SELECT * FROM replythread WHERE tnumber = #{tnumber} ORDER BY replydate ASC";
-    String REPLYTHINSERT =
+    String REPLYTH_INSERT =
             "INSERT INTO replythread(title, replydate, tnumber, rcontent, member) "+
                             " VALUES(#{title}, sysdate, #{tnumber}, #{rcontent}, #{member})";
+    String REPLY_UPDATE =
+            "UPDATE replythread SET rcontent = #{rcontent} WHERE replynumber = #{replynumber}";
 
-    @Select(SELECTBYTNUMBER)
+    String REPLY_COUNT =
+            "UPDATE topics SET rlycount = rlycount + 1 WHERE tnumber = #{tnumber}";
+
+    String REPLY_DELETE =
+            "DELETE FROM replythread WHERE replynumber = #{replynumber}";
+
+    String REPLY_COUNTOUT =
+            "UPDATE topics SET rlycount = rlycount -1 WHERE tnumber = (SELECT tnumber FROM replythread WHERE replynumber = #{replynumber})";
+
+    @Select(SELECT_BY_TNUMBER)
     List<ReplyThread> selectByTnumber(int tumber);
 
-    @Insert(REPLYTHINSERT)
+    @Insert(REPLYTH_INSERT)
     int replyInsert(ReplyThread replyThread);
+
+    @Update(REPLY_UPDATE)
+    int replyUpdate(ReplyThread replyThread);
+
+    @Update(REPLY_COUNT)
+    int replyCount(ReplyThread replyThread);
+
+    @Delete(REPLY_DELETE)
+    int replyDelete(int replynumber);
+
+    @Update(REPLY_COUNTOUT)
+    int replyCountOUT(int replynumber);
 }

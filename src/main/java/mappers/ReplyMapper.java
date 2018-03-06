@@ -12,9 +12,7 @@ public interface ReplyMapper {
 			"INSERT INTO test_reply (bno, rtext, replier, regdate)"
 			+ " VALUES (#{bno}, #{rtext}, #{replier}, sysdate)";
 	String SQL_UPDATE =
-			"UPDATE test_reply"
-			+ " SET rtext = #{rtext}, regdate = sysdate"
-			+ " WHERE rno = #{rno}";
+			"UPDATE test_reply SET rtext = #{rtext}, regdate = sysdate WHERE rno = #{rno}";
 	String SQL_SELECT_BY_BNO = 
 			"SELECT * FROM test_reply"
 			+ " WHERE bno = #{bno}"

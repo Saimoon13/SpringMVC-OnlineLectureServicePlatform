@@ -19,7 +19,26 @@ public class ReplyThDaoimple implements ReplyThDao {
 
     @Override
     public int replyInsert(ReplyThread replyThread) {
-        System.out.println(replyThread.getTnumber()+"다오");
         return mapper.replyInsert(replyThread);
+    }
+
+    @Override
+    public int replyUpdate(ReplyThread replyThread) {
+        return mapper.replyUpdate(replyThread);
+    }
+
+    @Override
+    public int replyCount(ReplyThread replyThread) {
+        return mapper.replyCount(replyThread);
+    }
+
+    @Override
+    public int replyCountOUT(int replynumber) {
+        return mapper.replyCountOUT(replynumber);
+    }
+
+    @Override
+    public int replyDelete(int replynumber) {
+        return mapper.replyDelete(replynumber);
     }
 }

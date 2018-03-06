@@ -16,7 +16,7 @@ public class ReplyThread {
     private Date replydate;
 
     public ReplyThread(){}
-    public ReplyThread(String title, String rcontent, int tnumber, int replynumber, String member, Date replydate) {
+    public ReplyThread(String title, String rcontent, long tnumber, int replynumber, String member, Date replydate) {
         this.title = title;
         this.rcontent = rcontent;
         this.tnumber = tnumber;

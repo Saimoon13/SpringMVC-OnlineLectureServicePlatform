@@ -22,7 +22,7 @@ public interface DiscussMapper {
                     "VALUES (#{writer}, #{title}, sysdate, #{lecturekey}, #{tcontent})";
     String SQL_GETTOTALCOUNT =
             "SELECT count(*) cnt from topics where Lecturekey = #{lid}";
-    String SQL_SELECTPAGE = "select b.writer, b.title, b.topicdate, b.lecturekey, b.tcontent, b.tnumber " +
+    String SQL_SELECTPAGE = "select b.writer, b.title, b.topicdate, b.lecturekey, b.tcontent, b.tnumber, b.rlycount " +
             "from (select rownum rn, a.* from (select * from topics WHERE LECTUREKEY = #{lid} " +
             "order by topicdate desc) a) b " +
             "where rn between #{c.start} and #{c.end}";

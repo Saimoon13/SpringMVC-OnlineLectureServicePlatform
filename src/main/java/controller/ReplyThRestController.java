@@ -50,17 +50,52 @@ public class ReplyThRestController {
 
         System.out.println(r.getTitle() + ", " + r.getRcontent() + ", " + r.getTnumber() + ", " + member);
 
-        int result = replyThService.replyInsert(r);
+        int resultinsert = replyThService.replyInsert(r);
+        int resultcount = replyThService.replyCount(r);
 
         ResponseEntity<Integer> entity = null;
-        if (result == 1) {
+        if (resultinsert == 1) {
             entity = new ResponseEntity<Integer>(1, HttpStatus.CREATED);
         } else {
-            entity = new ResponseEntity<Integer>(0, HttpStatus.BAD_REQUEST);
+            entity= new ResponseEntity<Integer>(0, HttpStatus.BAD_REQUEST);
         }
 
         System.out.println(entity);
 
         return entity;
     } // end createReply
+
+    @RequestMapping(value = "/{replynumber}", method = RequestMethod.PUT)
+    public ResponseEntity<String> updateReply(@PathVariable(name = "replynumber") int replynumber, @RequestBody ReplyThread r) {
+
+        System.out.println("replynumber: " + replynumber + "ReplyThread.content: " + r.getRcontent());
+
+        r.setReplynumber(replynumber);
+        int result = replyThService.replyUpdate(r);
+
+        ResponseEntity<String> entity = null;
+        if (result == 1) {
+            entity = new ResponseEntity<>("success", HttpStatus.OK);
+        } else {
+            entity = new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
+        }
+
+        return entity;
+    } // end updateReply()
+
+    @RequestMapping(value = "/{replynumber}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteReply(@PathVariable(name = "replynumber") int replynumber) {
+
+        int resultCountOUT = replyThService.replyCountOUT(replynumber);
+        int resultDelete = replyThService.replyDelete(replynumber);
+
+        ResponseEntity<String> entity = null;
+        if (resultDelete == 1) {
+            entity = new ResponseEntity<>("success", HttpStatus.OK);
+        } else {
+            entity = new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
+        }
+
+        return entity;
+    }
 }

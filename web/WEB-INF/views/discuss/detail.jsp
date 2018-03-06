@@ -98,7 +98,8 @@
                             <c:when test="${user.userid eq writer.userid}">
                                 <div class="row">
                                         <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
-                                    <a class="col-6" href="update?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">Update</a>
+                                    <a class="col-6"
+                                       href="update?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">Update</a>
                                     <a class="col-6" href="#">Delete</a>
                                 </div>
                             </c:when>
@@ -235,8 +236,10 @@
                     <div><span class="font-weight-bold">Posts:</span> {{postnum}}</div>
                     <div class="row">
                         <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
-                        <a class="col-6 updateReplyBtn" id="updateReply-{{replynumber}}">{{#noop}}{{Update}}{{/noop}}</a>
-                        <a class="col-6" href="#">{{#noop2}}{{Delete}}{{/noop2}}</a>
+                        <a class="col-6 updateReplyBtn"
+                           id="updateReply-{{replynumber}}">{{#noop}}{{Update}}{{/noop}}</a>
+                        <a class="col-6 deleteReplyBtn"
+                           id="deleteReply:{{replynumber}}-">{{#noop2}}{{Delete}}{{/noop2}}</a>
                     </div>
                 </td>
                 <td>
@@ -246,15 +249,14 @@
             </tbody>
         </table>
         <div class="form-group updateReplyText" id="updateReply-{{replynumber}}text">
-            <textarea class="form-control" rows="5"
+            <textarea class="form-control" rows="5" id="textarea:{{replynumber}}-text"
                       placeholder="Write your update here" required>{{rcontent}}</textarea>
-            <button type="submit" class="btn btn-primary my-2" style="float: right">Change</button>
+            <button type="submit" class="btn btn-primary my-2 UpdateConfirmBtn" id="textarea:{{replynumber}}"
+                    style="float: right">Change
+            </button>
         </div>
     </div>
 </script>
-
-
-
 
 
 <script>
@@ -314,7 +316,7 @@
                 $('.updateReplyText').hide();
 
                 $('.updateReplyBtn').click(function () {
-                    var id = this.id
+                    var id = this.id;
                     var id_change = id + "text";
 
                     var textReply = document.getElementById(id_change.toString());
@@ -325,8 +327,60 @@
                     }
                 });
 
-                <%--console.log('${user.userid}', $('.replyUserid a').html());--%>
+                $('.UpdateConfirmBtn').click(function () {
+                    var id = this.id;
+                    var id_change = id + "-text";
 
+                    var replynumber = id_change.substring(id_change.indexOf(":") + 1, id_change.indexOf("-"));
+
+                    var textarea = document.getElementById(id_change.toString());
+                    console.log(textarea.value + ", " + replynumber);
+
+                    $.ajax({
+                        type: 'PUT',
+                        url: '/rplyth/' + replynumber,
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-HTTP-Method-Override': 'PUT'
+                        },
+                        data: JSON.stringify({
+                            'rcontent': textarea.value
+                        }),
+                        success: function (result) {
+                            if (result === 'success') {
+                                alert('댓글 수정 성공');
+                                getAllReplies();
+                            } else {
+                                alert('댓글 수정 실패');
+                            }
+                        }
+                    });
+
+                });
+
+                $('.deleteReplyBtn').click(function () { // delete start
+                    var id = this.id;
+                    var replynumber = id.substring(id.indexOf(":") + 1, id.indexOf("-"));
+
+                    console.log(replynumber);
+
+                    $.ajax({
+                        type: 'DELETE',
+                        url: '/rplyth/' + replynumber,
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-HTTP-Method-Override': 'DELETE'
+                        },
+                        success: function (result) {
+                            if (result === 'success') {
+                                alert('댓글 삭제 성공');
+                                getAllReplies();
+                            } else {
+                                alert('댓글 삭제 실패');
+                            }
+                        }
+                    });
+                }); // delete end
             });
         } //
         getAllReplies();
@@ -361,57 +415,6 @@
             });
         });
 
-
-//        $('#replies').on('click', '.reply-item .btn-update',
-//            function () {
-//                var rno = $(this).prevAll('#rno').val();
-//                console.log('rno = ' + rno);
-//                var rtext = $(this).prevAll('#rtext').val();
-//                console.log('rtext = ' + rtext);
-//
-//                $.ajax({
-//                    type: 'PUT',
-//                    url: '/replies/' + rno,
-//                    headers: {
-//                        'Content-Type': 'application/json',
-//                        'X-HTTP-Method-Override': 'PUT'
-//                    },
-//                    data: JSON.stringify({
-//                        'rtext': rtext
-//                    }),
-//                    success: function (result) {
-//                        if (result === 'success') {
-//                            alert('댓글 수정 성공');
-//                            getAllReplies();
-//                        } else {
-//                            alert('댓글 수정 실패');
-//                        }
-//                    }
-//                });
-//
-//            });
-//
-//        $('#replies').on('click', '.reply-item .btn-delete',
-//            function () {
-//                var rno = $(this).prevAll('#rno').val();
-//
-//                $.ajax({
-//                    type: 'DELETE',
-//                    url: '/replies/' + rno,
-//                    headers: {
-//                        'Content-Type': 'application/json',
-//                        'X-HTTP-Method-Override': 'DELETE'
-//                    },
-//                    success: function (result) {
-//                        if (result === 'success') {
-//                            alert('댓글 삭제 성공');
-//                            getAllReplies();
-//                        } else {
-//                            alert('댓글 삭제 실패');
-//                        }
-//                    }
-//                });
-//            });
 
     });
 

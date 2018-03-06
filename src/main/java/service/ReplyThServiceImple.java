@@ -21,4 +21,26 @@ public class ReplyThServiceImple implements ReplyThService {
     public int replyInsert(ReplyThread replyThread) {
         return replyThDao.replyInsert(replyThread);
     }
+
+    @Override
+    public int replyUpdate(ReplyThread replyThread) {
+        return replyThDao.replyUpdate(replyThread);
+    }
+
+    @Override
+    public int replyCount(ReplyThread replyThread) {
+        return replyThDao.replyCount(replyThread);
+    }
+
+    @Override
+    public int replyDelete(int replynumber) {
+        return replyThDao.replyDelete(replynumber);
+    }
+
+    @Override
+    public int replyCountOUT(int replynumber) {
+        return replyThDao.replyCountOUT(replynumber);
+    }
+
+
 }

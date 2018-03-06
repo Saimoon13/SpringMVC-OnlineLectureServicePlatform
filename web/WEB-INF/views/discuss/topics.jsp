@@ -127,7 +127,7 @@
                                     ${replydate}</div>
                         </td>
                         <td>
-                            <div>${topic.rlycount}</div>
+                            <div>${topic.rlycount} replies</div>
                             <div>137 views</div>
                         </td>
                         <td>
@@ -211,7 +211,12 @@
     </div>
     <%
         if(session.getAttribute("loginResult") != null) {
-            out.print("<a href=\"/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}\" class=\"btn btn-lg btn-primary\">New topic</a>");
+            String lname = (String)request.getAttribute("lname");
+            String lcategory = (String)request.getAttribute("lcategory");
+            String lid = (String)request.getAttribute("lid");
+
+            out.print("<a href=\"/discuss/newtopic?lname="+ lname +
+                    "&lcategory=" + lcategory + "&lid=" + lid + "\" class=\"btn btn-lg btn-primary\">New topic</a>");
         }
     %>
     <%--<a href="/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>--%>
