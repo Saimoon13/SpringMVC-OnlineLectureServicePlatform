@@ -19,4 +19,7 @@ public interface DiscussDao {
     int updateLast(String writer, int tnumber, String title, String ld);
     int updateViews(int tnumber);
     int updateTopic(Topics topics);
+    int deleteTopic(int tnumber);
+    List<Topics> searchTopicsByLid(int searchType, String searchKeyword, String lid);
+    int searchCountTopicsByLid(String searchType, String searchKeyword, String lid);
 }

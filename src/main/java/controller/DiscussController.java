@@ -182,7 +182,7 @@ public class DiscussController {
         return "/discuss/newTopic";
     }
 
-    @RequestMapping(value = "updateconfirm")
+    @RequestMapping(value = "/updateconfirm")
     public String updateConfirm(@ModelAttribute("Topics")Topics topics, String lid, String lname, String lcategory, int tnumber){
 
         System.out.println("Tnumber: " + tnumber + ", " + "title: " + topics.getTitle() + ", " + "content: " + topics.getTcontent());
@@ -192,5 +192,38 @@ public class DiscussController {
 
         String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
         return "redirect:"+returnValue;
+    }
+
+    @RequestMapping(value = "/delete")
+    public String delete(int tnumber, String lname, String lcategory, String lid){
+
+        System.out.println("Tnumber: " + tnumber);
+
+        discussService.deleteTopic(tnumber);
+
+        String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
+        return "redirect:"+returnValue;
+    }
+
+    @RequestMapping(value = "/search")
+    public void search(String searchType, String searchKeyword, Model model, String lid, String lname, String lcategory,Integer page, Integer perPage) {
+
+        System.out.println("searchType: " + searchType + ", " + searchType.getClass());
+        System.out.println("searchkeyword: " + searchKeyword + ", " + searchKeyword.getClass());
+        System.out.println("lid: " + lid + ", " + lid.getClass());
+
+        PaginationCriteria c = null;
+        if (page != null && perPage != null) {
+            c = new PaginationCriteria(page, perPage);
+        } else {
+            c = new PaginationCriteria(); // 1, 10
+        }
+        PageNumberMaker maker = new PageNumberMaker();
+        maker.setCriteria(c);
+
+        int result = discussService.searchCountTopicsByLid(searchType, searchKeyword, lid);
+
+        System.out.println("result: " + result);
+
     }
 }

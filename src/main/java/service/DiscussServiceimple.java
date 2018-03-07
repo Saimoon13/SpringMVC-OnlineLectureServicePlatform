@@ -59,4 +59,19 @@ public class DiscussServiceimple implements DiscussService {
         return discussDao.updateTopic(topics);
     }
 
+    @Override
+    public int deleteTopic(int tnumber) {
+        return discussDao.deleteTopic(tnumber);
+    }
+
+    @Override
+    public List<Topics> searchTopicsByLid(int searchType, String searchKeyword, String lid) {
+        return discussDao.searchTopicsByLid(searchType, searchKeyword, lid);
+    }
+
+    @Override
+    public int searchCountTopicsByLid(String searchType, String searchKeyword, String lid) {
+        return discussDao.searchCountTopicsByLid(searchType, searchKeyword, lid);
+    }
+
 }

@@ -21,7 +21,7 @@ public interface ReplyThMapper {
     String REPLY_COUNTOUT =
             "UPDATE topics SET rlycount = rlycount -1 WHERE tnumber = (SELECT tnumber FROM replythread WHERE replynumber = #{replynumber})";
     String SQL_UPDATE_LAST_RLY =
-            "update topics set lastrlyname = #{lastrlyname}, lastrlydate = sysdate where tnumber = #{tnumber}";
+            "UPDATE topics SET lastrlyname = #{lastrlyname}, lastrlydate = sysdate WHERE tnumber = #{tnumber}";
 
     @Select(SELECT_BY_TNUMBER)
     List<ReplyThread> selectByTnumber(int tumber);
@@ -43,4 +43,5 @@ public interface ReplyThMapper {
 
     @Update(SQL_UPDATE_LAST_RLY)
     int updateLastRly(@Param("lastrlyname") String lastrlyname, @Param("tnumber") long tnumber);
+
 }

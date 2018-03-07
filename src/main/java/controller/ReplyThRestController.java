@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import service.DiscussService;
 import service.ReplyThService;
 
 import javax.servlet.http.HttpSession;
@@ -21,6 +22,7 @@ import static sun.plugin2.util.PojoUtil.toJson;
 public class ReplyThRestController {
 
     @Autowired ReplyThService replyThService;
+    @Autowired DiscussService discussService;
 
     @RequestMapping(value = "/all/{tnumber}", method = RequestMethod.GET)
     public ResponseEntity<List<ReplyThread>> readReplies(@PathVariable(name = "tnumber") int tnumber) {

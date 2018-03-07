@@ -2,10 +2,7 @@ package mappers;
 
 import domain.Lecture;
 import domain.Topics;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import pageutil.PaginationCriteria;
 
 import java.util.Date;
@@ -21,7 +18,7 @@ public interface DiscussMapper {
             "INSERT INTO TOPICS(writer, title, topicdate, lecturekey, tcontent) " +
                     "VALUES (#{writer}, #{title}, sysdate, #{lecturekey}, #{tcontent})";
     String SQL_GETTOTALCOUNT =
-            "SELECT count(*) cnt from topics where Lecturekey = #{lid}";
+            "SELECT count(*) cnt FROM topics WHERE Lecturekey = #{lid}";
     String SQL_SELECTPAGE = "select b.writer, b.title, b.topicdate, b.lecturekey, b.tcontent, b.tnumber, b.rlycount, b.lastrlyname, b.lastrlydate, b.views " +
             "from (select rownum rn, a.* from (select * from topics WHERE LECTUREKEY = #{lid} " +
             "order by topicdate desc) a) b " +
@@ -34,6 +31,22 @@ public interface DiscussMapper {
             "UPDATE topics SET views = views + 1 WHERE tnumber = #{tnumber}";
     String SQL_UPDATETOPIC =
             "UPDATE topics SET title = #{title}, tcontent = #{tcontent}, topicdate = sysdate WHERE tnumber = #{tnumber}";
+    String SQL_DELETETOPIC =
+            "DELETE FROM topics WHERE tnumber = #{tnumber}";
+
+    String SQL_SEARCH_COUNT_TOPIC_BY_LID =
+            "<script> SELECT count(*) cnt FROM topics WHERE " +
+            "<if test='#{searchType} == \"1\"'> title like #{searchKeyword} " +  "</if>" +
+            "<if test='#{searchType} == \"2\"'> tcontent like #{searchKeyword} " +  "</if>" +
+            "<if test='#{searchType} == \"3\"'> writer like #{searchKeyword} " +  "</if>" +
+            "and lecturekey = #{lid} </script>";
+
+    String searchTopicsByLid =
+            "<script> SELECT * FROM topics WHERE " +
+            "<if test='#{searchType} == 1'> title like #{searchKeyword} and " +  "</if>" +
+            "<if test='#{searchType} == 2'> tcontent like #{searchKeyword} and " +  "</if>" +
+            "<if test='#{searchType} == 3'> writer like #{searchKeyword} and " +  "</if>" +
+            "lid = #{lid} </script>";
 
     @Select(SQL_GETALLCATE)
     List<Lecture> selectAllcate();
@@ -61,4 +74,15 @@ public interface DiscussMapper {
 
     @Update(SQL_UPDATETOPIC)
     int updateTopic(Topics topics);
+
+    @Delete(SQL_DELETETOPIC)
+    int deleteTopic(int tnumber);
+
+    @Select(SQL_SEARCH_COUNT_TOPIC_BY_LID)
+    int searchCountTopicsByLid(@Param("searchType") String searchType,
+                               @Param("searchKeyword") String searchKeyword,
+                               @Param("lid") String lid);
+
+    @Select(searchTopicsByLid)
+    List<Topics> searchTopicsByLid(int searchType, String searchKeyword, String lid);
 }

@@ -79,7 +79,8 @@
                 <tbody>
                 <tr>
                     <td>
-                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0" class="text-uppercase">forum
+                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0"
+                                                                                            class="text-uppercase">forum
                             post title with a complex and long question</a></h3>
                         <div class="small">Go to page: <a href="#0">1</a>, <a href="#0">2</a>, <a href="#0">3</a>
                             &hellip;
@@ -119,18 +120,22 @@
                 <c:forEach var="topic" items="${topicList}">
                     <tr>
                         <td>
-                            <h3 class="h6 mb-0"><a href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">${topic.title}, ${topic.tnumber}</a></h3>
+                            <h3 class="h6 mb-0"><a
+                                    href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">${topic.title}, ${topic.tnumber}</a>
+                            </h3>
                         </td>
                         <td>
                             <div>by <a href="#0">${topic.writer}</a></div>
-                            <div><fmt:formatDate var="replydate" value="${topic.topicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                            <div><fmt:formatDate var="replydate" value="${topic.topicdate}"
+                                                 pattern="yyyy/MM/dd HH:mm:ss"/>
                                     ${replydate}</div>
                         </td>
                         <td>
                             <div>${topic.rlycount} replies</div>
                             <div>${topic.views} views</div>
                         </td>
-                        <td><fmt:formatDate var="lastrlydate" value="${topic.lastrlydate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                        <td><fmt:formatDate var="lastrlydate" value="${topic.lastrlydate}"
+                                            pattern="yyyy/MM/dd HH:mm:ss"/>
                             <div>by <a href="#0">${topic.lastrlyname}</a></div>
                             <div>${lastrlydate}</div>
                         </td>
@@ -176,46 +181,28 @@
             <input type="hidden" id="lcategory" name="lcategory" path="lcategory" value="${lcategory}">
         </form>
 
-        <form class="form-inline float-lg-left d-block d-sm-flex">
-            <div class="mb-2 mb-sm-0 mr-2">Display posts from previous:</div>
-            <div class="form-group mr-2">
-                <label class="sr-only" for="select-time">Time period</label>
-                <select class="form-control form-control-sm" id="select-time">
-                    <option value="all-posts" selected>All posts</option>
-                    <option value="dat">1 day</option>
-                    <option value="dat">1 week</option>
-                    <option value="dat">1 month</option>
-                    <option value="dat">1 year</option>
+        <form class="form-inline float-lg-left d-block d-sm-flex" method="get" action="/discuss/search">
+            <div class="input-group-btn search-panel">
+                <select class="form-control" data-toggle="dropdown" name="searchType">
+                    <option value="1">Title</option>
+                    <option value="2">Content</option>
+                    <option value="3">Username</option>
                 </select>
             </div>
-            <div class="mb-2 mb-sm-0 mr-2">Sort by:</div>
-            <div class="form-group mr-2">
-                <label class="sr-only" for="select-time">Sort by</label>
-                <select class="form-control form-control-sm" id="select-sort">
-                    <option value="author">All posts</option>
-                    <option value="post-time" selected>Post time</option>
-                    <option value="replies">1 Replies</option>
-                    <option value="subject">Subject</option>
-                    <option value="dat">Views</option>
-                </select>
-            </div>
-            <div class="form-group mr-2">
-                <label class="sr-only" for="select-time">Sort dircetion</label>
-                <select class="form-control form-control-sm" id="select-direction">
-                    <option value="ascending">Ascending</option>
-                    <option value="descending" selected>Descending</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-sm btn-primary">Go</button>
+            <input type="text" class="form-control ml-1" placeholder="Search term..." name="searchKeyword">
+            <input type="hidden" name="lname" value="${lname}">
+            <input type="hidden" name="lcategory" value="${lcategory}">
+            <input type="hidden" name="lid" value="${lid}">
+            <button type="submit" class="btn btn-outline-info ml-1"><i class="fas fa-search"></i></button>
         </form>
     </div>
     <%
-        if(session.getAttribute("loginResult") != null) {
-            String lname = (String)request.getAttribute("lname");
-            String lcategory = (String)request.getAttribute("lcategory");
-            String lid = (String)request.getAttribute("lid");
+        if (session.getAttribute("loginResult") != null) {
+            String lname = (String) request.getAttribute("lname");
+            String lcategory = (String) request.getAttribute("lcategory");
+            String lid = (String) request.getAttribute("lid");
 
-            out.print("<a href=\"/discuss/newtopic?lname="+ lname +
+            out.print("<a href=\"/discuss/newtopic?lname=" + lname +
                     "&lcategory=" + lcategory + "&lid=" + lid + "\" class=\"btn btn-lg btn-primary\">New topic</a>");
         }
     %>

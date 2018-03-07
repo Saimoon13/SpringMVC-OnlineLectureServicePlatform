@@ -90,13 +90,10 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
-    public void search(int searchType, String searchKeyword,
-                       Model model) {
+    public void search(int searchType, String searchKeyword, Model model) {
         logger.info("type: {}, keyword: {}", searchType, searchKeyword);
         List<Board> list = boardService.search(searchType, searchKeyword);
         model.addAttribute("boardList", list);
-
-
 
     }
 }

@@ -60,5 +60,22 @@ public class DiscussDaoImple implements DiscussDao {
         return mapper.updateTopic(topics);
     }
 
+    @Override
+    public int deleteTopic(int tnumber) {
+        return mapper.deleteTopic(tnumber);
+    }
+
+    @Override
+    public List<Topics> searchTopicsByLid(int searchType, String searchKeyword, String lid) {
+        System.out.println("searchType: " + searchType + "searchType: " + searchKeyword + "lid: " + lid);
+        return mapper.searchTopicsByLid(searchType, searchKeyword, lid);
+    }
+
+    @Override
+    public int searchCountTopicsByLid(String searchType, String searchKeyword, String lid) {
+        System.out.println("searchType: " + searchType + ", searchType: " + searchKeyword + ", lid: " + lid);
+        return mapper.searchCountTopicsByLid(searchType, searchKeyword, lid);
+    }
+
 
 }

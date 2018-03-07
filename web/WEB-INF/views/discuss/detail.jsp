@@ -100,7 +100,7 @@
                                         <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
                                     <a class="col-6"
                                        href="update?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">Update</a>
-                                    <a class="col-6" href="#">Delete</a>
+                                    <a class="col-6" href="delete?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">Delete</a>
                                 </div>
                             </c:when>
                         </c:choose>
@@ -185,17 +185,6 @@
                     "    <button type=\"reset\" class=\"btn btn-danger mb-3\">Reset</button>");
         }
     %>
-    <%--<div class="form-group">--%>
-    <%--<input type="text" class="form-control" name="replyTitle" path="replyTitle"--%>
-    <%--id="replyTitle" placeholder="Give your a comment title." required>--%>
-    <%--</div>--%>
-    <%--<div class="form-group">--%>
-    <%--<textarea class="form-control" id="replyComment" rows="10" placeholder="Write your comment here"--%>
-    <%--required></textarea>--%>
-    <%--</div>--%>
-    <%--<button type="submit" class="btn btn-primary mb-3" id="btn-insert">Reply</button>--%>
-    <%--<button type="reset" class="btn btn-danger mb-3">Reset</button>--%>
-    <%--</form>--%>
 
 </div>
 
@@ -257,7 +246,6 @@
         </div>
     </div>
 </script>
-
 
 <script>
     $(document).ready(function () {
