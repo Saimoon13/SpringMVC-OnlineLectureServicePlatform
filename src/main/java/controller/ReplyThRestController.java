@@ -52,6 +52,7 @@ public class ReplyThRestController {
 
         int resultinsert = replyThService.replyInsert(r);
         int resultcount = replyThService.replyCount(r);
+        int resultlastupdate = replyThService.updateLastRly(m.getUserid(), r.getTnumber());
 
         ResponseEntity<Integer> entity = null;
         if (resultinsert == 1) {

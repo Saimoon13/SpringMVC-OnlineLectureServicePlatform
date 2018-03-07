@@ -140,6 +140,9 @@ public class DiscussController {
 
         Member writer = memberService.select(topic.getWriter());
 
+        int updateViews = discussService.updateViews(tnumber);
+        //TODO: 캐시 이용 중복 클릭 카운트 방지
+
         model.addAttribute("topic",topic);
         model.addAttribute("writer", writer);
         model.addAttribute("lname", lname);
@@ -179,4 +182,15 @@ public class DiscussController {
         return "/discuss/newTopic";
     }
 
+    @RequestMapping(value = "updateconfirm")
+    public String updateConfirm(@ModelAttribute("Topics")Topics topics, String lid, String lname, String lcategory, int tnumber){
+
+        System.out.println("Tnumber: " + tnumber + ", " + "title: " + topics.getTitle() + ", " + "content: " + topics.getTcontent());
+
+        topics.setTnumber(tnumber);
+        discussService.updateTopic(topics);
+
+        String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
+        return "redirect:"+returnValue;
+    }
 }

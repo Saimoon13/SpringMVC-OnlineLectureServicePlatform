@@ -17,4 +17,6 @@ public interface DiscussDao {
     List<Topics> selectPage(String lid, PaginationCriteria c);
     Topics selectTopicByTnumber(int tnumber);
     int updateLast(String writer, int tnumber, String title, String ld);
+    int updateViews(int tnumber);
+    int updateTopic(Topics topics);
 }

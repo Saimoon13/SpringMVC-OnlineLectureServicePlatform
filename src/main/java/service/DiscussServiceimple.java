@@ -49,6 +49,14 @@ public class DiscussServiceimple implements DiscussService {
     public int updateLast(String writer, int tnumber, String title, String lid) {
         return discussDao.updateLast(writer, tnumber, title, lid);
     }
+    @Override
+    public int updateViews(int tnumber) {
+        return discussDao.updateViews(tnumber);
+    }
 
+    @Override
+    public int updateTopic(Topics topics) {
+        return discussDao.updateTopic(topics);
+    }
 
 }

@@ -16,4 +16,6 @@ public interface DiscussService {
     List<Topics> selectPage(String lid, PaginationCriteria c);
     Topics selectTopicByTnumber(int tnumber);
     int updateLast(String writer, int tnumber, String title, String lid);
+    int updateViews(int tnumber);
+    int updateTopic(Topics topics);
 }

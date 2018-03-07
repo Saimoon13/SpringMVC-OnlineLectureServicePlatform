@@ -72,7 +72,7 @@
                     <th scope="col" class="topic-col" style="width: 60%">Topic</th>
                     <th scope="col" class="created-col" style="width: 15%">Created</th>
                     <th scope="col" style="width: 10%">Statistics</th>
-                    <th scope="col" class="last-post-col" style="width: 15%">last post</th>
+                    <th scope="col" class="last-post-col" style="width: 15%">Last Reply</th>
                 </tr>
                 </thead>
 
@@ -128,11 +128,11 @@
                         </td>
                         <td>
                             <div>${topic.rlycount} replies</div>
-                            <div>137 views</div>
+                            <div>${topic.views} views</div>
                         </td>
-                        <td>
-                            <div>by <a href="#0">author name</a></div>
-                            <div>05 apr 2017, 20:07</div>
+                        <td><fmt:formatDate var="lastrlydate" value="${topic.lastrlydate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                            <div>by <a href="#0">${topic.lastrlyname}</a></div>
+                            <div>${lastrlydate}</div>
                         </td>
                     </tr>
                 </c:forEach>

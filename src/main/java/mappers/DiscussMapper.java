@@ -22,14 +22,18 @@ public interface DiscussMapper {
                     "VALUES (#{writer}, #{title}, sysdate, #{lecturekey}, #{tcontent})";
     String SQL_GETTOTALCOUNT =
             "SELECT count(*) cnt from topics where Lecturekey = #{lid}";
-    String SQL_SELECTPAGE = "select b.writer, b.title, b.topicdate, b.lecturekey, b.tcontent, b.tnumber, b.rlycount " +
+    String SQL_SELECTPAGE = "select b.writer, b.title, b.topicdate, b.lecturekey, b.tcontent, b.tnumber, b.rlycount, b.lastrlyname, b.lastrlydate, b.views " +
             "from (select rownum rn, a.* from (select * from topics WHERE LECTUREKEY = #{lid} " +
             "order by topicdate desc) a) b " +
             "where rn between #{c.start} and #{c.end}";
     String SQL_SELECTTOPICBYTNUMBER =
             "SELECT * FROM topics WHERE tnumber = #{tnumber}";
     String SQL_UPDATELAST =
-            "update lecture set lastwriter = #{writer}, lasttitle = #{title}, lasttopicdate = sysdate, lasttnumber = #{tnumber} where lid = #{lid}";
+            "UPDATE lecture SET lastwriter = #{writer}, lasttitle = #{title}, lasttopicdate = sysdate, lasttnumber = #{tnumber} WHERE lid = #{lid}";
+    String SQL_UPDATEVIEWS=
+            "UPDATE topics SET views = views + 1 WHERE tnumber = #{tnumber}";
+    String SQL_UPDATETOPIC =
+            "UPDATE topics SET title = #{title}, tcontent = #{tcontent}, topicdate = sysdate WHERE tnumber = #{tnumber}";
 
     @Select(SQL_GETALLCATE)
     List<Lecture> selectAllcate();
@@ -52,4 +56,9 @@ public interface DiscussMapper {
     @Update(SQL_UPDATELAST)
     int updateLastJson(@Param("writer") String writer, @Param("tnumber") int tnumber,
                        @Param("title") String title, @Param("lid") String lid);
+    @Update(SQL_UPDATEVIEWS)
+    int updateViews(int tnumber);
+
+    @Update(SQL_UPDATETOPIC)
+    int updateTopic(Topics topics);
 }

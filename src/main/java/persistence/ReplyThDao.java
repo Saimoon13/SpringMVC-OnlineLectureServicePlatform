@@ -12,4 +12,6 @@ public interface ReplyThDao {
     int replyCount(ReplyThread replyThread);
     int replyCountOUT(int replynumber);
     int replyDelete(int replynumber);
+    int updateLastRly(String lastrlyname, long tnumber);
+
 }

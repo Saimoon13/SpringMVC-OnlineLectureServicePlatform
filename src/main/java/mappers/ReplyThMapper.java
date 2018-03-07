@@ -1,10 +1,7 @@
 package mappers;
 
 import domain.ReplyThread;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -17,15 +14,14 @@ public interface ReplyThMapper {
                             " VALUES(#{title}, sysdate, #{tnumber}, #{rcontent}, #{member})";
     String REPLY_UPDATE =
             "UPDATE replythread SET rcontent = #{rcontent} WHERE replynumber = #{replynumber}";
-
     String REPLY_COUNT =
             "UPDATE topics SET rlycount = rlycount + 1 WHERE tnumber = #{tnumber}";
-
     String REPLY_DELETE =
             "DELETE FROM replythread WHERE replynumber = #{replynumber}";
-
     String REPLY_COUNTOUT =
             "UPDATE topics SET rlycount = rlycount -1 WHERE tnumber = (SELECT tnumber FROM replythread WHERE replynumber = #{replynumber})";
+    String SQL_UPDATE_LAST_RLY =
+            "update topics set lastrlyname = #{lastrlyname}, lastrlydate = sysdate where tnumber = #{tnumber}";
 
     @Select(SELECT_BY_TNUMBER)
     List<ReplyThread> selectByTnumber(int tumber);
@@ -44,4 +40,7 @@ public interface ReplyThMapper {
 
     @Update(REPLY_COUNTOUT)
     int replyCountOUT(int replynumber);
+
+    @Update(SQL_UPDATE_LAST_RLY)
+    int updateLastRly(@Param("lastrlyname") String lastrlyname, @Param("tnumber") long tnumber);
 }

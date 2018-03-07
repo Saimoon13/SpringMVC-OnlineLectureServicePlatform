@@ -41,4 +41,10 @@ public class ReplyThDaoimple implements ReplyThDao {
     public int replyDelete(int replynumber) {
         return mapper.replyDelete(replynumber);
     }
+
+    @Override
+    public int updateLastRly(String lastrlyname, long tnumber) {
+        return mapper.updateLastRly(lastrlyname, tnumber);
+    }
+
 }

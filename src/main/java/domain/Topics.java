@@ -12,6 +12,8 @@ public class Topics{
     private int rlycount;
     private int views;
     private int tnumber;
+    private String lastrlyname;
+    private Date lastrlydate;
 
     public Topics(){}
     public Topics(String writer, String title, Date topicdate, String content, String lecturekey) {
@@ -30,6 +32,18 @@ public class Topics{
         this.rlycount = rlycount;
         this.views = views;
         this.tnumber = tnumber;
+    }
+    public Topics(String writer, String title, Date topicdate, String tcontent, String lecturekey, int rlycount, int views, int tnumber, String lastrlyname, Date lastrlydate) {
+        this.writer = writer;
+        this.title = title;
+        this.topicdate = topicdate;
+        this.tcontent = tcontent;
+        this.lecturekey = lecturekey;
+        this.rlycount = rlycount;
+        this.views = views;
+        this.tnumber = tnumber;
+        this.lastrlyname = lastrlyname;
+        this.lastrlydate = lastrlydate;
     }
 
     public String getWriter() {
@@ -56,7 +70,12 @@ public class Topics{
     public int getTnumber() {
         return tnumber;
     }
-
+    public String getLastrlyname() {
+        return lastrlyname;
+    }
+    public Date getLastrlydate() {
+        return lastrlydate;
+    }
 
     public void setWriter(String writer) {
         this.writer = writer;
@@ -81,5 +100,11 @@ public class Topics{
     }
     public void setTnumber(int tnumber) {
         this.tnumber = tnumber;
+    }
+    public void setLastrlyname(String lastrlyname) {
+        this.lastrlyname = lastrlyname;
+    }
+    public void setLastrlydate(Date lastrlydate) {
+        this.lastrlydate = lastrlydate;
     }
 }

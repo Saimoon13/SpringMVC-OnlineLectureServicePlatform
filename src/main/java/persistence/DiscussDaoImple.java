@@ -50,5 +50,15 @@ public class DiscussDaoImple implements DiscussDao {
         return mapper.updateLastJson(writer, tnumber, title, lid);
     }
 
+    @Override
+    public int updateViews(int tnumber) {
+        return mapper.updateViews(tnumber);
+    }
+
+    @Override
+    public int updateTopic(Topics topics) {
+        return mapper.updateTopic(topics);
+    }
+
 
 }

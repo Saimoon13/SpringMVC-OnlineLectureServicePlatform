@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 2018-02-21
-  Time: 오전 9:39
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -95,7 +88,7 @@
     </form>
     </c:when>
     <c:when test="${not empty topic.title}">
-        <form class="mb-3" action="/discuss/post?lid=${lid}&lname=${lname}&lcategory=${lcategory}" method="post">
+        <form class="mb-3" action="/discuss/updateconfirm?lid=${lid}&lname=${lname}&lcategory=${lcategory}&tnumber=${topic.tnumber}" method="post">
             <div class="form-group">
                 <label for="topic">Topic:</label>
                 <input type="text" class="form-control" name="title" path="title" value="${topic.title}"

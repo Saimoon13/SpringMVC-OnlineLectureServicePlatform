@@ -38,6 +38,11 @@ public class ReplyThServiceImple implements ReplyThService {
     }
 
     @Override
+    public int updateLastRly(String lastrlyname, long tnumber) {
+        return replyThDao.updateLastRly(lastrlyname, tnumber);
+    }
+
+    @Override
     public int replyCountOUT(int replynumber) {
         return replyThDao.replyCountOUT(replynumber);
     }
