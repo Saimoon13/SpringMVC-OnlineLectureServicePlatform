@@ -240,26 +240,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                <%--<li class="nav-item dropdown">--%>
-                    <%--<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"--%>
-                       <%--data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--%>
-                        <%--<i class="fas fa-search"></i>--%>
-                    <%--</a>--%>
-                    <%--<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">--%>
-                        <%--&lt;%&ndash;<a class="dropdown-item" href="#">Action</a>&ndash;%&gt;--%>
-                        <%--&lt;%&ndash;<a class="dropdown-item" href="#">Another action</a>&ndash;%&gt;--%>
-                        <%--<div class="input-group">--%>
-                            <%--<input type="text" class="form-control" placeholder="Search for...">--%>
-                            <%--<span class="input-group-btn">--%>
-                                <%--<button class="btn btn-secondary" type="button">Go!</button>--%>
-                                <%--</span>--%>
-                        <%--</div>--%>
-
-                    <%--</div>--%>
-                <%--</li>--%>
-
             </ul>
         </div>
     </div>

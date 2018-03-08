@@ -113,6 +113,21 @@
         where ${colBno} = #{bno}
     </update>
 
+    <select id="search3" resultType="Integer">
+        SELECT count(*) cnt FROM topics
+        WHERE
+        <if test="searchType == 'title'">
+            title LIKE #{searchKeyword}
+        </if>
+        <if test="searchType == 'content'">
+            tcontent LIKE #{searchKeyword}
+        </if>
+        <if test="searchType == 'username'">
+            writer LIKE #{searchKeyword}
+        </if>
+        and lecturekey = #{lecturekey}
+    </select>
+
 </mapper>
 
 

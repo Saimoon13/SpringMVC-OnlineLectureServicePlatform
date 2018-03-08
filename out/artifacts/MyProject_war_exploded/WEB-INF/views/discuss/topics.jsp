@@ -78,16 +78,13 @@
 
                 <tbody>
                 <tr>
-                    <td>
-                        <h3 class="h6"><span class="badge badge-primary">7 unread</span> <a href="#0"
+                    <td style="vertical-align: middle">
+                        <h3 class="h6"><span class="badge badge-primary">Notice</span> <a href="#0"
                                                                                             class="text-uppercase">forum
                             post title with a complex and long question</a></h3>
-                        <div class="small">Go to page: <a href="#0">1</a>, <a href="#0">2</a>, <a href="#0">3</a>
-                            &hellip;
-                            <a href="#0">7</a>, <a href="#0">8</a>, <a href="#0">9</a></div>
                     </td>
                     <td>
-                        <div>by <a href="#0">Author name</a></div>
+                        <div>by <a href="#0">Admin</a></div>
                         <div>03 Apr 2017, 13:46</div>
                     </td>
                     <td>
@@ -99,27 +96,27 @@
                         <div>05 apr 2017, 20:07</div>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <h3 class="h6 mb-0"><a href="/discuss/detail">Forum name title with a complex and long
-                            question</a></h3>
-                    </td>
-                    <td>
-                        <div>by <a href="#0">Author name</a></div>
-                        <div>03 Apr 2017, 13:46</div>
-                    </td>
-                    <td>
-                        <div>5 replies</div>
-                        <div>137 views</div>
-                    </td>
-                    <td>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
+                <%--<tr>--%>
+                    <%--<td>--%>
+                        <%--<h3 class="h6 mb-0"><a href="/discuss/detail">Forum name title with a complex and long--%>
+                            <%--question</a></h3>--%>
+                    <%--</td>--%>
+                    <%--<td>--%>
+                        <%--<div>by <a href="#0">Author name</a></div>--%>
+                        <%--<div>03 Apr 2017, 13:46</div>--%>
+                    <%--</td>--%>
+                    <%--<td>--%>
+                        <%--<div>5 replies</div>--%>
+                        <%--<div>137 views</div>--%>
+                    <%--</td>--%>
+                    <%--<td>--%>
+                        <%--<div>by <a href="#0">author name</a></div>--%>
+                        <%--<div>05 apr 2017, 20:07</div>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
                 <c:forEach var="topic" items="${topicList}">
                     <tr>
-                        <td>
+                        <td style="vertical-align: middle">
                             <h3 class="h6 mb-0"><a
                                     href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">${topic.title}, ${topic.tnumber}</a>
                             </h3>
@@ -136,7 +133,12 @@
                         </td>
                         <td><fmt:formatDate var="lastrlydate" value="${topic.lastrlydate}"
                                             pattern="yyyy/MM/dd HH:mm:ss"/>
-                            <div>by <a href="#0">${topic.lastrlyname}</a></div>
+                            <c:if test="${empty topic.lastrlyname}">
+                                <div>Empty</div>
+                            </c:if>
+                            <c:if test="${not empty topic.lastrlyname}">
+                                <div>by <a href="#0">${topic.lastrlyname}</a></div>
+                            </c:if>
                             <div>${lastrlydate}</div>
                         </td>
                     </tr>
@@ -184,9 +186,9 @@
         <form class="form-inline float-lg-left d-block d-sm-flex" method="get" action="/discuss/search">
             <div class="input-group-btn search-panel">
                 <select class="form-control" data-toggle="dropdown" name="searchType">
-                    <option value="1">Title</option>
-                    <option value="2">Content</option>
-                    <option value="3">Username</option>
+                    <option value="title">Title</option>
+                    <option value="content">Content</option>
+                    <option value="username">Username</option>
                 </select>
             </div>
             <input type="text" class="form-control ml-1" placeholder="Search term..." name="searchKeyword">

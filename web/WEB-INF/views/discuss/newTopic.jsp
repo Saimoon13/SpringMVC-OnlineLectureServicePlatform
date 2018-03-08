@@ -66,7 +66,7 @@
     </div>
 <c:choose>
     <c:when test="${empty topic.title}">
-    <form class="mb-3" action="/discuss/post?lid=${lid}&lname=${lname}&lcategory=${lcategory}" method="post">
+    <form class="mb-3" action="/discuss/post?lid=${lid}&lname=${lname}&lcategory=${lcategory}" method="post" >
         <div class="form-group">
             <label for="topic">Topic:</label>
             <input type="text" class="form-control" name="title" path="title"
@@ -77,12 +77,11 @@
             <textarea class="form-control"  name="tcontent" path="tcontent"
                       id="comment" rows="10" placeholder="Write your comment here" required>${topic.tcontent}</textarea>
         </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" id="checkbox" value="notification">
-                Notify me upon replies.
-            </label>
-        </div>
+        <%--<div class="form-check p-0 mb-3">--%>
+            <%--<label class="form-check-label">--%>
+                <%--<input class="form-control-file" type="file" name="file">--%>
+            <%--</label>--%>
+        <%--</div>--%>
         <button type="submit" class="btn btn-primary">Create topic</button>
         <button type="reset" class="btn btn-danger">Reset</button>
     </form>

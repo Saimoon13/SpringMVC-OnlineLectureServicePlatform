@@ -43,6 +43,11 @@ public class ReplyThServiceImple implements ReplyThService {
     }
 
     @Override
+    public int updateRlyCount(long tnumber) {
+        return replyThDao.updateRlyCount(tnumber);
+    }
+
+    @Override
     public int replyCountOUT(int replynumber) {
         return replyThDao.replyCountOUT(replynumber);
     }

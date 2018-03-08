@@ -3,12 +3,15 @@ package persistence;
 import domain.Lecture;
 import domain.Topics;
 import mappers.DiscussMapper;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pageutil.PaginationCriteria;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class DiscussDaoImple implements DiscussDao {
@@ -66,16 +69,18 @@ public class DiscussDaoImple implements DiscussDao {
     }
 
     @Override
-    public List<Topics> searchTopicsByLid(int searchType, String searchKeyword, String lid) {
-        System.out.println("searchType: " + searchType + "searchType: " + searchKeyword + "lid: " + lid);
-        return mapper.searchTopicsByLid(searchType, searchKeyword, lid);
-    }
-
-    @Override
     public int searchCountTopicsByLid(String searchType, String searchKeyword, String lid) {
-        System.out.println("searchType: " + searchType + ", searchType: " + searchKeyword + ", lid: " + lid);
         return mapper.searchCountTopicsByLid(searchType, searchKeyword, lid);
     }
 
+    @Override
+    public int updateTopicCount(String lid) {
+        return mapper.updateTopicCount(lid);
+    }
+
+    @Override
+    public int selectLastTnumber(String writer, Date topicdate) {
+        return mapper.selectLastTnumber(writer, topicdate);
+    }
 
 }

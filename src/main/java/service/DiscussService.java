@@ -19,6 +19,7 @@ public interface DiscussService {
     int updateViews(int tnumber);
     int updateTopic(Topics topics);
     int deleteTopic(int tnumber);
-    List<Topics> searchTopicsByLid(int searchType, String searchKeyword, String lid);
     int searchCountTopicsByLid(String searchType, String searchKeyword, String lid);
+    int updateTopicCount(String lid);
+    int selectLastTnumber(String writer, Date topicdate);
 }

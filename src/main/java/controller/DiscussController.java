@@ -105,14 +105,15 @@ public class DiscussController {
 
         if(m != null){
             discussService.insertTopic(topics);
+            discussService.updateTopicCount(lid);
             memberService.addOnePostNum(m.getUserid());
 
             String changed = topics.getTitle();
-            if(topics.getTitle().length() >= 15){
-                changed = topics.getTitle().substring(0, 15)+"..";
+            if(topics.getTitle().length() >= 10){
+                changed = topics.getTitle().substring(0, 10)+"..";
             }
-            //TODO: subString은 영어만 된다.. 길이제한 수정해야함
-            System.out.println(changed);
+            //TODO: 길이제한 수정해야함
+
             discussService.updateLast(topics.getWriter(), topics.getTnumber(), changed, lid);
         } else if (m == null){
             try {
@@ -206,11 +207,13 @@ public class DiscussController {
     }
 
     @RequestMapping(value = "/search")
-    public void search(String searchType, String searchKeyword, Model model, String lid, String lname, String lcategory,Integer page, Integer perPage) {
+    public String search(String searchType, String searchKeyword, Model model, String lid, String lname, String lcategory,Integer page, Integer perPage) {
 
         System.out.println("searchType: " + searchType + ", " + searchType.getClass());
         System.out.println("searchkeyword: " + searchKeyword + ", " + searchKeyword.getClass());
-        System.out.println("lid: " + lid + ", " + lid.getClass());
+        System.out.println("lecturekey: " + lid + ", " + lid.getClass());
+
+        searchKeyword = "%" + searchKeyword + "%";
 
         PaginationCriteria c = null;
         if (page != null && perPage != null) {
@@ -221,9 +224,18 @@ public class DiscussController {
         PageNumberMaker maker = new PageNumberMaker();
         maker.setCriteria(c);
 
-        int result = discussService.searchCountTopicsByLid(searchType, searchKeyword, lid);
+        maker.setTotalCount(discussService.searchCountTopicsByLid(searchType, searchKeyword, lid));
+        maker.setPageMakerData();
 
-        System.out.println("result: " + result);
+        List<Topics> listtrue = discussService.selectPage(lid, c);
+
+        model.addAttribute("topicList",listtrue);
+        model.addAttribute("pageMaker", maker);
+        model.addAttribute("lid",lid);
+        model.addAttribute("lname",lname);
+        model.addAttribute("lcategory",lcategory);
+
+        return "discuss/topics";
 
     }
 }

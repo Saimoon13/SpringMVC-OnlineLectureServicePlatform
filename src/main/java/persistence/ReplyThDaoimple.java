@@ -47,4 +47,8 @@ public class ReplyThDaoimple implements ReplyThDao {
         return mapper.updateLastRly(lastrlyname, tnumber);
     }
 
+    @Override
+    public int updateRlyCount(long tnumber) {
+        return mapper.updateRlyCount(tnumber);
+    }
 }

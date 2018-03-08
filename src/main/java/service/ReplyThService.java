@@ -13,4 +13,5 @@ public interface ReplyThService {
     int replyCountOUT(int replynumber);
     int replyDelete(int replynumber);
     int updateLastRly(String lastrlyname, long tnumber);
+    int updateRlyCount(long tnumber);
 }

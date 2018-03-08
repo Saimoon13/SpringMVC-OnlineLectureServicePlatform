@@ -34,6 +34,21 @@
             min-width: 12em;
         }
 
+        .tr-th-1 {
+            width: 70%;
+        }
+
+        .tr-th-2 {
+            width: 5%;
+        }
+
+        .tr-th-3 {
+            width: 5%;
+        }
+        .tr-th-4 {
+            width: 20%;
+        }
+
     </style>
 </head>
 <body>
@@ -63,10 +78,10 @@
             <table class="table table-striped table-bordered table-responsive mb-xl-0">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col" class="forum-col">forum</th>
-                    <th scope="col">topics</th>
-                    <th scope="col">posts</th>
-                    <th scope="col" class="last-post-col">last post</th>
+                    <th scope="col" class="forum-col tr-th-1">forum</th>
+                    <th scope="col" class="tr-th-2">topics</th>
+                    <th scope="col" class="tr-th-3">replies</th>
+                    <th scope="col" class="last-post-col tr-th-4">last post</th>
                 </tr>
                 </thead>
 
@@ -82,15 +97,20 @@
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
                                 <td>
-                                    <div>5</div>
+                                    <div>${lecture.topiccount}</div>
                                 </td>
                                 <td>
-                                    <div>18</div>
+                                    <div>${lecture.rlycount}</div>
                                 </td>
                                 <td>
                                     <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
-                                    <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <c:if test="${empty lecture.lastwriter}">
+                                        <div>Empty</div>
+                                    </c:if>
+                                    <c:if test="${not empty lecture.lastwriter}">
+                                        <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    </c:if>
                                     <div>${lasttopicdate}</div>
                                 </td>
                             </tr>
@@ -101,24 +121,6 @@
                     </c:choose>
                 </c:forEach>
 
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
 
@@ -126,10 +128,10 @@
             <table class="table table-striped table-bordered table-responsive mb-xl-0">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col" class="forum-col">forum</th>
-                    <th scope="col">topics</th>
-                    <th scope="col">posts</th>
-                    <th scope="col" class="last-post-col">last post</th>
+                    <th scope="col" class="forum-col tr-th-1">forum</th>
+                    <th scope="col" class="tr-th-2">topics</th>
+                    <th scope="col" class="tr-th-3">replies</th>
+                    <th scope="col" class="last-post-col tr-th-4">last post</th>
                 </tr>
                 </thead>
 
@@ -144,15 +146,20 @@
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
                                 <td>
-                                    <div>5</div>
+                                    <div>${lecture.topiccount}</div>
                                 </td>
                                 <td>
-                                    <div>18</div>
+                                    <div>${lecture.rlycount}</div>
                                 </td>
                                 <td>
                                     <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
-                                    <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <c:if test="${empty lecture.lastwriter}">
+                                    <div>Empty</div>
+                                    </c:if>
+                                    <c:if test="${not empty lecture.lastwriter}">
+                                        <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    </c:if>
                                     <div>${lasttopicdate}</div>
                                 </td>
                             </tr>
@@ -162,24 +169,6 @@
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
                 </tbody>
             </table>
 
@@ -187,10 +176,10 @@
             <table class="table table-striped table-bordered table-responsive mb-xl-0">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col" class="forum-col">forum</th>
-                    <th scope="col">topics</th>
-                    <th scope="col">posts</th>
-                    <th scope="col" class="last-post-col">last post</th>
+                    <th scope="col" class="forum-col tr-th-1">forum</th>
+                    <th scope="col" class="tr-th-2">topics</th>
+                    <th scope="col" class="tr-th-3">replies</th>
+                    <th scope="col" class="last-post-col tr-th-4">last post</th>
                 </tr>
                 </thead>
 
@@ -205,15 +194,20 @@
                                     <p class="mb-0">${lecture.lexplain}</p>
                                 </td>
                                 <td>
-                                    <div>5</div>
+                                    <div>${lecture.topiccount}</div>
                                 </td>
                                 <td>
-                                    <div>18</div>
+                                    <div>${lecture.rlycount}</div>
                                 </td>
                                 <td>
                                     <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
                                     <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
-                                    <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <c:if test="${empty lecture.lastwriter}">
+                                        <div>Empty</div>
+                                    </c:if>
+                                    <c:if test="${not empty lecture.lastwriter}">
+                                        <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    </c:if>
                                     <div>${lasttopicdate}</div>
                                 </td>
                             </tr>
@@ -223,24 +217,7 @@
                         </c:otherwise>
                     </c:choose>
                 </c:forEach>
-                <tr>
-                    <td>
-                        <h3 class="h5 mb-0"><a href="#0" class="text-uppercase">forum name</a></h3>
-                        <p class="mb-0">
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                    <td>
-                        <div>5</div>
-                    </td>
-                    <td>
-                        <div>18</div>
-                    </td>
-                    <td>
-                        <h4 class="h6 mb-0 font-weight-bold"><a href="#0">post name</a></h4>
-                        <div>by <a href="#0">author name</a></div>
-                        <div>05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
+
                 </tbody>
             </table>
         </div>
