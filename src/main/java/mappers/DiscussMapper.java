@@ -1,6 +1,6 @@
 package mappers;
 
-import domain.Lecture;
+import domain.Discuss;
 import domain.Topics;
 import org.apache.ibatis.annotations.*;
 import pageutil.PaginationCriteria;
@@ -11,7 +11,7 @@ import java.util.List;
 public interface DiscussMapper {
 
     String SQL_GETALLCATE =
-            "SELECT * FROM LECTURE";
+            "SELECT * FROM Discuss";
     String SQL_GETALLTOPIC =
             "SELECT * FROM TOPICS WHERE LECTUREKEY = #{lid}";
     String SQL_INSERTTOPIC =
@@ -27,7 +27,7 @@ public interface DiscussMapper {
     String SQL_SELECTTOPICBYTNUMBER =
             "SELECT * FROM topics WHERE tnumber = #{tnumber}";
     String SQL_UPDATELAST =
-            "UPDATE lecture SET lastwriter = #{writer}, lasttitle = #{title}, lasttopicdate = sysdate, lasttnumber = #{tnumber} WHERE lid = #{lid}";
+            "UPDATE Discuss SET lastwriter = #{writer}, lasttitle = #{title}, lasttopicdate = sysdate, lasttnumber = #{tnumber} WHERE lid = #{lid}";
     String SQL_UPDATEVIEWS=
             "UPDATE topics SET views = views + 1 WHERE tnumber = #{tnumber}";
     String SQL_UPDATETOPIC =
@@ -41,12 +41,12 @@ public interface DiscussMapper {
             "<if test='searchType == \"username\"'> " + "writer LIKE #{searchKeyword} " +  "</if>" +
             "and lecturekey = #{lid} </script>";
     String SQL_UPDATE_TOPICCOUNT =
-            "UPDATE lecture SET topiccount = topiccount + 1 WHERE lid = #{lid}";
+            "UPDATE Discuss SET topiccount = topiccount + 1 WHERE lid = #{lid}";
     String SQL_SELECT_LAST_TNUMBER =
             "SELECT tnumber FROM topics WHERE writer = #{writer} and topicdate = #{topicdate}";
 
     @Select(SQL_GETALLCATE)
-    List<Lecture> selectAllcate();
+    List<Discuss> selectAllcate();
 
     @Select(SQL_GETALLTOPIC)
     List<Topics> selectTopicsByLid(String lid);

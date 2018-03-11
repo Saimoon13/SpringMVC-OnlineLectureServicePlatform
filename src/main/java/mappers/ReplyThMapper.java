@@ -23,7 +23,7 @@ public interface ReplyThMapper {
     String SQL_UPDATE_LAST_RLY =
             "UPDATE topics SET lastrlyname = #{lastrlyname}, lastrlydate = sysdate WHERE tnumber = #{tnumber}";
     String SQL_UPDATE_RLYCOUNT =
-            "UPDATE lecture SET rlycount  = rlycount + 1 WHERE lid = (SELECT lecturekey FROM topics WHERE tnumber = #{tnumber})";
+            "UPDATE Discuss SET rlycount  = rlycount + 1 WHERE lid = (SELECT lecturekey FROM topics WHERE tnumber = #{tnumber})";
 
     @Select(SELECT_BY_TNUMBER)
     List<ReplyThread> selectByTnumber(int tumber);

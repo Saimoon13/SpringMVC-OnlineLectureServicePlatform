@@ -1,9 +1,7 @@
 package controller;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import domain.Lecture;
+import domain.Discuss;
 import domain.Member;
 import domain.Topics;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +28,7 @@ public class DiscussController {
 
     @RequestMapping(value = "/")
     public String overview(Model model){
-        List<Lecture> list = discussService.selectAll();
+        List<Discuss> list = discussService.selectAll();
 
         Gson gson = new Gson();
 
@@ -157,9 +155,9 @@ public class DiscussController {
     @RequestMapping(value = "/test")
     public String test(){
 
-        List<Lecture> list = discussService.selectAll();
-        for (Lecture lecture:list) {
-            System.out.println(lecture.getLexplain() + lecture.getLname());
+        List<Discuss> list = discussService.selectAll();
+        for (Discuss Discuss :list) {
+            System.out.println(Discuss.getLexplain() + Discuss.getLname());
         }
 
         return "redirect:/";
@@ -202,7 +200,7 @@ public class DiscussController {
 
         discussService.deleteTopic(tnumber);
 
-        String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
+        String returnValue = "/Discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
         return "redirect:"+returnValue;
     }
 

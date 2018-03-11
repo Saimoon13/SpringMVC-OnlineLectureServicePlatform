@@ -1,17 +1,14 @@
 package persistence;
 
-import domain.Lecture;
+import domain.Discuss;
 import domain.Topics;
 import mappers.DiscussMapper;
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pageutil.PaginationCriteria;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class DiscussDaoImple implements DiscussDao {
@@ -19,7 +16,7 @@ public class DiscussDaoImple implements DiscussDao {
     @Autowired private DiscussMapper mapper;
 
     @Override
-    public List<Lecture> selectAllcate() {
+    public List<Discuss> selectAllcate() {
         return mapper.selectAllcate();
     }
 

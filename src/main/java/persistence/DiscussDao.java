@@ -1,8 +1,7 @@
 package persistence;
 
-import domain.Lecture;
+import domain.Discuss;
 import domain.Topics;
-import org.apache.ibatis.annotations.Param;
 import pageutil.PaginationCriteria;
 
 import java.util.Date;
@@ -10,7 +9,7 @@ import java.util.List;
 
 public interface DiscussDao {
 
-    List<Lecture> selectAllcate(); // 모든 카테고리
+    List<Discuss> selectAllcate(); // 모든 카테고리
     List<Topics> selectTopicsByLid(String lid);
     int insert(Topics topics);
     int getCountByLid(String lid);

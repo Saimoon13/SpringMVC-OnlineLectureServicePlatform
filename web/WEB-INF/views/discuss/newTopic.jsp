@@ -42,7 +42,7 @@
                 <span class="breadcrumb-item active">Unkown Error</span>
             </c:otherwise>
         </c:choose>
-        <%--<a href="/discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>--%>
+        <%--<a href="/Discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>--%>
         <%--<span class="breadcrumb-item active">${lname} New Topic</span>--%>
     </nav>
     <div class="row">

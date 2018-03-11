@@ -1,6 +1,6 @@
 package service;
 
-import domain.Lecture;
+import domain.Discuss;
 import domain.Topics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class DiscussServiceimple implements DiscussService {
     @Autowired private DiscussDao discussDao;
 
     @Override
-    public List<Lecture> selectAll() {
+    public List<Discuss> selectAll() {
         return discussDao.selectAllcate();
     }
 

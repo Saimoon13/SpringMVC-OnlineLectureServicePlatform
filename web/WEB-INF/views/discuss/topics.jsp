@@ -98,7 +98,7 @@
                 </tr>
                 <%--<tr>--%>
                     <%--<td>--%>
-                        <%--<h3 class="h6 mb-0"><a href="/discuss/detail">Forum name title with a complex and long--%>
+                        <%--<h3 class="h6 mb-0"><a href="/Discuss/detail">Forum name title with a complex and long--%>
                             <%--question</a></h3>--%>
                     <%--</td>--%>
                     <%--<td>--%>
@@ -208,7 +208,7 @@
                     "&lcategory=" + lcategory + "&lid=" + lid + "\" class=\"btn btn-lg btn-primary\">New topic</a>");
         }
     %>
-    <%--<a href="/discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>--%>
+    <%--<a href="/Discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>--%>
 </div>
 <footer class="small bg-dark text-white">
     <div class="container py-4">

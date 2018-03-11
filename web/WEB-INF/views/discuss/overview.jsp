@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="domain.Lecture" %><%--
+<%@ page import="domain.Discuss" %><%--
   Created by IntelliJ IDEA.
   User: PC
   Date: 2018-02-21
@@ -87,29 +87,29 @@
 
                 <tbody>
 
-                <c:forEach var="lecture" items="${lectureList}">
+                <c:forEach var="Discuss" items="${lectureList}">
                     <c:choose>
-                        <c:when test="${lecture.lcategory eq 'basic'}">
+                        <c:when test="${Discuss.lcategory eq 'basic'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}&lname=${lecture.lname}&lcategory=${lecture.lcategory}"
-                                                           class="text-uppercase">${lecture.lname}</a></h3>
-                                    <p class="mb-0">${lecture.lexplain}</p>
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
+                                                           class="text-uppercase">${Discuss.lname}</a></h3>
+                                    <p class="mb-0">${Discuss.lexplain}</p>
                                 </td>
                                 <td>
-                                    <div>${lecture.topiccount}</div>
+                                    <div>${Discuss.topiccount}</div>
                                 </td>
                                 <td>
-                                    <div>${lecture.rlycount}</div>
+                                    <div>${Discuss.rlycount}</div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
-                                    <c:if test="${empty lecture.lastwriter}">
+                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a></h4>
+                                    <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
                                     </c:if>
-                                    <c:if test="${not empty lecture.lastwriter}">
-                                        <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <c:if test="${not empty Discuss.lastwriter}">
+                                        <div>by <a href="#0"><span>${Discuss.lastwriter}</span></a></div>
                                     </c:if>
                                     <div>${lasttopicdate}</div>
                                 </td>
@@ -136,29 +136,29 @@
                 </thead>
 
                 <tbody>
-                <c:forEach var="lecture" items="${lectureList}">
+                <c:forEach var="Discuss" items="${lectureList}">
                     <c:choose>
-                        <c:when test="${lecture.lcategory eq 'advanced'}">
+                        <c:when test="${Discuss.lcategory eq 'advanced'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}&lname=${lecture.lname}&lcategory=${lecture.lcategory}"
-                                                           class="text-uppercase">${lecture.lname}</a></h3>
-                                    <p class="mb-0">${lecture.lexplain}</p>
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
+                                                           class="text-uppercase">${Discuss.lname}</a></h3>
+                                    <p class="mb-0">${Discuss.lexplain}</p>
                                 </td>
                                 <td>
-                                    <div>${lecture.topiccount}</div>
+                                    <div>${Discuss.topiccount}</div>
                                 </td>
                                 <td>
-                                    <div>${lecture.rlycount}</div>
+                                    <div>${Discuss.rlycount}</div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
-                                    <c:if test="${empty lecture.lastwriter}">
+                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a></h4>
+                                    <c:if test="${empty Discuss.lastwriter}">
                                     <div>Empty</div>
                                     </c:if>
-                                    <c:if test="${not empty lecture.lastwriter}">
-                                        <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <c:if test="${not empty Discuss.lastwriter}">
+                                        <div>by <a href="#0"><span>${Discuss.lastwriter}</span></a></div>
                                     </c:if>
                                     <div>${lasttopicdate}</div>
                                 </td>
@@ -184,29 +184,29 @@
                 </thead>
 
                 <tbody>
-                <c:forEach var="lecture" items="${lectureList}">
+                <c:forEach var="Discuss" items="${lectureList}">
                     <c:choose>
-                        <c:when test="${lecture.lcategory eq 'superior'}">
+                        <c:when test="${Discuss.lcategory eq 'superior'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${lecture.lid}&lname=${lecture.lname}&lcategory=${lecture.lcategory}"
-                                                           class="text-uppercase">${lecture.lname}</a></h3>
-                                    <p class="mb-0">${lecture.lexplain}</p>
+                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
+                                                           class="text-uppercase">${Discuss.lname}</a></h3>
+                                    <p class="mb-0">${Discuss.lexplain}</p>
                                 </td>
                                 <td>
-                                    <div>${lecture.topiccount}</div>
+                                    <div>${Discuss.topiccount}</div>
                                 </td>
                                 <td>
-                                    <div>${lecture.rlycount}</div>
+                                    <div>${Discuss.rlycount}</div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate var="lasttopicdate" value="${lecture.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${lecture.lasttitle}</span></a></h4>
-                                    <c:if test="${empty lecture.lastwriter}">
+                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a></h4>
+                                    <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
                                     </c:if>
-                                    <c:if test="${not empty lecture.lastwriter}">
-                                        <div>by <a href="#0"><span>${lecture.lastwriter}</span></a></div>
+                                    <c:if test="${not empty Discuss.lastwriter}">
+                                        <div>by <a href="#0"><span>${Discuss.lastwriter}</span></a></div>
                                     </c:if>
                                     <div>${lasttopicdate}</div>
                                 </td>
