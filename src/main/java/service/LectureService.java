@@ -8,7 +8,8 @@ import java.util.List;
 public interface LectureService {
 
     int insertPayment(Payment payment);
-    int selectLectureDetail(int lid);
+    Payment selectPaymentByLid(String lid);
     List<Payment> selectPaymentById(String userid);
     List<Lecture> selectLectureBylId(String lid);
+
 }

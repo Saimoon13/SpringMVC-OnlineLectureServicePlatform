@@ -27,7 +27,7 @@
             crossorigin="anonymous"></script>
 
     <script defer src="../../resources/fontawesome-all.js"></script>
-    <link rel="stylesheet" href="../../resources/CSS/header.css?d" type="text/css" media="screen" title="no title"
+    <link rel="stylesheet" href="../../resources/CSS/header.css" type="text/css" media="screen" title="no title"
           charset="utf-8"/>
 </head>
 <body>

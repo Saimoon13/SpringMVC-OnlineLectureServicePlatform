@@ -37,11 +37,15 @@ public class MemberController {
     @RequestMapping(value="/login", method = RequestMethod.POST)
     private String memberLogin(@ModelAttribute("Member")Member m, HttpSession session){
 
+        System.out.println("login 페이지");
+
         logger.info("--- userID: " + m.getUserid());
         logger.info("--- userPasswordt: " + m.getPassword());
         logger.info("--- userEmail: " + m.getEmail());
 
         Member result = service.login(m);
+
+        System.out.println(result);
 
         if(result != null){
             session.setAttribute("loginResult",result);

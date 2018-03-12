@@ -1,21 +1,27 @@
 package controller;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(HomeController.class);
-
     @RequestMapping(value = "/")
     public String test(){
-        logger.info("아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아");
-
         return "index";
-
     }
+
+    @RequestMapping(value = "/loginForm")
+    public String loginForm(){
+        return "member/loginFail";
+    }
+
+    @RequestMapping(value = "/loginForm2")
+    public String loginForm2(){
+        return "member/loginFail2";
+    }
+
+
+
+
 }

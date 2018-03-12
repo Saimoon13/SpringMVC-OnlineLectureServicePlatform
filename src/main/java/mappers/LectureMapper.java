@@ -11,8 +11,8 @@ public interface LectureMapper {
 
     String SQL_INSERT_PAYMENT =
             "INSERT INTO payment(userid, lid, signdate, expiredate) VALUES(#{userid}, #{lid}, sysdate, sysdate + 30)";
-    String SQL_SELECT_LECTURE_DETAIL =
-            "SELECT * FROM lecturedetail WHERE lid = #{lid}";
+    String SQL_SELECT_PAYMENT_BY_LID =
+            "SELECT * FROM payment WHERE lid = #{lid}";
     String SQL_SELECT_PAYMENT_BY_ID =
             "SELECT * FROM payment WHERE userid = #{userid}";
     String SQL_SELECT_LECTURE_BY_lID =
@@ -21,8 +21,8 @@ public interface LectureMapper {
     @Insert(SQL_INSERT_PAYMENT)
     int insertPayment(Payment payment);
 
-    @Select(SQL_SELECT_LECTURE_DETAIL)
-    int selectLectureDetail(int lid);
+    @Select(SQL_SELECT_PAYMENT_BY_LID)
+    Payment selectPaymentByLid(String lid);
 
     @Select(SQL_SELECT_PAYMENT_BY_ID)
     List<Payment> selectPaymentById(String userid);

@@ -70,8 +70,7 @@ public class BoardController {
         return "redirect:/board/detail?bno=" + b.getBno();
     }
 
-    @RequestMapping(value = "/detail",
-            method = RequestMethod.GET)
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public void detail(int bno, Model model) {
         logger.info("detail() GET 호출");
 

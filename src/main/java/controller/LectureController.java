@@ -26,35 +26,31 @@ public class LectureController {
     }
 
     @RequestMapping(value = "/detail")
-    public String detail(HttpSession session, Model model){
+    public String detail(HttpSession session, Model model, String lid) {
+
+        System.out.println("lid: " + lid);
 
         String userid = ((Member)session.getAttribute("loginResult")).getUserid();
 
-        List<Payment> list = lectureService.selectPaymentById(userid);
+        Payment payment = lectureService.selectPaymentByLid(lid);
 
-        List<Payment> listfiltered = new ArrayList<>();
-        Date date = new Date();
+        Date date = new Date(); // 현재 시간을 위한 비교 대상
         int temp = 0;
-
-        // filter
-        for(Payment payment: list){
+        if(payment != null) {
             temp = date.compareTo(payment.getExpiredate());
-            if(temp < 0){
-                listfiltered.add(payment);
-            }
         }
 
-        // getLecture
         List<Lecture> lectureList = new ArrayList<>();
-        for(Payment payment: listfiltered){
+
+        if(temp < 0 && payment != null){
             lectureList.addAll(lectureService.selectLectureBylId(payment.getLid()));
+            model.addAttribute("lectureList",lectureList);
+            System.out.println(lectureList);
+            return "lecture/lecture";
+        } else {
+            return "member/nonAuth";
         }
 
-        model.addAttribute("lectureList",lectureList);
-
-        return "lecture/lecture";
     }
-
-
 
 }
