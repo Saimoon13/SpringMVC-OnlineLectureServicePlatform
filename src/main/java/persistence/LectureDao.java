@@ -11,4 +11,5 @@ public interface LectureDao {
     Payment selectPaymentByLid(String lid);
     List<Payment> selectPaymentById(String userid);
     List<Lecture> selectLectureBylId(String lid);
+    List<Lecture> selectLecturePreviewlist();
 }

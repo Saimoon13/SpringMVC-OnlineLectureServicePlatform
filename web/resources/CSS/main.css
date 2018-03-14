@@ -18,9 +18,18 @@
 
 .card {
     margin-top: 30px;
-    height: 500px;
+    height: 380px;
 }
 .card-img-top{
     width: 100%;
 }
 
+.container-fluid img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.container-fluid img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}

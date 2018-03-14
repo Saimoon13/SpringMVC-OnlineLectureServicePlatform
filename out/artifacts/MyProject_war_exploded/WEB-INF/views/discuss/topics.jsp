@@ -36,6 +36,7 @@
 
     </style>
 </head>
+
 <body>
 <header>
     <jsp:include page="../subPage/header.jsp">

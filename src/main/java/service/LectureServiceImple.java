@@ -33,4 +33,9 @@ public class LectureServiceImple implements LectureService {
         return lectureDao.selectLectureBylId(lid);
     }
 
+    @Override
+    public List<Lecture> selectLecturePreviewlist() {
+        return lectureDao.selectLecturePreviewlist();
+    }
+
 }

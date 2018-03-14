@@ -17,6 +17,8 @@ public interface LectureMapper {
             "SELECT * FROM payment WHERE userid = #{userid}";
     String SQL_SELECT_LECTURE_BY_lID =
             "SELECT * FROM Lecture WHERE lid = #{lid} order by lindex";
+    String SQL_SELECT_LECTURE_PREVIEWLIST =
+            "SELECT lid, lname, lecturer, lcategory, imagepath, lexplain FROM lecture WHERE lindex = 1";
 
     @Insert(SQL_INSERT_PAYMENT)
     int insertPayment(Payment payment);
@@ -29,4 +31,7 @@ public interface LectureMapper {
 
     @Select(SQL_SELECT_LECTURE_BY_lID)
     List<Lecture> selectLectureBylId(String lid);
+
+    @Select(SQL_SELECT_LECTURE_PREVIEWLIST)
+    List<Lecture> selectLecturePreviewlist();
 }

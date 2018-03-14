@@ -9,10 +9,11 @@ public class Lecture {
     private String adress;
     private String subname;
     private int lindex;
-    private String lexpain;
+    private String lexplain;
+    private String imagepath;
 
     public Lecture(){}
-    public Lecture(String lid, String lname, String lcategory, String lecturer, String adress, String subname, int lindex, String lexpain) {
+    public Lecture(String lid, String lname, String lcategory, String lecturer, String adress, String subname, int lindex, String lexplain, String imagepath) {
         this.lid = lid;
         this.lname = lname;
         this.lcategory = lcategory;
@@ -20,7 +21,8 @@ public class Lecture {
         this.adress = adress;
         this.subname = subname;
         this.lindex = lindex;
-        this.lexpain = lexpain;
+        this.lexplain = lexplain;
+        this.imagepath = imagepath;
     }
 
     public String getLid() {
@@ -44,8 +46,11 @@ public class Lecture {
     public int getLindex() {
         return lindex;
     }
-    public String getLexpain() {
-        return lexpain;
+    public String getLexplain() {
+        return lexplain;
+    }
+    public String getImagepath() {
+        return imagepath;
     }
 
     public void setLid(String lid) {
@@ -69,7 +74,10 @@ public class Lecture {
     public void setLindex(int lindex) {
         this.lindex = lindex;
     }
-    public void setLexpain(String lexpain) {
-        this.lexpain = lexpain;
+    public void setLexplain(String lexplain) {
+        this.lexplain = lexplain;
+    }
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 }

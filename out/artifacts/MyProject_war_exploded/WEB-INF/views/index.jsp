@@ -29,7 +29,7 @@
             crossorigin="anonymous"></script>
 
     <script defer src="../../resources/fontawesome-all.js"></script>
-    <link rel="stylesheet" href="../../resources/CSS/main.css?ver=1" type="text/css" media="screen" title="no title"
+    <link rel="stylesheet" href="../../resources/CSS/main.css?ver=4" type="text/css" media="screen" title="no title"
           charset="utf-8"/>
 
 </head>
@@ -61,22 +61,22 @@
             <div class="carousel-item active">
                 <img src="../../resources/image/la.jpg" alt="Los Angeles">
                 <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
+                    <h3>Gang dongwon</h3>
+                    <p>New HTML Lecutre Release!</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="../../resources/image/chicago.jpg" alt="Chicago">
                 <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
+                    <h3>Won bin</h3>
+                    <p>New Java Lecture Release!</p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="../../resources/image/ny.jpg" alt="New York">
                 <div class="carousel-caption">
-                    <h3>Los Angeles</h3>
-                    <p>We had such a great time in LA!</p>
+                    <h3>Namukkun</h3>
+                    <p>New Python Lecture Release!</p>
                 </div>
             </div>
         </div>
@@ -98,7 +98,7 @@
         <div class="col-md-4">
             <div class="container">
                 <div class="card">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                    <img class="card-img-top" src="../../resources/image/Main/basic.png">
                 </div>
                 <br>
             </div>
@@ -107,7 +107,7 @@
         <div class="col-md-4">
             <div class="container">
                 <div class="card">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                    <img class="card-img-top" src="../../resources/image/Main/advanced.png">
                 </div>
             </div>
         </div> <!-- end col -->
@@ -115,7 +115,7 @@
         <div class="col-md-4">
             <div class="container">
                 <div class="card">
-                    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                    <img class="card-img-top" src="../../resources/image/Main/superior.png">
                 </div>
             </div>
         </div> <!-- end col -->

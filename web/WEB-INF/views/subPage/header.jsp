@@ -30,10 +30,126 @@
     <link rel="stylesheet" href="../../resources/CSS/header.css" type="text/css" media="screen" title="no title"
           charset="utf-8"/>
 </head>
-<body>
+<body class="pt-5">
 
+<!-- 로그인 모달-->
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title text-center">Login</h4>
+            </div>
+
+            <!-- Modal body -->
+            <form action="/login" method="post" id="login">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="uid" class="cols-sm-2 control-label">Your ID</label>
+                        <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="fas fas fa-user"
+                                                                          aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="userid" id="uid" path="userid"
+                                   placeholder="Enter your Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="upw" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
+                                                                              aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" name="password" id="upw"
+                                       path="password" placeholder="Enter your Password"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <p class="mt-3 mr-3"><span id="loginForm">Please Fill the blank</span></p>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                id="loginConfirm">Login
+                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 회원가입 모달 -->
+<div class="modal fade" id="regiModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title text-center">Registration</h4>
+            </div>
+            <form action="/signup" method="POST" id="signup">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="id" class="cols-sm-2 control-label">Your ID</label>
+                        <div class="input-group mb-3">
+                                        <span class="input-group-text"><i class="fas fas fa-user"
+                                                                          aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" name="userid" id="id" path="userid"
+                                   placeholder="Enter your Name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pw" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
+                                                                              aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" name="password" id="pw"
+                                       path="password" placeholder="Enter your Password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="repw" class="cols-sm-2 control-label">Confirm Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
+                                                                              aria-hidden="true"></i></span>
+                                <input type="password" class="form-control" name="confirm" id="repw"
+                                       placeholder="Confirm your Password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group mb-3">
+                                            <span class="input-group-text"><i class="fa fa-envelope fa"
+                                                                              aria-hidden="true"></i></span>
+                                <input type="text" class="form-control" name="email" id="email"
+                                       path="email" placeholder="Enter your Email"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <p class="mt-3 mr-3"><span id="signupForm">ddddddddddddddddddd</span></p>
+                    <input type="submit" class="btn btn-primary" data-dismiss="modal"
+                           id="signupConfirm" value="Register">
+                    </input>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div id="app" class="container">
         <a class="navbar-brand" href="/">Naming</a>
 
@@ -103,54 +219,6 @@
                        <%--href="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>--%>
                 <%--</li>--%>
 
-                <!-- 로그인 모달-->
-                <div class="modal fade" id="loginModal">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title text-center">Login</h4>
-                            </div>
-
-                            <!-- Modal body -->
-                            <form action="/login" method="post" id="login">
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="uid" class="cols-sm-2 control-label">Your ID</label>
-                                        <div class="input-group mb-3">
-                                        <span class="input-group-text"><i class="fas fas fa-user"
-                                                                          aria-hidden="true"></i></span>
-                                            <input type="text" class="form-control" name="userid" id="uid" path="userid"
-                                                   placeholder="Enter your Name"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="upw" class="cols-sm-2 control-label">Password</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group mb-3">
-                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
-                                                                              aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control" name="password" id="upw"
-                                                       path="password" placeholder="Enter your Password"/>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <p class="mt-3 mr-3"><span id="loginForm">ddddddddddddddddddd</span></p>
-                                        <button type="button" class="btn btn-primary" data-dismiss="modal"
-                                                id="loginConfirm">Login
-                                        </button>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- 회원가입 -->
                 <%
@@ -172,74 +240,7 @@
                         <%--<i class="fas fa-sign-out-alt"></i> Register</a>--%>
                 <%--</li>--%>
 
-                <!-- 회원가입 모달 -->
-                <div class="modal fade" id="regiModal">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
 
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title text-center">Registration</h4>
-                            </div>
-                            <form action="/signup" method="POST" id="signup">
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                        <label for="id" class="cols-sm-2 control-label">Your ID</label>
-                                        <div class="input-group mb-3">
-                                        <span class="input-group-text"><i class="fas fas fa-user"
-                                                                          aria-hidden="true"></i></span>
-                                            <input type="text" class="form-control" name="userid" id="id" path="userid"
-                                                   placeholder="Enter your Name"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="pw" class="cols-sm-2 control-label">Password</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group mb-3">
-                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
-                                                                              aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control" name="password" id="pw"
-                                                       path="password" placeholder="Enter your Password"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="repw" class="cols-sm-2 control-label">Confirm Password</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group mb-3">
-                                            <span class="input-group-text"><i class="fa fa-lock fa-lg"
-                                                                              aria-hidden="true"></i></span>
-                                                <input type="password" class="form-control" name="confirm" id="repw"
-                                                       placeholder="Confirm your Password"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email" class="cols-sm-2 control-label">Your Email</label>
-                                        <div class="cols-sm-10">
-                                            <div class="input-group mb-3">
-                                            <span class="input-group-text"><i class="fa fa-envelope fa"
-                                                                              aria-hidden="true"></i></span>
-                                                <input type="text" class="form-control" name="email" id="email"
-                                                       path="email" placeholder="Enter your Email"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <p class="mt-3 mr-3"><span id="signupForm">ddddddddddddddddddd</span></p>
-                                    <input type="submit" class="btn btn-primary" data-dismiss="modal"
-                                           id="signupConfirm" value="Register">
-                                    </input>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </ul>
         </div>
     </div>

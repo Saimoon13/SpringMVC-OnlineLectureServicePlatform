@@ -22,6 +22,15 @@ public class LectureController {
 
     @RequestMapping(value = "/")
     public String preview(Model model){
+
+        List<Lecture> list = lectureService.selectLecturePreviewlist();
+
+        for(Lecture lecture: list) {
+            System.out.println(lecture.getLexplain());
+        }
+
+        model.addAttribute(list);
+
         return "lecture/preview";
     }
 
@@ -45,7 +54,11 @@ public class LectureController {
         if(temp < 0 && payment != null){
             lectureList.addAll(lectureService.selectLectureBylId(payment.getLid()));
             model.addAttribute("lectureList",lectureList);
-            System.out.println(lectureList);
+
+            for (Lecture lecture:lectureList) {
+                System.out.println(lecture.getLindex()+"강");
+            }
+
             return "lecture/lecture";
         } else {
             return "member/nonAuth";

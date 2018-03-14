@@ -33,4 +33,9 @@ public class LectureDaoImple implements LectureDao {
     public List<Lecture> selectLectureBylId(String lid) {
         return mapper.selectLectureBylId(lid);
     }
+
+    @Override
+    public List<Lecture> selectLecturePreviewlist() {
+        return mapper.selectLecturePreviewlist();
+    }
 }
