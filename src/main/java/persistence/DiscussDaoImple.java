@@ -80,4 +80,9 @@ public class DiscussDaoImple implements DiscussDao {
         return mapper.selectLastTnumber(writer, topicdate);
     }
 
+    @Override
+    public int topicTotalCount() {
+        return mapper.topicTotalCount();
+    }
+
 }

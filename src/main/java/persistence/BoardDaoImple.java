@@ -25,7 +25,7 @@ public class BoardDaoImple implements BoardDao {
 	@Override
 	public List<Board> read() {
 		
-		return session.selectList(NAMESPACE + ".selectAllcate");
+		return session.selectList(NAMESPACE + ".selectAll");
 	}
 
 	@Override

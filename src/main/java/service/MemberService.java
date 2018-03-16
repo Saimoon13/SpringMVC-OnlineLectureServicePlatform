@@ -13,5 +13,7 @@ public interface MemberService {
 	int delete(String userid);
 	Member login(Member m);
 	int addOnePostNum(String userid);
+	int memberTotalCount();
+	List<Member> newsetMember();
 
 } //end interface MemberService

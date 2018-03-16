@@ -79,4 +79,9 @@ public class DiscussServiceimple implements DiscussService {
         return discussDao.selectLastTnumber(writer, topicdate);
     }
 
+    @Override
+    public int topicTotalCount() {
+        return discussDao.topicTotalCount();
+    }
+
 }

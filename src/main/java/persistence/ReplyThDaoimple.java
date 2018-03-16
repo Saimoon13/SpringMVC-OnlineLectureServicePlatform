@@ -51,4 +51,9 @@ public class ReplyThDaoimple implements ReplyThDao {
     public int updateRlyCount(long tnumber) {
         return mapper.updateRlyCount(tnumber);
     }
+
+    @Override
+    public int replyThreadTotalCount() {
+        return mapper.replyThreadTotalCount();
+    }
 }

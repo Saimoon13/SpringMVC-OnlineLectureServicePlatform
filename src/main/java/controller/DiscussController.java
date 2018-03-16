@@ -14,6 +14,7 @@ import pageutil.PageNumberMaker;
 import pageutil.PaginationCriteria;
 import service.DiscussService;
 import service.MemberService;
+import service.ReplyThService;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
@@ -25,14 +26,26 @@ public class DiscussController {
 
     @Autowired DiscussService discussService;
     @Autowired MemberService memberService;
+    @Autowired ReplyThService replyThService;
 
     @RequestMapping(value = "/")
-    public String overview(Model model){
+    public String overview(HttpSession session, Model model){
         List<Discuss> list = discussService.selectAll();
+        int memberTotalCount = memberService.memberTotalCount();
+        int topicTotalCount = discussService.topicTotalCount();
+        int replythreadTotalCount = replyThService.replyThreadTotalCount();
+        List<Member> newsetMember = memberService.newsetMember();
+        System.out.println(newsetMember+"새맴버");
 
-        Gson gson = new Gson();
+        if(session.getAttribute("loginResult") != null){
+            model.addAttribute("userid" ,((Member)session.getAttribute("loginResult")).getUserid());
+        }
 
         model.addAttribute("lectureList",list);
+        model.addAttribute("memberTotalCount",memberTotalCount);
+        model.addAttribute("topicTotalCount",topicTotalCount);
+        model.addAttribute("replythreadTotalCount",replythreadTotalCount);
+        model.addAttribute("newsetMember",newsetMember);
 
         return "discuss/overview";
     }

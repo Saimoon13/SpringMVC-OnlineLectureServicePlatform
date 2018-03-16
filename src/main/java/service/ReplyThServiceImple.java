@@ -48,6 +48,11 @@ public class ReplyThServiceImple implements ReplyThService {
     }
 
     @Override
+    public int replyThreadTotalCount() {
+        return replyThDao.replyThreadTotalCount();
+    }
+
+    @Override
     public int replyCountOUT(int replynumber) {
         return replyThDao.replyCountOUT(replynumber);
     }

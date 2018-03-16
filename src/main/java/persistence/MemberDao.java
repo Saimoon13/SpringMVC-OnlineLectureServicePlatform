@@ -13,5 +13,7 @@ public interface MemberDao {
 	int delete(String userid);
 	Member login (Member m);
 	int addOnePostNum(String userid);
+	int totalMemberCount();
+	List<Member> newsetMember();
 
 } // end interface MemberDao

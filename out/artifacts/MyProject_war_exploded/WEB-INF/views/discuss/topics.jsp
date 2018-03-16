@@ -151,13 +151,13 @@
     <div class="mb-3 clearfix">
         <nav aria-label="Navigate post pages" class="float-lg-right">
             <ul class="pagination pagination-sm mb-lg-0">
-                <li class="page-item"><a href="#0" class="page-link">1<span class="sr-only">(current)</span></a></li>
-                <li class="page-item"><a href="#0" class="page-link">2</a></li>
-                <li class="page-item"><a href="#0" class="page-link">3</a></li>
-                <li class="page-item"><a href="#0" class="page-link">4</a></li>
-                <li class="page-item"><a href="#0" class="page-link">5</a></li>
-                <li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>
-                <li class="page-item"><a href="#0" class="page-link">Next</a></li>
+                <%--<li class="page-item"><a href="#0" class="page-link">1<span class="sr-only">(current)</span></a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">2</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">3</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">4</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">5</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">Next</a></li>--%>
                 <c:if test="${pageMaker.prev}">
                     <!-- 이전 버튼은 (startPage - 1)로 이동 -->
                     <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
@@ -209,7 +209,7 @@
                     "&lcategory=" + lcategory + "&lid=" + lid + "\" class=\"btn btn-lg btn-primary\">New topic</a>");
         }
     %>
-    <%--<a href="/Discuss/newtopic?lname=${lname}&lcategory=${lcategory}&lid=${lid}" class="btn btn-lg btn-primary">New topic</a>--%>
+
 </div>
 <footer class="small bg-dark text-white">
     <div class="container py-4">

@@ -18,8 +18,7 @@
     INSERT INTO ${tblMember}(${colUserid}, ${colPassword}, ${colEmail}, regdate)
     VALUES (#{userid}, #{password}, #{email}, sysdate)
     </insert>
-    
-    
+
     <update id="update">
     UPDATE ${tblMember}
     SET ${colPassword} = #{password}, ${colEmail} = #{email}
@@ -38,5 +37,13 @@
     <update id="addOnePostNum">
         UPDATE ${tblMember} set postnum = postnum + 1 WHERE ${colUserid} = #{userid}
     </update>
+
+    <select id="totalMemberCount" resultType="Integer">
+        SELECT count(*) cnt FROM ${tblMember}
+    </select>
+
+    <select id="newsetMember" resultType="Member">
+        SELECT * FROM ${tblMember} WHERE regdate BETWEEN TRUNC(sysdate) - 3 AND TRUNC(sysdate);
+    </select>
 
 </mapper>

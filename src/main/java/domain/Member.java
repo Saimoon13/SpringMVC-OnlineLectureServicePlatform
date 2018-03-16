@@ -10,16 +10,18 @@ public class Member {
 	private int postnum;
 
 	public Member() {}
-	public Member(String userid, String password, String email) {
-		this.userid = userid;
-		this.password = password;
-		this.email = email;
-	}
 	public Member(String userid, String password, String email, Date regdate) {
 		this.userid = userid;
 		this.password = password;
 		this.email = email;
 		this.regdate = regdate;
+	}
+	public Member(String userid, String password, String email, Date regdate, int postnum) {
+		this.userid = userid;
+		this.password = password;
+		this.email = email;
+		this.regdate = regdate;
+		this.postnum = postnum;
 	}
 
 	public String getUserid() {
@@ -55,14 +57,6 @@ public class Member {
 	}
 	public void setPostnum(int postnum) {
 		this.postnum = postnum;
-	}
-
-	@Override
-	public String toString() {
-		String member = String.format(
-				"Member {userid: %s, password: %s, email: $s}",
-				userid, password, email);
-		return member;
 	}
 
 }

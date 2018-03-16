@@ -22,4 +22,5 @@ public interface DiscussService {
     int searchCountTopicsByLid(String searchType, String searchKeyword, String lid);
     int updateTopicCount(String lid);
     int selectLastTnumber(String writer, Date topicdate);
+    int topicTotalCount();
 }

@@ -13,11 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/replies")
-// REST URL과 HTTP 요청 방식
-// /replies/all/{bno} + GET ==> 해당 bno의 모든 댓글 검색
-// /replies + POST ==> 새로운 댓글 입력
-// /replies/{rno} + PUT ==> 해당 rno 댓글의 내용(rtext)을 수정
-// /replies/{rno} + DELETE ==> 해당 rno 댓글을 테이블에서 삭제
 public class ReplyRestController {
 	private static final Logger logger =
 			LoggerFactory.getLogger(ReplyRestController.class);

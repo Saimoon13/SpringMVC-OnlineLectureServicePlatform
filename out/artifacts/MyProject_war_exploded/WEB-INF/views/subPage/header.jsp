@@ -209,7 +209,7 @@
                                 "</li>");
                     } else {
                         out.print("<li class=\"nav-item\">\n" +
-                                "<a class=\"nav-link\"nav-item\">\n" +
+                                "<a id=\"useridResult\" class=\"nav-link\"nav-item\">" +
                                 "Welcome! " + member.getUserid() +"</a>\n" +
                                 "</li>");
                     }
@@ -247,11 +247,21 @@
 </nav>
 
 <script>
-
     $(document).ready(function () {
-
-//        로그인
-
+        var userid = $('#useridResult').html();
+        console.log(userid);
+        if(userid !== undefined){
+            userid = userid.replace("Welcome! ","");
+            var socket = new WebSocket("ws://localhost:8282/webSocketServer");
+            socket.onopen = function (event) {
+                var message = {
+                    type: 0,
+                    username: userid
+                };
+                socket.send(JSON.stringify(message));
+                console.log(userid + " : header 메시지");
+            }
+        }
         var signupConfirm = $('#loginConfirm'),
             uid = $('#uid'),
             upw = $('#upw');

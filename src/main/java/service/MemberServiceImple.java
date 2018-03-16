@@ -56,4 +56,14 @@ public class MemberServiceImple implements MemberService {
 		return memberDao.addOnePostNum(userid);
 	}
 
+	@Override
+	public int memberTotalCount() {
+		return memberDao.totalMemberCount();
+	}
+
+	@Override
+	public List<Member> newsetMember() {
+		return memberDao.newsetMember();
+	}
+
 } // end class MemberServiceImple

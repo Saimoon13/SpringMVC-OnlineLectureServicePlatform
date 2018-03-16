@@ -59,5 +59,15 @@ public class MemberDaoImple implements MemberDao {
 		return session.update(NAMESPACE+".addOnePostNum", userid);
 	}
 
+	@Override
+	public int totalMemberCount() {
+		return session.selectOne(NAMESPACE+".totalMemberCount");
+	}
+
+	@Override
+	public List<Member> newsetMember() {
+		return session.selectList(NAMESPACE + ".newsetMember");
+	}
+
 
 } // end class MemberDaoImple

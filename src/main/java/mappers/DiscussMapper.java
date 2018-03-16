@@ -44,6 +44,8 @@ public interface DiscussMapper {
             "UPDATE Discuss SET topiccount = topiccount + 1 WHERE lid = #{lid}";
     String SQL_SELECT_LAST_TNUMBER =
             "SELECT tnumber FROM topics WHERE writer = #{writer} and topicdate = #{topicdate}";
+    String SQL_TOPIC_TOTAL_COUNT =
+            "SElect count(*) FROM topics";
 
     @Select(SQL_GETALLCATE)
     List<Discuss> selectAllcate();
@@ -84,4 +86,8 @@ public interface DiscussMapper {
 
     @Select(SQL_SELECT_LAST_TNUMBER)
     int selectLastTnumber(@Param("writer") String writer,@Param("topicdate") Date topicdate);
+
+    @Select(SQL_TOPIC_TOTAL_COUNT)
+    int topicTotalCount();
+
 }

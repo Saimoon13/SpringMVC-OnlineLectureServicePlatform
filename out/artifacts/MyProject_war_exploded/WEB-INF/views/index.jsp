@@ -29,7 +29,7 @@
             crossorigin="anonymous"></script>
 
     <script defer src="../../resources/fontawesome-all.js"></script>
-    <link rel="stylesheet" href="../../resources/CSS/main.css?ver=4" type="text/css" media="screen" title="no title"
+    <link rel="stylesheet" href="../../resources/CSS/main.css?ver=5" type="text/css" media="screen" title="no title"
           charset="utf-8"/>
 
 </head>

@@ -24,6 +24,8 @@ public interface ReplyThMapper {
             "UPDATE topics SET lastrlyname = #{lastrlyname}, lastrlydate = sysdate WHERE tnumber = #{tnumber}";
     String SQL_UPDATE_RLYCOUNT =
             "UPDATE Discuss SET rlycount  = rlycount + 1 WHERE lid = (SELECT lecturekey FROM topics WHERE tnumber = #{tnumber})";
+    String SQL_REPLYTHREAD_TOTAL_COUNT =
+            "SELECT count(*) FROM replythread";
 
     @Select(SELECT_BY_TNUMBER)
     List<ReplyThread> selectByTnumber(int tumber);
@@ -49,4 +51,6 @@ public interface ReplyThMapper {
     @Update(SQL_UPDATE_RLYCOUNT)
     int updateRlyCount(long tnumber);
 
+    @Select(SQL_REPLYTHREAD_TOTAL_COUNT)
+    int replyThreadTotalCount();
 }

@@ -22,7 +22,7 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
-    <context:component-scan base-package="service, persistence">
+    <context:component-scan base-package="service, persistence, socketService">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 

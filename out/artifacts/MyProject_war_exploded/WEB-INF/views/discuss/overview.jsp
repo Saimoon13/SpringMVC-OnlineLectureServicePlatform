@@ -19,48 +19,17 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../resources/CSS/discuss-overview.css?df" type="text/css" media="screen"
+    <link rel="stylesheet" href="../../../resources/CSS/discuss-overview.css?sf" type="text/css" media="screen"
           title="no title"
           charset="utf-8"/>
 
     <title>Discuss-Board overview</title>
 
     <style type="text/css">
-        .forum-col {
-            min-width: 16em;
-        }
-
-        .last-post-col {
-            min-width: 12em;
-        }
-
-        .tr-th-1 {
-            width: 70%;
-        }
-
-        .tr-th-2 {
-            width: 5%;
-        }
-
-        .tr-th-3 {
-            width: 5%;
-        }
-        .tr-th-4 {
-            width: 20%;
-        }
 
     </style>
 </head>
 <body>
-<%--<nav class="navbar navbar-dark bg-dark">--%>
-<%--<div class="container">--%>
-<%--<h1><a href="0" class="navbar-brand">Discuss board</a></h1>--%>
-<%--<form class="form-inline">--%>
-<%--<input type="text" class="form-control mr-3 mb-2 mb-sm-0" placeholder="Search">--%>
-<%--<button type="submit" class="btn btn-primary">Search</button>--%>
-<%--</form>--%>
-<%--</div>--%>
-<%--</nav>--%>
 <header>
     <jsp:include page="../subPage/header.jsp">
         <jsp:param name="before" value="third"></jsp:param>
@@ -92,8 +61,9 @@
                         <c:when test="${Discuss.lcategory eq 'basic'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
-                                                           class="text-uppercase">${Discuss.lname}</a></h3>
+                                    <h3 class="h5 mb-0"><a
+                                            href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
+                                            class="text-uppercase">${Discuss.lname}</a></h3>
                                     <p class="mb-0">${Discuss.lexplain}</p>
                                 </td>
                                 <td>
@@ -103,8 +73,10 @@
                                     <div>${Discuss.rlycount}</div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a></h4>
+                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}"
+                                                    pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a>
+                                    </h4>
                                     <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
                                     </c:if>
@@ -141,8 +113,9 @@
                         <c:when test="${Discuss.lcategory eq 'advanced'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
-                                                           class="text-uppercase">${Discuss.lname}</a></h3>
+                                    <h3 class="h5 mb-0"><a
+                                            href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
+                                            class="text-uppercase">${Discuss.lname}</a></h3>
                                     <p class="mb-0">${Discuss.lexplain}</p>
                                 </td>
                                 <td>
@@ -152,10 +125,12 @@
                                     <div>${Discuss.rlycount}</div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a></h4>
+                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}"
+                                                    pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a>
+                                    </h4>
                                     <c:if test="${empty Discuss.lastwriter}">
-                                    <div>Empty</div>
+                                        <div>Empty</div>
                                     </c:if>
                                     <c:if test="${not empty Discuss.lastwriter}">
                                         <div>by <a href="#0"><span>${Discuss.lastwriter}</span></a></div>
@@ -189,8 +164,9 @@
                         <c:when test="${Discuss.lcategory eq 'superior'}">
                             <tr>
                                 <td>
-                                    <h3 class="h5 mb-0"><a href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
-                                                           class="text-uppercase">${Discuss.lname}</a></h3>
+                                    <h3 class="h5 mb-0"><a
+                                            href="/discuss/topics?lid=${Discuss.lid}&lname=${Discuss.lname}&lcategory=${Discuss.lcategory}"
+                                            class="text-uppercase">${Discuss.lname}</a></h3>
                                     <p class="mb-0">${Discuss.lexplain}</p>
                                 </td>
                                 <td>
@@ -200,8 +176,10 @@
                                     <div>${Discuss.rlycount}</div>
                                 </td>
                                 <td>
-                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}" pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a></h4>
+                                    <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}"
+                                                    pattern="yyyy/MM/dd HH:mm:ss"/>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a>
+                                    </h4>
                                     <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
                                     </c:if>
@@ -228,53 +206,54 @@
                         <%--576(sm)이상일 경우 2개(6+6) 1200(xl)이상일경우 12--%>
                         <div class="card mb-3 mb-sm-0 mb-xl-3">
                             <div class="card-body">
-                                <h2 class="h4 card-title">members online</h2>
-                                <ul class="list-unstyled mb-0">
-                                    <li><a href="#0">forum member name</a></li>
-                                    <li><a href="#0">forum member name</a></li>
-                                    <li><a href="#0">forum member name</a></li>
-                                    <li><a href="#0">forum member name</a></li>
-                                    <li><a href="#0">forum member name</a></li>
-                                    <li><a href="#0">forum member name</a></li>
-                                    <li><a href="#0">forum member name</a></li>
-                                </ul>
+                                <h2 class="h4 card-title">Site online</h2>
+                                <%
+                                    if (session.getAttribute("loginResult") != null) {
+                                        out.print("<ul class=\"list-unstyled mb-0\" id=\"usersInfo\"></ul>");
+                                    } else {
+                                        out.print("<ul class=\"list-unstyled mb-0\">Please, Login for OnlineList.</ul>");
+                                    }
+                                %>
+                                <%--<ul class="list-unstyled mb-0" id="usersInfo"></ul>--%>
                             </div>
                             <div class="card-footer">
                                 <dl class="row mb-0">
-                                    <dt class="col-8">total:</dt>
-                                    <dt class="col-4 mb-0">10</dt>
+                                    <dt class="col-8">Total online:</dt>
+                                    <dt class="col-4 mb-0" id="totalOnline">10</dt>
                                 </dl>
-                                <dl class="row mb-0">
-                                    <dt class="col-8">total:</dt>
-                                    <dt class="col-4 mb-0">7</dt>
-                                </dl>
-                                <dl class="row mb-0">
-                                    <dt class="col-8">total:</dt>
-                                    <dt class="col-4 mb-0">3</dt>
-                                </dl>
+                                <%--<dl class="row mb-0">--%>
+                                <%--<dt class="col-8">total:</dt>--%>
+                                <%--<dt class="col-4 mb-0">7</dt>--%>
+                                <%--</dl>--%>
+                                <%--<dl class="row mb-0">--%>
+                                <%--<dt class="col-8">total:</dt>--%>
+                                <%--<dt class="col-4 mb-0">3</dt>--%>
+                                <%--</dl>--%>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6 col-xl-12">
                         <div class="card">
                             <div class="card-body">
-                                <h2 class="h4 card-title">forum statistics</h2>
+                                <h2 class="h4 card-title">Forum statistics</h2>
                                 <dl class="row mb-0">
-                                    <dt class="col-8">total forums:</dt>
-                                    <dt class="col-4 mb-0">15</dt>
+                                    <dt class="col-8">forums:</dt>
+                                    <dt class="col-4 mb-0">${topicTotalCount}</dt>
                                 </dl>
                                 <dl class="row mb-0">
-                                    <dt class="col-8">total topics:</dt>
-                                    <dt class="col-4 mb-0">1927</dt>
+                                    <dt class="col-8">replies thread:</dt>
+                                    <dt class="col-4 mb-0">${replythreadTotalCount}</dt>
                                 </dl>
                                 <dl class="row mb-0">
                                     <dt class="col-8">total members:</dt>
-                                    <dt class="col-4 mb-0">581</dt>
+                                    <dt class="col-4 mb-0">${memberTotalCount}</dt>
                                 </dl>
                             </div>
                             <div class="card-footer">
                                 <div>newset member:</div>
-                                <div><a href="#0">forum member name</a></div>
+                                <c:forEach var="Member" items="${newsetMember}">
+                                    <div><a href="#0">${Member}</a></div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
@@ -296,6 +275,58 @@
 
 <script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var userinfo = $("#usersInfo"); // 유저 목록
+        var currentUser = $("#userid a").html();
+
+        function Socket(url, callback) {
+            var socket = new WebSocket(url);
+
+            socket.onopen = function (event) {
+                var message = {
+                    type: 0,
+                    username: "justCallForList"
+                };
+                console.log(currentUser + " : overview 메시지");
+                socket.send(JSON.stringify(message));
+            }
+
+            socket.onmessage = function (event) {
+                callback(event);
+            }
+
+            return socket;
+        }
+
+        var socket = new Socket("ws://localhost:8282/webSocketServer", messageHandle);
+
+        function messageHandle(event) {
+            var jsonStr = event.data;
+            var data = JSON.parse(jsonStr);
+
+            switch (data.type) {
+                case 3: // json 타입이 3일 때
+                    var usernames = data.usernames;
+                    var userinfo = $("#usersInfo");
+                    userinfo.empty();
+                    $('#totalOnline').html(usernames.length);
+                    for (var i = 0, len = usernames.length; i < len; i++) {
+                        var username = $("<li><a href=\"#0\"></a></li>");
+                        username.text(usernames[i]);
+                        userinfo.append(username);
+                    }
+
+                    break;
+                case 4: // json 타입이 4일 때 사용자 정보 삭제
+                    userinfo.find(":contains(" + data.username + ")").remove();
+            }
+        }
+
+    })
+</script>
 
 </body>
 </html>
