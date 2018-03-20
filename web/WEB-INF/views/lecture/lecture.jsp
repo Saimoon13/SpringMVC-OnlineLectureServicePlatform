@@ -50,9 +50,7 @@
             </c:forEach>
         </ul>
     </div>
-    <!-- /#sidebar-wrapper -->
 
-    <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <a href="#menu-toggle" class="btn btn-secondary mb-3" id="menu-toggle"><i class="fas fa-align-justify"></i></a>
@@ -69,10 +67,10 @@
 
         </div>
     </div>
-    <!-- /#page-content-wrapper -->
 
 </div>
-<!-- /#wrapper -->
+
+<jsp:include page="../subPage/footer.jsp"/>
 
 <script>
     $(document).ready(function () {

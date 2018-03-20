@@ -26,7 +26,6 @@ public class ReplyThRestController {
 
     @RequestMapping(value = "/all/{tnumber}", method = RequestMethod.GET)
     public ResponseEntity<List<ReplyThread>> readReplies(@PathVariable(name = "tnumber") int tnumber) {
-
         List<ReplyThread> list = replyThService.selectByTnumber(tnumber);
 
         ResponseEntity<List<ReplyThread>> entity = null;
@@ -35,8 +34,6 @@ public class ReplyThRestController {
         } else {
             entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-
-        System.out.println(entity);
 
      return entity;
     }
@@ -72,8 +69,6 @@ public class ReplyThRestController {
     @RequestMapping(value = "/{replynumber}", method = RequestMethod.PUT)
     public ResponseEntity<String> updateReply(@PathVariable(name = "replynumber") int replynumber, @RequestBody ReplyThread r) {
 
-        System.out.println("replynumber: " + replynumber + "ReplyThread.content: " + r.getRcontent());
-
         r.setReplynumber(replynumber);
         int result = replyThService.replyUpdate(r);
 
@@ -99,7 +94,6 @@ public class ReplyThRestController {
         } else {
             entity = new ResponseEntity<>("fail", HttpStatus.BAD_REQUEST);
         }
-
         return entity;
     }
 }

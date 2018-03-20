@@ -1,11 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="domain.Discuss" %><%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 2018-02-21
-  Time: 오전 9:39
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="domain.Discuss" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -14,7 +8,6 @@
 <head>
 
     <meta charset="utf-8">
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit:no">--%>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -36,7 +29,6 @@
     </jsp:include>
 </header>
 
-<%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
         <span class="breadcrumb-item active">Discuss</span>
@@ -53,9 +45,7 @@
                     <th scope="col" class="last-post-col tr-th-4">last post</th>
                 </tr>
                 </thead>
-
                 <tbody>
-
                 <c:forEach var="Discuss" items="${lectureList}">
                     <c:choose>
                         <c:when test="${Discuss.lcategory eq 'basic'}">
@@ -87,15 +77,10 @@
                                 </td>
                             </tr>
                         </c:when>
-                        <c:otherwise>
-
-                        </c:otherwise>
                     </c:choose>
                 </c:forEach>
-
                 </tbody>
             </table>
-
             <h2 class="h4 text-white bg-info mb-0 p-4 rounded-top mt-3">Advanced</h2>
             <table class="table table-striped table-bordered table-responsive mb-xl-0">
                 <thead class="thead-light">
@@ -139,9 +124,6 @@
                                 </td>
                             </tr>
                         </c:when>
-                        <c:otherwise>
-
-                        </c:otherwise>
                     </c:choose>
                 </c:forEach>
                 </tbody>
@@ -190,9 +172,6 @@
                                 </td>
                             </tr>
                         </c:when>
-                        <c:otherwise>
-
-                        </c:otherwise>
                     </c:choose>
                 </c:forEach>
 
@@ -214,21 +193,12 @@
                                         out.print("<ul class=\"list-unstyled mb-0\">Please, Login for OnlineList.</ul>");
                                     }
                                 %>
-                                <%--<ul class="list-unstyled mb-0" id="usersInfo"></ul>--%>
                             </div>
                             <div class="card-footer">
                                 <dl class="row mb-0">
                                     <dt class="col-8">Total online:</dt>
                                     <dt class="col-4 mb-0" id="totalOnline">10</dt>
                                 </dl>
-                                <%--<dl class="row mb-0">--%>
-                                <%--<dt class="col-8">total:</dt>--%>
-                                <%--<dt class="col-4 mb-0">7</dt>--%>
-                                <%--</dl>--%>
-                                <%--<dl class="row mb-0">--%>
-                                <%--<dt class="col-8">total:</dt>--%>
-                                <%--<dt class="col-4 mb-0">3</dt>--%>
-                                <%--</dl>--%>
                             </div>
                         </div>
                     </div>
@@ -263,15 +233,8 @@
     </div>
 
 </div>
-<footer class="small bg-dark text-white">
-    <div class="container py-4">
-        <ul class="list-inline mb-0 text-center">
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-            <li class="list-inline-item">All rights reserved.</li>
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-        </ul>
-    </div>
-</footer>
+
+<jsp:include page="../subPage/footer.jsp"/>
 
 <script src="../../../resources/lib/jquery-3.3.1.min.js"></script>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>
@@ -290,14 +253,12 @@
                     type: 0,
                     username: "justCallForList"
                 };
-                console.log(currentUser + " : overview 메시지");
                 socket.send(JSON.stringify(message));
-            }
+            };
 
             socket.onmessage = function (event) {
                 callback(event);
-            }
-
+            };
             return socket;
         }
 
@@ -308,7 +269,7 @@
             var data = JSON.parse(jsonStr);
 
             switch (data.type) {
-                case 3: // json 타입이 3일 때
+                case 3:
                     var usernames = data.usernames;
                     var userinfo = $("#usersInfo");
                     userinfo.empty();
@@ -318,13 +279,11 @@
                         username.text(usernames[i]);
                         userinfo.append(username);
                     }
-
                     break;
-                case 4: // json 타입이 4일 때 사용자 정보 삭제
+                case 4:
                     userinfo.find(":contains(" + data.username + ")").remove();
             }
         }
-
     })
 </script>
 

@@ -7,60 +7,105 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86e953fa-a38a-4376-9a2e-7a8edc87d7b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/socketService/NameViaScket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/socketService/OnlineMembers.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/socketService/WebSocketConfig.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/controller/onlineController.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/controller/ReplyRestController.class" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/controller/ReplyRestController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/domain/Member.class" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/domain/Member.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/MemberDao.class" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/MemberDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/MemberDaoImple.class" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/MemberDaoImple.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/MemberService.class" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/MemberService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/MemberServiceImple.class" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/MemberServiceImple.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controller/ReplyRestController.class" afterPath="$PROJECT_DIR$/target/classes/controller/ReplyRestController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/domain/Member.class" afterPath="$PROJECT_DIR$/target/classes/domain/Member.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/BoardDaoImple.class" afterPath="$PROJECT_DIR$/target/classes/persistence/BoardDaoImple.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/MemberDao.class" afterPath="$PROJECT_DIR$/target/classes/persistence/MemberDao.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/image/Bootstrap NewRelease.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/image/HTMLNew release.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/resources/image/c++.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_8_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_12.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/controller/BoardController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/controller/ReplyRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/domain/Board.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/mappers/board-mapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/mappers/reply-mapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/BoardDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/BoardDaoImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/ReplyDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/persistence/ReplyDaoImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/BoardService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/BoardServiceImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/ReplyService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/service/ReplyServiceImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/controller/BoardController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/controller/ReplyRestController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/domain/Board.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/domain/Reply.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/mappers/ReplyMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/persistence/BoardDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/persistence/BoardDaoImple.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/persistence/ReplyDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/persistence/ReplyDaoImple.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/service/BoardService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/service/BoardServiceImple.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/service/ReplyService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/service/ReplyServiceImple.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mappers/board-mapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/mappers/reply-mapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/controller/BoardController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/controller/ReplyRestController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/domain/Board.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/domain/Reply.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mappers/ReplyMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mappers/board-mapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/mappers/reply-mapper.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/persistence/BoardDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/persistence/BoardDaoImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/persistence/ReplyDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/persistence/ReplyDaoImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/BoardService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/BoardServiceImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/ReplyService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/service/ReplyServiceImple.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/detail.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/list.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/register.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/search.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/board/update.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/category.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/resources/image/chicago.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/resources/image/la.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/resources/image/ny.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pageutil/PageNumberMaker.class" afterPath="$PROJECT_DIR$/target/classes/pageutil/PageNumberMaker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pageutil/PaginationCriteria.class" afterPath="$PROJECT_DIR$/target/classes/pageutil/PaginationCriteria.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/MemberDaoImple.class" afterPath="$PROJECT_DIR$/target/classes/persistence/MemberDaoImple.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/service/MemberService.class" afterPath="$PROJECT_DIR$/target/classes/service/MemberService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/service/MemberServiceImple.class" afterPath="$PROJECT_DIR$/target/classes/service/MemberServiceImple.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyProject.iml" afterPath="$PROJECT_DIR$/MyProject.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/mappers/member-mapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/classes/mappers/member-mapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/dispatcher-servlet.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/overview.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/overview.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/topics.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/discuss/topics.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/subPage/header.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/WEB-INF/views/subPage/header.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/resources/CSS/discuss-overview.css" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/resources/CSS/discuss-overview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/resources/CSS/main.css" afterPath="$PROJECT_DIR$/out/artifacts/MyProject_war_exploded/resources/CSS/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/DiscussController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/DiscussController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/ReplyRestController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/ReplyRestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/domain/Member.java" afterPath="$PROJECT_DIR$/src/main/java/domain/Member.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/HomeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/LectureController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/LectureController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/MemberController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/MemberController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controller/ReplyThRestController.java" afterPath="$PROJECT_DIR$/src/main/java/controller/ReplyThRestController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java" afterPath="$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/mappers/ReplyThMapper.java" afterPath="$PROJECT_DIR$/src/main/java/mappers/ReplyThMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/BoardDaoImple.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/BoardDaoImple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pageutil/PageNumberMaker.java" afterPath="$PROJECT_DIR$/src/main/java/pageutil/PageNumberMaker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pageutil/PaginationCriteria.java" afterPath="$PROJECT_DIR$/src/main/java/pageutil/PaginationCriteria.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/MemberDao.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/MemberDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/MemberDaoImple.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/MemberDaoImple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/ReplyThDao.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/ReplyThDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/ReplyThDaoimple.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/ReplyThDaoimple.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/DiscussService.java" afterPath="$PROJECT_DIR$/src/main/java/service/DiscussService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java" afterPath="$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MemberService.java" afterPath="$PROJECT_DIR$/src/main/java/service/MemberService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/MemberServiceImple.java" afterPath="$PROJECT_DIR$/src/main/java/service/MemberServiceImple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/ReplyThService.java" afterPath="$PROJECT_DIR$/src/main/java/service/ReplyThService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/service/ReplyThServiceImple.java" afterPath="$PROJECT_DIR$/src/main/java/service/ReplyThServiceImple.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mappers/member-mapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/member-mapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mappers/member-mapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/member-mapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java" afterPath="$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/newTopic.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/newTopic.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/lecture/lecture.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/lecture/lecture.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/member/loginFail.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/member/loginFail.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/member/loginFail2.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/member/loginFail2.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/member/nonAuth.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/member/nonAuth.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/subPage/footer.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/subPage/footer.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/views/subPage/header.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/views/subPage/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/CSS/discuss-overview.css" afterPath="$PROJECT_DIR$/web/resources/CSS/discuss-overview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/CSS/main.css" afterPath="$PROJECT_DIR$/web/resources/CSS/main.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -87,99 +132,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SystemWebSocketHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java">
+      <file leaf-file-name="LectureController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/LectureController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="92" column="38" lean-forward="false" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+            <state relative-caret-position="391">
+              <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebSocketConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/socketService/WebSocketConfig.java">
+      <file leaf-file-name="MemberController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/MemberController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overview.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7976">
-              <caret line="72" column="66" lean-forward="true" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NameViaScket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/socketService/NameViaScket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="discuss-overview.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/resources/CSS/discuss-overview.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3013">
-              <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="topics.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="member-mapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/member-mapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+            <state relative-caret-position="193">
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <marker date="1521185603165" expanded="true" signature="243:269" ph="SELECT * FRO... ${tblMember}" />
-                <marker date="1521185603165" expanded="true" signature="338:399" ph="SELECT * FRO... ${tblMember}" />
-                <marker date="1521185603165" expanded="true" signature="448:579" ph="INSERT INTO ${tblMember}... " />
-                <marker date="1521185603165" expanded="true" signature="624:739" ph="UPDATE ${tbl... " />
-                <marker date="1521185603165" expanded="true" signature="788:847" ph="DELETE FROM " />
-                <marker date="1521185603165" expanded="true" signature="922:1012" ph="SELECT * FRO... ${tblMember}" />
-                <marker date="1521185603165" expanded="true" signature="1068:1144" ph="UPDATE ${tbl... " />
-                <marker date="1521185603165" expanded="true" signature="1224:1261" ph="SELECT count... ${tblMember}" />
-                <marker date="1521185603165" expanded="true" signature="1230:1261" ph="select count... ${tblMember}" />
-                <marker date="1521185603165" expanded="true" signature="1336:1422" ph="SELECT * FRO... ${tblMember}" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OnlineMembers.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/socketService/OnlineMembers.java">
+      <file leaf-file-name="ReplyThRestController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controller/ReplyThRestController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="472">
+              <caret line="95" column="9" lean-forward="false" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Discuss.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/domain/Discuss.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
@@ -188,11 +174,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/subPage/header.jsp">
+      <file leaf-file-name="DiscussMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9362">
-              <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="71" />
+            <state relative-caret-position="782">
+              <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LectureMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mappers/LectureMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReplyThMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/mappers/ReplyThMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageNumberMaker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageutil/PageNumberMaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-264">
+              <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaginationCriteria.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pageutil/PaginationCriteria.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-660">
+              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiscussDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -207,25 +243,15 @@
         <option value="FxmlFile" />
         <option value="Interface" />
         <option value="spring-beans.schema" />
-        <option value="Class" />
         <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Class" />
+        <option value="Aspect" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>margin</find>
-      <find>overview</find>
-      <find>members</find>
-      <find>had</find>
-      <find>4</find>
-      <find>handle</find>
-      <find>cnt</find>
-      <find>cou</find>
-      <find>addOnePostNum</find>
-      <find>total mem</find>
-      <find>chatmessage</find>
       <find>chat</find>
       <find>totalCount</find>
       <find>count</find>
@@ -245,6 +271,17 @@
       <find>last post</find>
       <find>newset</find>
       <find>lasttitle</find>
+      <find>리퀘</find>
+      <find>/login</find>
+      <find>aop</find>
+      <find>update</find>
+      <find>시그</find>
+      <find>board</find>
+      <find>ty</find>
+      <find>chic</find>
+      <find>.</find>
+      <find>userinfo</find>
+      <find>syste</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -259,57 +296,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/persistence/LectureDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/LectureDaoImple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/LectureService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/LectureServiceImple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mappers/LectureMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/Lecture.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/LectureController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/lecture/lecture.jsp" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/onlineController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/MessageVO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/handler/Echohandler.java" />
-        <option value="$PROJECT_DIR$/lib/spring-websocket-4.3.14.RELEASE.jar!/org/springframework/web/socket/handler/TextWebSocketHandler.class" />
-        <option value="$PROJECT_DIR$/src/main/java/handler/EchoHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/ReplyRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/domain/ChatMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/socketService/ChatMessage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/socketService/OnlineMembers.java" />
         <option value="$PROJECT_DIR$/lib/spring-websocket-4.3.14.RELEASE.jar!/org/springframework/web/socket/WebSocketSession.class" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/socketService/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/web/resources/CSS/main.css" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/subPage/header.jsp" />
         <option value="$PROJECT_DIR$/web/resources/CSS/chat.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/views/subPage/chat.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/MemberController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/DiscussService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java" />
         <option value="$PROJECT_DIR$/src/main/java/mappers/ReplyThMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/ReplyThDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/ReplyThDaoimple.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/ReplyThService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/ReplyThServiceImple.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/MemberDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/MemberService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/MemberServiceImple.java" />
         <option value="$PROJECT_DIR$/src/main/java/domain/Member.java" />
         <option value="$PROJECT_DIR$/src/main/java/persistence/BoardDaoImple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/persistence/MemberDaoImple.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/DiscussController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/member-mapper.xml" />
         <option value="$PROJECT_DIR$/web/resources/CSS/discuss-overview.css" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/socketService/NameViaScket.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/aspect/loginAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/aspect/test.aj" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/subPage/header.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/mappers/ReplyMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/aspect/LoginAspect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DiscussService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageutil/PaginationCriteria.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pageutil/PageNumberMaker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/persistence/MemberDaoImple.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/MemberServiceImple.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/member/loginFail2.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/member/nonAuth.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/subPage/footer.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/discuss/newTopic.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/lecture/lecture.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/member/loginFail.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/DiscussController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/LectureController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/MemberController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controller/ReplyThRestController.java" />
       </list>
     </option>
   </component>
@@ -327,8 +364,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="95" />
+    <option name="y" value="41" />
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
@@ -348,7 +385,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -373,6 +410,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyProject" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="aspect" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MyProject" type="b2602c69:ProjectViewProjectNode" />
@@ -467,6 +512,13 @@
               <item name="MyProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="MyProject" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyProject" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -512,9 +564,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,15 +581,15 @@
     <property name="SearchEverywhereHistoryKey" value="frameworkservlet&#9;PSI&#9;JAVA://org.springframework.web.servlet.FrameworkServlet&#10;FrameworkServlet&#9;PSI&#9;JAVA://org.springframework.web.servlet.FrameworkServlet&#10;board&#9;FILE&#9;file://D:/bdsucess/project/MyProject/src/main/java/myProject/domain/Board.java" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\classes" />
+      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\views\member" />
+      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\views\discuss" />
+      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF" />
+      <recent name="D:\bdsucess\project\MyProject\web\views" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bdsucess\project\MyProject\web\resources\image\lecture" />
-      <recent name="D:\bdsucess\project\MyProject\web\resources\image\Main" />
-      <recent name="D:\bdsucess\project\MyProject\web\resources\CSS" />
-      <recent name="D:\bdsucess\project\MyProject\src\main\java" />
-      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\classes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="socketService" />
@@ -546,12 +598,12 @@
       <recent name="controller" />
       <recent name="domain" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\classes" />
-      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\views\member" />
-      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF\views\discuss" />
-      <recent name="D:\bdsucess\project\MyProject\web\WEB-INF" />
-      <recent name="D:\bdsucess\project\MyProject\web\views" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bdsucess\project\MyProject\web\resources\image" />
+      <recent name="D:\bdsucess\project\MyProject\web\resources\image\lecture" />
+      <recent name="D:\bdsucess\project\MyProject\web\resources\image\Main" />
+      <recent name="D:\bdsucess\project\MyProject\web\resources\CSS" />
+      <recent name="D:\bdsucess\project\MyProject\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -829,7 +881,13 @@
       <workItem from="1521099509692" duration="13096000" />
       <workItem from="1521153071978" duration="1599000" />
       <workItem from="1521159768225" duration="9601000" />
-      <workItem from="1521174797348" duration="11497000" />
+      <workItem from="1521174797348" duration="11620000" />
+      <workItem from="1521199589868" duration="2860000" />
+      <workItem from="1521245590620" duration="2262000" />
+      <workItem from="1521280054675" duration="8653000" />
+      <workItem from="1521372111035" duration="7897000" />
+      <workItem from="1521469171398" duration="703000" />
+      <workItem from="1521523627973" duration="13636000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1517537962351</created>
@@ -1013,11 +1071,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520995264507</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="test">
+      <created>1521186561972</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1521186561972</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="672558000" />
+    <option name="totallyTimeSpent" value="708692000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1037,7 +1102,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6526196" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45671982" sideWeight="0.46294308" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08314351" sideWeight="0.5370569" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14123006" sideWeight="0.5370569" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21374866" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1051,12 +1116,12 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.49570355" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7927107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7927107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19387755" sideWeight="0.7058824" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20461869" sideWeight="0.7058824" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1858217" sideWeight="0.50537634" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21160042" sideWeight="0.29411766" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1081,113 +1146,136 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/resources/CSS/lecture.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/MemberDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/CSS/list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/CSS/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/subPage/footer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/CSS/chat.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/MemberDaoImple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="53" column="25" lean-forward="true" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/subPage/chat.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2937">
-          <caret line="89" column="26" lean-forward="false" selection-start-line="89" selection-start-column="26" selection-end-line="89" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        <state relative-caret-position="-665">
+          <caret line="13" column="44" lean-forward="false" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
           <folding>
-            <element signature="method#memberRegister#0;class#MemberController#0" expanded="false" />
-            <element signature="method#memberLogin#0;class#MemberController#0" expanded="false" />
+            <element signature="e#573#574#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#793#794#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/ReplyMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/ReplyThDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/LectureMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/ReplyThDaoimple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="-401">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/reply-mapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/DiscussService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="485">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="83" />
           <folding>
-            <marker date="1519110023747" expanded="true" signature="249:291" ph="SELECT * FRO... test_reply" />
-            <marker date="1519110023747" expanded="true" signature="340:381" ph="DELETE FROM " />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/rebel.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="127">
+          <caret line="73" column="63" lean-forward="true" selection-start-line="73" selection-start-column="63" selection-end-line="73" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/LectureService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/LectureServiceImple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-38">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/MemberService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/MemberServiceImple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+          <folding>
+            <element signature="e#508#509#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#589#590#0" expanded="true" />
+            <element signature="e#625#626#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#863#864#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ReplyThServiceImple.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/NameViaScket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/OnlineMembers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1853">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="54" />
           <folding />
         </state>
       </provider>
@@ -1200,274 +1288,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/security-Content.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/BoardController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/ReplyThDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/ReplyThDaoimple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="56" column="45" lean-forward="false" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
-          <folding>
-            <element signature="e#1371#1372#0" expanded="false" />
-            <element signature="e#1424#1425#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/ReplyThService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/ReplyThServiceImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="e#1286#1287#0" expanded="true" />
-            <element signature="e#1343#1344#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/DiscussServiceimple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="83" column="44" lean-forward="false" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
-          <folding>
-            <element signature="e#2136#2137#0" expanded="true" />
-            <element signature="e#2187#2188#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/ReplyThMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/DiscussService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/BoardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="24" column="26" lean-forward="false" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.4.5/mybatis-3.4.5.jar!/org/apache/ibatis/session/SqlSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ReplyRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="35" lean-forward="false" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/MemberServiceImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="65" column="30" lean-forward="true" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-          <folding>
-            <element signature="e#1345#1346#0" expanded="true" />
-            <element signature="e#1383#1384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/MemberDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/MemberService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DiscussDaoImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding>
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#506#507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/BoardServiceImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/BoardDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/board-mapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-          <folding>
-            <marker date="1520478282111" expanded="true" signature="241:290" ph="SELECT * FRO... ${tblBoard}" />
-            <marker date="1520478282111" expanded="true" signature="339:478" ph="INSERT INTO ${tblBoard}... " />
-            <marker date="1520478282111" expanded="true" signature="527:659" ph="UPDATE ${tbl... " />
-            <marker date="1520478282111" expanded="true" signature="708:760" ph="DELETE FROM " />
-            <marker date="1520478282111" expanded="true" signature="836:927" ph="SELECT * FRO... ${tblBoard}" />
-            <marker date="1520478282111" expanded="true" signature="1007:1129" ph="SELECT * FRO... ${tblBoard}" />
-            <marker date="1520478282111" expanded="true" signature="1202:1256" ph="SELECT * FRO... ${tblBoard}" />
-            <marker date="1520478282111" expanded="true" signature="1406:1777" ph="SELECT * FRO... ${tblBoard}" />
-            <marker date="1520478282111" expanded="true" signature="1842:2296" ph="SELECT * FRO... ${tblBoard}" />
-            <marker date="1520478282111" expanded="true" signature="2432:2469" ph="select count... test_board" />
-            <marker date="1520478282111" expanded="true" signature="2771:2998" ph="select b.bno... rownum" />
-            <marker date="1520478282111" expanded="true" signature="2846:2949" ph="select rownu... *" />
-            <marker date="1520478282111" expanded="true" signature="2895:2937" ph="select * fro... test_board" />
-            <marker date="1520478282111" expanded="true" signature="3055:3162" ph="update ${tbl... " />
-            <marker date="1520478282111" expanded="true" signature="3233:3614" ph="SELECT count... topics" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding>
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/BoardDaoImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/MemberDaoImple.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="68" column="61" lean-forward="false" selection-start-line="68" selection-start-column="61" selection-end-line="68" selection-end-column="61" />
-          <folding>
-            <element signature="e#1603#1604#0" expanded="true" />
-            <element signature="e#1664#1665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/DiscussController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="47" column="56" lean-forward="true" selection-start-line="47" selection-start-column="56" selection-end-line="47" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/CSS/discuss-overview.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="36" column="29" lean-forward="false" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/member-mapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+        <state relative-caret-position="617">
+          <caret line="48" column="9" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding>
             <marker date="1521185603165" expanded="true" signature="243:269" ph="SELECT * FRO... ${tblMember}" />
             <marker date="1521185603165" expanded="true" signature="338:399" ph="SELECT * FRO... ${tblMember}" />
@@ -1483,15 +1307,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/NameViaScket.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/ReplyThService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/OnlineMembers.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-783">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/security-Content.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Lecture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Member.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
@@ -1499,50 +1363,231 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/SystemWebSocketHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Payment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="92" column="38" lean-forward="false" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+        <state relative-caret-position="132">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/socketService/WebSocketConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/ReplyThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="70" />
+        <state relative-caret-position="132">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/subPage/header.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Topics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9362">
-          <caret line="23" column="4" lean-forward="false" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3013">
-          <caret line="100" column="36" lean-forward="false" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        <state relative-caret-position="132">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/overview.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7976">
-          <caret line="72" column="66" lean-forward="true" selection-start-line="72" selection-start-column="66" selection-end-line="72" selection-end-column="66" />
+        <state relative-caret-position="208">
+          <caret line="235" column="0" lean-forward="false" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/newTopic.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="189" column="43" lean-forward="false" selection-start-line="189" selection-start-column="43" selection-end-line="189" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/member/loginFail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/member/loginFail2.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/member/nonAuth.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/subPage/footer.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="985">
+          <caret line="125" column="19" lean-forward="false" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aspect/LoginAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aspect/test.aj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/lecture/lecture.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="72" column="43" lean-forward="false" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/discuss/topics.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="58" column="69" lean-forward="false" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/views/lecture/preview.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="36" column="81" lean-forward="false" selection-start-line="36" selection-start-column="81" selection-end-line="36" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/DiscussController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2508">
+          <caret line="128" column="20" lean-forward="false" selection-start-line="128" selection-start-column="20" selection-end-line="128" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/LectureController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/MemberController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/ReplyThRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="95" column="9" lean-forward="false" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/domain/Discuss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/DiscussMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/LectureMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mappers/ReplyThMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="54" column="4" lean-forward="true" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageutil/PageNumberMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-264">
+          <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pageutil/PaginationCriteria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-660">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/persistence/DiscussDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>

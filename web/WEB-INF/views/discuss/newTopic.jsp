@@ -5,15 +5,13 @@
 <head>
 
     <meta charset="utf-8">
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit:no">--%>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../../../resources/CSS/discuss-overview.css?df" type="text/css" media="screen"
           title="no title"
           charset="utf-8"/>
-
 
     <title>Forum - Create new topic</title>
 
@@ -25,7 +23,6 @@
     </jsp:include>
 </header>
 
-<%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
         <a href="/discuss/" class="breadcrumb-item">Discuss</a>
@@ -42,8 +39,6 @@
                 <span class="breadcrumb-item active">Unkown Error</span>
             </c:otherwise>
         </c:choose>
-        <%--<a href="/Discuss/topics?lid=${lid}&lname=${lname}&lcategory=${lcategory}" class="breadcrumb-item">${lname}</a>--%>
-        <%--<span class="breadcrumb-item active">${lname} New Topic</span>--%>
     </nav>
     <div class="row">
         <div class="col-12">
@@ -61,7 +56,6 @@
                     <h2 class="h4 bg-light mb-0 p-4 rounded-top">Unknown Error</h2>
                 </c:otherwise>
             </c:choose>
-            <%--<h2 class="h4 text-white bg-info mb-3 p-4 rounded">Create new topic, ${lid}</h2>--%>
         </div>
     </div>
 <c:choose>
@@ -77,11 +71,6 @@
             <textarea class="form-control"  name="tcontent" path="tcontent"
                       id="comment" rows="10" placeholder="Write your comment here" required>${topic.tcontent}</textarea>
         </div>
-        <%--<div class="form-check p-0 mb-3">--%>
-            <%--<label class="form-check-label">--%>
-                <%--<input class="form-control-file" type="file" name="file">--%>
-            <%--</label>--%>
-        <%--</div>--%>
         <button type="submit" class="btn btn-primary">Create topic</button>
         <button type="reset" class="btn btn-danger">Reset</button>
     </form>
@@ -113,15 +102,8 @@
     </c:otherwise>
 </c:choose>
 </div>
-<footer class="small bg-dark text-white">
-    <div class="container py-4">
-        <ul class="list-inline mb-0 text-center">
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-            <li class="list-inline-item">All rights reserved.</li>
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-        </ul>
-    </div>
-</footer>
+
+<jsp:include page="../subPage/footer.jsp"/>
 
 <script src="../../../resources/lib/jquery-3.3.1.min.js"></script>>
 <script src="../../../resources/lib/bootstrap.bundle.min.js"></script>

@@ -40,6 +40,12 @@ public interface DiscussMapper {
             "<if test='searchType == \"content\"'> " + "tcontent LIKE #{searchKeyword} " +  "</if>" +
             "<if test='searchType == \"username\"'> " + "writer LIKE #{searchKeyword} " +  "</if>" +
             "and lecturekey = #{lid} </script>";
+    String SQL_SEARCHEDLIST =
+            "<script> SELECT * FROM topics WHERE " +
+            "<if test='searchType == \"title\"'> " + "title LIKE #{searchKeyword} " +  "</if>" +
+            "<if test='searchType == \"content\"'> " + "tcontent LIKE #{searchKeyword} " +  "</if>" +
+            "<if test='searchType == \"username\"'> " + "writer LIKE #{searchKeyword} " +  "</if>" +
+            "and lecturekey = #{lid} </script>";
     String SQL_UPDATE_TOPICCOUNT =
             "UPDATE Discuss SET topiccount = topiccount + 1 WHERE lid = #{lid}";
     String SQL_SELECT_LAST_TNUMBER =
@@ -81,6 +87,11 @@ public interface DiscussMapper {
     int searchCountTopicsByLid(@Param("searchType") String searchType,
                                @Param("searchKeyword") String searchKeyword,
                                @Param("lid") String lid);
+    @Select(SQL_SEARCHEDLIST)
+    List<Topics> searchedList(@Param("searchType") String searchType,
+                              @Param("searchKeyword") String searchKeyword,
+                              @Param("lid") String lid);
+
     @Update(SQL_UPDATE_TOPICCOUNT)
     int updateTopicCount(String lid);
 

@@ -70,6 +70,11 @@ public class DiscussServiceimple implements DiscussService {
     }
 
     @Override
+    public List<Topics> searchedList(String searchType, String searchKeyword, String lid) {
+        return discussDao.searchedList(searchType, searchKeyword, lid);
+    }
+
+    @Override
     public int updateTopicCount(String lid) {
         return discussDao.updateTopicCount(lid);
     }

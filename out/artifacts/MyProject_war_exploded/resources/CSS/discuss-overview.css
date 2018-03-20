@@ -31,3 +31,8 @@ tbody td {
     overflow-y: scroll;
     -ms-overflow-style: none;
 }
+#newsetmember{
+    height: 100px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}

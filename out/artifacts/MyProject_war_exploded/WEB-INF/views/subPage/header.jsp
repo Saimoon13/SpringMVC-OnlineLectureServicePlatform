@@ -32,7 +32,7 @@
 </head>
 <body class="pt-5">
 
-<!-- 로그인 모달-->
+<!-- Login modal -->
 <div class="modal fade" id="loginModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -80,7 +80,7 @@
         </div>
     </div>
 </div>
-<!-- 회원가입 모달 -->
+<!-- Register modal -->
 <div class="modal fade" id="regiModal">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -166,17 +166,6 @@
         %>
         <div id="navbarNavDropdown" class="navbar-collapse collapse">
             <ul class="navbar-nav mr-auto">
-                <%--<li class="nav-item active">--%>
-                    <%
-                        if (criterion.equals("first")) {
-                            out.print("<li class=\"nav-item active\">");
-                        } else {
-                            out.print("<li class=\"nav-item\">");
-                        }
-                    %>
-                    <a class="nav-link" href="/board/list">Board</a>
-                </li>
-                <%--<li class="nav-item active">--%>
                     <%
                         if (criterion.equals("second")) {
                             out.print("<li class=\"nav-item active\">");
@@ -186,7 +175,6 @@
                     %>
                     <a class="nav-link" href="/lecture/">Lecture</a>
                 </li>
-                <%--<li class="nav-item">--%>
                     <%
                         if (criterion.equals("third")) {
                             out.print("<li class=\"nav-item active\">");
@@ -199,7 +187,7 @@
             </ul>
 
             <ul class="navbar-nav" id="alignneeded">
-                <!-- 로그인 -->
+                <!-- Login -->
                 <%
                     Member member = (Member) session.getAttribute("loginResult");
                     if(member == null) {
@@ -214,13 +202,8 @@
                                 "</li>");
                     }
                 %>
-                <%--<li class="nav-item">--%>
-                    <%--<a class="nav-link" data-dismiss="modal" data-toggle="modal" data-target="#loginModal"--%>
-                       <%--href="#loginModal"><i class="fas fa-sign-in-alt"></i> Login</a>--%>
-                <%--</li>--%>
 
-
-                <!-- 회원가입 -->
+                <!-- Register -->
                 <%
                     if(member == null) {
                         out.print("<li class=\"nav-item\">\n" +
@@ -235,12 +218,6 @@
                                 "</li>");
                     }
                 %>
-                <%--<li class="nav-item">--%>
-                    <%--<a class="nav-link">--%>
-                        <%--<i class="fas fa-sign-out-alt"></i> Register</a>--%>
-                <%--</li>--%>
-
-
             </ul>
         </div>
     </div>
@@ -259,7 +236,7 @@
                     username: userid
                 };
                 socket.send(JSON.stringify(message));
-                console.log(userid + " : header 메시지");
+                console.log(userid + " : header Message");
             }
         }
         var signupConfirm = $('#loginConfirm'),

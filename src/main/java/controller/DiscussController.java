@@ -35,7 +35,7 @@ public class DiscussController {
         int topicTotalCount = discussService.topicTotalCount();
         int replythreadTotalCount = replyThService.replyThreadTotalCount();
         List<Member> newsetMember = memberService.newsetMember();
-        System.out.println(newsetMember+"새맴버");
+        System.out.println(newsetMember+" New Member");
 
         if(session.getAttribute("loginResult") != null){
             model.addAttribute("userid" ,((Member)session.getAttribute("loginResult")).getUserid());
@@ -53,9 +53,9 @@ public class DiscussController {
     @RequestMapping(value = "/topics", method = RequestMethod.GET)
     public String topics(String lid, String lname, String lcategory, Model model,Integer page, Integer perPage){
 
-        System.out.println(lid);
-        System.out.println(lname);
-        System.out.println(lcategory);
+        System.out.println("Lid: " + lid);
+        System.out.println("Lname: " + lname);
+        System.out.println("Lcategory: " + lcategory);
 
         PaginationCriteria c = null;
         if (page != null && perPage != null) {
@@ -65,7 +65,7 @@ public class DiscussController {
         }
         PageNumberMaker maker = new PageNumberMaker();
         maker.setCriteria(c);
-        maker.setTotalCount(discussService.getCountByLid(lid)); // 전체 게시글 수
+        maker.setTotalCount(discussService.getCountByLid(lid)); // All topics count
         maker.setPageMakerData();
 
         List<Topics> listtrue = discussService.selectPage(lid, c);
@@ -82,14 +82,13 @@ public class DiscussController {
     @RequestMapping(value = "/newtopic")
     public String post(String lname, String lcategory, String lid, Model model){
 
-        System.out.println(lid);
         model.addAttribute("lid",lid);
         model.addAttribute("lname", lname);
         model.addAttribute("lcategory", lcategory);
 
-        System.out.println(lid);
-        System.out.println(lname);
-        System.out.println(lcategory);
+        System.out.println("Lid: " + lid);
+        System.out.println("Lname: " + lname);
+        System.out.println("Lcategory: " + lcategory);
 
         return "discuss/newTopic";
     }
@@ -98,7 +97,6 @@ public class DiscussController {
     public String post(@ModelAttribute("Topics")Topics topics, HttpSession session, String lid, String lname, String lcategory){
 
         Member m = (Member)session.getAttribute("loginResult");
-        System.out.println(topics.getLecturekey()+" 전");
 
         topics.setLecturekey(lid);
         topics.setWriter(m.getUserid());
@@ -106,9 +104,7 @@ public class DiscussController {
 
         System.out.println(topics.getWriter());
         System.out.println(topics.getTitle());
-        System.out.println(topics.getLecturekey()+ " 후");
         System.out.println(topics.getTcontent());
-        System.out.println(lid+ " 수정 후");
 
         Gson topicgson = new Gson();
         String json = topicgson.toJson(topics);
@@ -123,7 +119,7 @@ public class DiscussController {
             if(topics.getTitle().length() >= 10){
                 changed = topics.getTitle().substring(0, 10)+"..";
             }
-            //TODO: 길이제한 수정해야함
+            //TODO: Length should be changed
 
             discussService.updateLast(topics.getWriter(), topics.getTnumber(), changed, lid);
         } else if (m == null){
@@ -133,7 +129,7 @@ public class DiscussController {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("/discuss/post 에러");
+            System.out.println("/discuss/post Error");
         }
 
         String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
@@ -178,9 +174,6 @@ public class DiscussController {
 
     @RequestMapping(value = "update")
     public String insert(int tnumber, String lname, String lcategory, String lid, Model model){
-
-        System.out.println("update 진입");
-
         Topics topic = discussService.selectTopicByTnumber(tnumber);
 
         model.addAttribute("topic", topic);
@@ -188,41 +181,26 @@ public class DiscussController {
         model.addAttribute("lname", lname);
         model.addAttribute("lcategory", lcategory);
 
-        System.out.println(lname);
-        System.out.println(topic.getTitle()+"dfdfd");
-
         return "/discuss/newTopic";
     }
 
     @RequestMapping(value = "/updateconfirm")
     public String updateConfirm(@ModelAttribute("Topics")Topics topics, String lid, String lname, String lcategory, int tnumber){
-
-        System.out.println("Tnumber: " + tnumber + ", " + "title: " + topics.getTitle() + ", " + "content: " + topics.getTcontent());
-
         topics.setTnumber(tnumber);
         discussService.updateTopic(topics);
-
         String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
         return "redirect:"+returnValue;
     }
 
     @RequestMapping(value = "/delete")
     public String delete(int tnumber, String lname, String lcategory, String lid){
-
-        System.out.println("Tnumber: " + tnumber);
-
         discussService.deleteTopic(tnumber);
-
-        String returnValue = "/Discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
+        String returnValue = "/discuss/topics?lid="+lid+"&lname="+lname+"&lcategory="+lcategory;
         return "redirect:"+returnValue;
     }
 
     @RequestMapping(value = "/search")
     public String search(String searchType, String searchKeyword, Model model, String lid, String lname, String lcategory,Integer page, Integer perPage) {
-
-        System.out.println("searchType: " + searchType + ", " + searchType.getClass());
-        System.out.println("searchkeyword: " + searchKeyword + ", " + searchKeyword.getClass());
-        System.out.println("lecturekey: " + lid + ", " + lid.getClass());
 
         searchKeyword = "%" + searchKeyword + "%";
 
@@ -238,7 +216,7 @@ public class DiscussController {
         maker.setTotalCount(discussService.searchCountTopicsByLid(searchType, searchKeyword, lid));
         maker.setPageMakerData();
 
-        List<Topics> listtrue = discussService.selectPage(lid, c);
+        List<Topics> listtrue = discussService.searchedList(searchType, searchKeyword, lid);
 
         model.addAttribute("topicList",listtrue);
         model.addAttribute("pageMaker", maker);

@@ -71,6 +71,11 @@ public class DiscussDaoImple implements DiscussDao {
     }
 
     @Override
+    public List<Topics> searchedList(String searchType, String searchKeyword, String lid) {
+        return mapper.searchedList(searchType, searchKeyword, lid);
+    }
+
+    @Override
     public int updateTopicCount(String lid) {
         return mapper.updateTopicCount(lid);
     }

@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 2018-02-24
-  Time: 오전 11:40
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,22 +20,21 @@
 <body>
 
 <header>
-    <%--<%@ include file="../subPage/header.jsp" %>--%>
     <jsp:include page="../subPage/header.jsp">
         <jsp:param name="before" value="second"></jsp:param>
     </jsp:include>
 </header>
 
-<h2 class="text-center mb-half blue mt-3">Imagine your future!</h2>
-<h5 class="text-center mb-1 light">What do you want to learn today? What's your dream job?</h5>
-<h5 class="text-center mb-1">I want to...</h5>
+<h2 class="text-center mb-half blue mt-5 text-primary">Imagine your future!</h2>
+<h2 class="text-center mb-3 light text-muted">What do you want to learn today? What's your dream job?</h2>
+<h5 class="text-center mb-3">I want to...</h5>
 
 <div class="container-fluid my-5">
     <div class="row text-center text-lg-left">
         <c:forEach var="lecture" items="${lectureList}">
             <c:choose>
                 <c:when test="${lecture.lcategory eq 'Basic'}">
-                    <div class="col-lg-3 col-md-4 col-6 initiateModal">
+                    <div class="col-lg-3 col-md-4 col-6 initiateModal img-rounded">
                         <a data-toggle="modal" data-target="#lmodal" href="#lmodal" class="d-block mb-4 ">
                             <img class="img-fluid img-thumbnail sub-imagepath" src=${lecture.imagepath}>
                         </a>
@@ -103,7 +95,6 @@
             <!-- Modal Header -->
             <div class="modal-header d-inline mb-auto">
                 <h4 class="modal-title text-center">Card Image</h4>
-                <%--<p>Image at the top (card-img-top):</p>--%>
             </div>
 
             <!-- Modal body -->
@@ -126,9 +117,7 @@
     </div>
 </div>
 
-<footer>
-    <jsp:include page="../subPage/footer.jsp"></jsp:include>
-</footer>
+<jsp:include page="../subPage/footer.jsp"/>
 
 <script>
     $(document).ready(function () {

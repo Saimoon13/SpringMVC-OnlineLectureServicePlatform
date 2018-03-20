@@ -59,24 +59,24 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../../resources/image/la.jpg" alt="Los Angeles">
+                <img src="../../resources/image/c++.jpg" alt="C++">
                 <div class="carousel-caption">
                     <h3>Gang dongwon</h3>
-                    <p>New HTML Lecutre Release!</p>
+                    <p>New C++ Lecutre Release!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../../resources/image/chicago.jpg" alt="Chicago">
+                <img src="../../resources/image/HTMLNew%20release.jpg" alt="HTML">
                 <div class="carousel-caption">
                     <h3>Won bin</h3>
-                    <p>New Java Lecture Release!</p>
+                    <p>New HTML Lecture Release!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="../../resources/image/ny.jpg" alt="New York">
+                <img src="../../resources/image/Bootstrap%20NewRelease.jpg" alt="Bootstrap">
                 <div class="carousel-caption">
                     <h3>Namukkun</h3>
-                    <p>New Python Lecture Release!</p>
+                    <p>New BOOTSTRAP Lecture Release!</p>
                 </div>
             </div>
         </div>
@@ -123,10 +123,7 @@
     </div> <!-- end cols -->
 </div>
 
-<!-- 꼬리글 -->
-<footer>
-    <jsp:include page="subPage/footer.jsp"></jsp:include>
-</footer>
+<jsp:include page="subPage/footer.jsp"/>
 
 </body>
 </html>

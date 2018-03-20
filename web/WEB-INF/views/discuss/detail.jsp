@@ -170,7 +170,6 @@
             </ul>
         </nav>
     </div>
-    <%--<form class="mb-3">--%>
     <%
         if ((Member) session.getAttribute("loginResult") != null) {
             out.print("<div class=\"form-group\">\n" +
@@ -181,22 +180,14 @@
                     "            <textarea class=\"form-control\" id=\"replyComment\" rows=\"10\" placeholder=\"Write your comment here\"\n" +
                     "                      required></textarea>\n" +
                     "    </div>\n" +
-                    "    <button type=\"submit\" class=\"btn btn-primary mb-3\" id=\"btn-insert\">Reply</button>\n" +
+                    "    <button type=\"submit\" class=\"btn btn-primary mb-3\" id=\"btn-insert\">Reply thread</button>\n" +
                     "    <button type=\"reset\" class=\"btn btn-danger mb-3\">Reset</button>");
         }
     %>
 
 </div>
 
-<footer class="small bg-dark text-white">
-    <div class="container py-4">
-        <ul class="list-inline mb-0 text-center">
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-            <li class="list-inline-item">All rights reserved.</li>
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-        </ul>
-    </div>
-</footer>
+<jsp:include page="../subPage/footer.jsp"/>
 
 <%--핸들러--%>
 <script id="replyThread" type="text/x-handlebars-template">
@@ -204,7 +195,7 @@
         <table class="table table-striped table-bordered table-responsive-lg ">
             <thead class="thead-light">
             <tr>
-                <th scope="col" class="topic-col" style="width: 18%">Author${lid}</th>
+                <th scope="col" class="topic-col" style="width: 18%">Author</th>
                 <th scope="col" class="created-col" style="width: 72%">Message</th>
             </tr>
             </thead>
@@ -224,7 +215,6 @@
                     <div><span class="font-weight-bold">Joined:</span> {{signupdate}}</div>
                     <div><span class="font-weight-bold">Posts:</span> {{postnum}}</div>
                     <div class="row">
-                        <%--TODO: href 파마미터로 {{replynumber}} 넘길것--%>
                         <a class="col-6 updateReplyBtn"
                            id="updateReply-{{replynumber}}">{{#noop}}{{Update}}{{/noop}}</a>
                         <a class="col-6 deleteReplyBtn"
@@ -249,24 +239,12 @@
 
 <script>
     $(document).ready(function () {
-        // 검색할 댓글의 게시글 번호
-
-
-        <%--if($('.replyUserid a').html() == ${user.userid})--%>
-
-        // jQuery를 사용해서 AJAX 요청을 보내는 함수들 중에서
-        // $.getJSON(url, data, callback)
-        // 해당 url로 HTTP GET 방식의 ajax 요청을 보내고,
-        // JSON 객체를 로드하는 함수
-        // url (필수): 서버로 요청을 보내는 주소
-        // data (선택): 요청과 함께 서버로 보내는 데이터. 생략 가능.
-        // callback (선택): 응답을 받았을 때 처리할 일을 정의하는 콜백 함수
 
         var tnumber = ${topic.tnumber};
 
         function getAllReplies() {
             $.getJSON('/rplyth/all/' + tnumber, function (data) {
-                console.log('댓글 갯수: ' + data.length);
+                console.log('RelyThread Number: ' + data.length);
 
                 var temp = "";
                 $(data).each(function () {
@@ -280,9 +258,8 @@
                         rcontent: this.rcontent,
                         replynumber: this.replynumber
                     }
-//                    자신의 댓글만 update/delete 뜨게 처리 start
+//                    My update/delete Creating Start
                     if ('${user.userid}' === JSON.parse(this.member).userid) {
-                        <%--console.log('${user.userid}' === JSON.parse(this.member).userid);--%>
                         Handlebars.registerHelper('noop', function (options) {
                             return options.fn(this) + "Update";
                         });
@@ -297,7 +274,7 @@
                             return options.fn(this);
                         });
                     }
-//                    end
+//                    End
                     temp += templateResponse(contextResponse);
                 });
                 $('#replyTh-tables').html(temp);
@@ -336,17 +313,17 @@
                         }),
                         success: function (result) {
                             if (result === 'success') {
-                                alert('댓글 수정 성공');
+                                alert('ReplyThread Edit Success');
                                 getAllReplies();
                             } else {
-                                alert('댓글 수정 실패');
+                                alert('ReplyThread Edit Fail');
                             }
                         }
                     });
 
                 });
 
-                $('.deleteReplyBtn').click(function () { // delete start
+                $('.deleteReplyBtn').click(function () {
                     var id = this.id;
                     var replynumber = id.substring(id.indexOf(":") + 1, id.indexOf("-"));
 
@@ -361,19 +338,19 @@
                         },
                         success: function (result) {
                             if (result === 'success') {
-                                alert('댓글 삭제 성공');
+                                alert('ReplyThread Delete Success');
                                 getAllReplies();
                             } else {
-                                alert('댓글 삭제 실패');
+                                alert('ReplyThread Delete Fail');
                             }
                         }
                     });
                 }); // delete end
             });
-        } //
+        }
         getAllReplies();
 
-        // btn-insert 버튼을 클릭했을 때 댓글 입력 기능
+        // btn-insert Click function
         $('#btn-insert').click(function () {
             var rtitle = $('#replyTitle').val();
             var rcoment = $('#replyComment').val();
@@ -392,12 +369,12 @@
                 }),
                 success: function (result) {
                     if (result === 1) {
-                        alert("댓글 입력 성공");
+                        alert("ReplyThread Creating Success");
                         $('#replyTitle').val("");
                         $('#replyComment').val("");
                         getAllReplies();
                     } else {
-                        alert("댓글 입력 실패");
+                        alert("ReplyThread Creating Fail");
                     }
                 }
             });

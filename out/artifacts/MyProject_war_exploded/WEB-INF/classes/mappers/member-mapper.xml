@@ -43,7 +43,7 @@
     </select>
 
     <select id="newsetMember" resultType="Member">
-        SELECT * FROM ${tblMember} WHERE regdate BETWEEN TRUNC(sysdate) - 3 AND TRUNC(sysdate);
+        SELECT * FROM ${tblMember} WHERE regdate BETWEEN TRUNC(sysdate) - 3 AND TRUNC(sysdate)
     </select>
 
 </mapper>

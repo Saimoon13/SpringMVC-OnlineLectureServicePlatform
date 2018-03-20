@@ -18,31 +18,26 @@ public class MemberServiceImple implements MemberService {
 	
 	@Override
 	public List<Member> select() {
-		logger.info("select() 호출");
 		return memberDao.read();
 	}
 
 	@Override
 	public Member select(String userid) {
-		logger.info("select(userid: {}) 호출", userid);
 		return memberDao.read(userid);
 	}
 
 	@Override
 	public int insert(Member m) {
-		logger.info("insert() 호출");
 		return memberDao.create(m);
 	}
 
 	@Override
 	public int update(Member m) {
-		logger.info("update() 호출");
 		return memberDao.update(m);
 	}
 
 	@Override
 	public int delete(String userid) {
-		logger.info("delete() 호출");
 		return memberDao.delete(userid);
 	}
 

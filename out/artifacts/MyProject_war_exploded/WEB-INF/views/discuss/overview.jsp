@@ -75,7 +75,7 @@
                                 <td>
                                     <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}"
                                                     pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a><span>${Discuss.lasttitle}</span></a>
                                     </h4>
                                     <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
@@ -127,7 +127,7 @@
                                 <td>
                                     <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}"
                                                     pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a><span>${Discuss.lasttitle}</span></a>
                                     </h4>
                                     <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
@@ -178,7 +178,7 @@
                                 <td>
                                     <fmt:formatDate var="lasttopicdate" value="${Discuss.lasttopicdate}"
                                                     pattern="yyyy/MM/dd HH:mm:ss"/>
-                                    <h4 class="h6 mb-0 font-weight-bold"><a href="#0"><span>${Discuss.lasttitle}</span></a>
+                                    <h4 class="h6 mb-0 font-weight-bold"><a><span>${Discuss.lasttitle}</span></a>
                                     </h4>
                                     <c:if test="${empty Discuss.lastwriter}">
                                         <div>Empty</div>
@@ -249,10 +249,10 @@
                                     <dt class="col-4 mb-0">${memberTotalCount}</dt>
                                 </dl>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer" id="newsetmember">
                                 <div>newset member:</div>
                                 <c:forEach var="Member" items="${newsetMember}">
-                                    <div><a href="#0">${Member}</a></div>
+                                    <div><a href="#0">${Member.userid}</a></div>
                                 </c:forEach>
                             </div>
                         </div>

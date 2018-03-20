@@ -1,10 +1,8 @@
 package pageutil;
 
-// 페이징 처리를 위한 기준(현재 페이지 번호, 한 페이지에 보여질 글 갯수)를
-// 설정하기 위한 클래스
 public class PaginationCriteria {
-	private int page; // 현재 보고 있는 페이지
-	private int numsPerPage; // 한 페이지에 보여줄 게시글 갯수
+	private int page;
+	private int numsPerPage;
 	
 	public PaginationCriteria() {
 		this.page = 1;

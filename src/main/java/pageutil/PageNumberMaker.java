@@ -1,21 +1,14 @@
 package pageutil;
 
-// 게시글 테이블 아래에 페이지 번호들을 만들어 주기 위한 클래스
 public class PageNumberMaker {
-	// 몇번째 페이지를 보고 있는지, 한  페이지에 몇개를 볼 것인지에 대한 기준
+
 	private PaginationCriteria criteria;
 
-	// 게시글 전체 갯수
 	private int totalCount;
-
-	// 페이지 번호를 몇개씩 보여줄 것인지
 	private int numsOfLinks;
 
-	// 화면에 보여지는 시작 페이지 번호
 	private int startPage;
-	// 화면에 보여지는 끝 페이지 번호
 	private int endPage;
-	// 이전/다음 링크가 필요한 지
 	private boolean prev;
 	private boolean next;
 	
@@ -64,7 +57,6 @@ public class PageNumberMaker {
 	}
 
 	public void setPageMakerData() {
-		// 전체 페이지 갯수
 		int totalPageNum = (int)
 				Math.ceil((double) totalCount / criteria.getNumsPerPage());
 		

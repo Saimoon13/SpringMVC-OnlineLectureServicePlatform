@@ -21,7 +21,4 @@ public class HomeController {
         return "member/loginFail2";
     }
 
-
-
-
 }
