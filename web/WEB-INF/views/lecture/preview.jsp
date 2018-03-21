@@ -34,7 +34,7 @@
         <c:forEach var="lecture" items="${lectureList}">
             <c:choose>
                 <c:when test="${lecture.lcategory eq 'Basic'}">
-                    <div class="col-lg-3 col-md-4 col-6 initiateModal img-rounded">
+                    <div class="col-lg-3 col-md-4 col-6 initiateModal">
                         <a data-toggle="modal" data-target="#lmodal" href="#lmodal" class="d-block mb-4 ">
                             <img class="img-fluid img-thumbnail sub-imagepath" src=${lecture.imagepath}>
                         </a>

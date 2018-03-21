@@ -6,6 +6,7 @@ import domain.Member;
 import domain.Topics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,7 @@ public class DiscussController {
     @Autowired MemberService memberService;
     @Autowired ReplyThService replyThService;
 
+    @Transactional
     @RequestMapping(value = "/")
     public String overview(HttpSession session, Model model){
         List<Discuss> list = discussService.selectAll();
@@ -93,6 +95,7 @@ public class DiscussController {
         return "discuss/newTopic";
     }
 
+    @Transactional
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public String post(@ModelAttribute("Topics")Topics topics, HttpSession session, String lid, String lname, String lcategory){
 

@@ -30,7 +30,6 @@ public class MemberController {
     }
 
     @RequestMapping(value="/login", method = RequestMethod.POST)
-    @Transactional
     public String memberLogin(@ModelAttribute("Member")Member m, HttpSession session, HttpServletRequest request){
         String returnURL = request.getHeader("referer").replace("http://localhost:8282","");
         Member result = service.login(m);

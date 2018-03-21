@@ -17,7 +17,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         System.out.println("ConnectionEstablished");
         String i = session.getId();
-        System.out.println(i + " user size:" + users.size());
+        System.out.println(i + " user size: " + users.size());
         users.add(session);
     }
 

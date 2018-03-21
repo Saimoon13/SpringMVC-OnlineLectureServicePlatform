@@ -27,7 +27,7 @@
             crossorigin="anonymous"></script>
 
     <script defer src="../../resources/fontawesome-all.js"></script>
-    <link rel="stylesheet" href="../../resources/CSS/header.css" type="text/css" media="screen" title="no title"
+    <link rel="stylesheet" href="../../resources/CSS/header.css?ver=6" type="text/css" media="screen" title="no title"
           charset="utf-8"/>
 </head>
 <body class="pt-5">
@@ -191,12 +191,12 @@
                 <%
                     Member member = (Member) session.getAttribute("loginResult");
                     if(member == null) {
-                        out.print("<li class=\"nav-item\">\n" +
+                        out.print("<li class=\"nav-item nav-item-login\">\n" +
                                 "<a class=\"nav-link\" data-dismiss=\"modal\" data-toggle=\"modal\" data-target=\"#loginModal\"\n" +
                                 "href=\"#loginModal\"><i class=\"fas fa-sign-in-alt\"></i> Login</a>\n" +
                                 "</li>");
                     } else {
-                        out.print("<li class=\"nav-item\">\n" +
+                        out.print("<li class=\"nav-item nav-item-register\">\n" +
                                 "<a id=\"useridResult\" class=\"nav-link\"nav-item\">" +
                                 "Welcome! " + member.getUserid() +"</a>\n" +
                                 "</li>");

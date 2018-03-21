@@ -44,7 +44,6 @@
     </jsp:include>
 </header>
 
-<%--my margin top and bottom--%>
 <div class="container my-3">
     <nav class="breadcrumb">
         <a href="/discuss/" class="breadcrumb-item">Discuss</a>
@@ -66,7 +65,6 @@
                     <h2 class="h4 bg-light mb-0 p-4 rounded-top">Unknown Error</h2>
                 </c:otherwise>
             </c:choose>
-            <%--<h2 class="h4 text-white bg-info mb-0 p-4 rounded-top">${lname}</h2>--%>
             <table class="table table-striped table-bordered table-responsive-lg">
                 <thead class="thead-light">
                 <tr>
@@ -97,29 +95,11 @@
                         <div>05 apr 2017, 20:07</div>
                     </td>
                 </tr>
-                <%--<tr>--%>
-                    <%--<td>--%>
-                        <%--<h3 class="h6 mb-0"><a href="/Discuss/detail">Forum name title with a complex and long--%>
-                            <%--question</a></h3>--%>
-                    <%--</td>--%>
-                    <%--<td>--%>
-                        <%--<div>by <a href="#0">Author name</a></div>--%>
-                        <%--<div>03 Apr 2017, 13:46</div>--%>
-                    <%--</td>--%>
-                    <%--<td>--%>
-                        <%--<div>5 replies</div>--%>
-                        <%--<div>137 views</div>--%>
-                    <%--</td>--%>
-                    <%--<td>--%>
-                        <%--<div>by <a href="#0">author name</a></div>--%>
-                        <%--<div>05 apr 2017, 20:07</div>--%>
-                    <%--</td>--%>
-                <%--</tr>--%>
                 <c:forEach var="topic" items="${topicList}">
                     <tr>
                         <td style="vertical-align: middle">
                             <h3 class="h6 mb-0"><a
-                                    href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">${topic.title}, ${topic.tnumber}</a>
+                                    href="/discuss/detail?tnumber=${topic.tnumber}&lname=${lname}&lcategory=${lcategory}&lid=${lid}">${topic.title}</a>
                             </h3>
                         </td>
                         <td>
@@ -151,16 +131,8 @@
     <div class="mb-3 clearfix">
         <nav aria-label="Navigate post pages" class="float-lg-right">
             <ul class="pagination pagination-sm mb-lg-0">
-                <%--<li class="page-item"><a href="#0" class="page-link">1<span class="sr-only">(current)</span></a></li>--%>
-                <%--<li class="page-item"><a href="#0" class="page-link">2</a></li>--%>
-                <%--<li class="page-item"><a href="#0" class="page-link">3</a></li>--%>
-                <%--<li class="page-item"><a href="#0" class="page-link">4</a></li>--%>
-                <%--<li class="page-item"><a href="#0" class="page-link">5</a></li>--%>
-                <%--<li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>--%>
-                <%--<li class="page-item"><a href="#0" class="page-link">Next</a></li>--%>
                 <c:if test="${pageMaker.prev}">
-                    <!-- 이전 버튼은 (startPage - 1)로 이동 -->
-                    <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">이전</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageMaker.startPage - 1}">Pre</a></li>
                 </c:if>
 
                 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
@@ -168,8 +140,7 @@
                 </c:forEach>
 
                 <c:if test="${pageMaker.next}">
-                    <!-- 다음 버튼은 (endPage + 1)으로 이동 -->
-                    <li class="page-item"><a class="page-link" href="${pageMaker.endPage + 1}">다음</a></li>
+                    <li class="page-item"><a class="page-link" href="${pageMaker.endPage + 1}">Next</a></li>
                 </c:if>
             </ul>
         </nav>
@@ -211,23 +182,14 @@
     %>
 
 </div>
-<footer class="small bg-dark text-white">
-    <div class="container py-4">
-        <ul class="list-inline mb-0 text-center">
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-            <li class="list-inline-item">All rights reserved.</li>
-            <li class="list-inline-item">&copy; 2017 web company, Inc.</li>
-        </ul>
-    </div>
-</footer>
+
+<jsp:include page="../subPage/footer.jsp"/>
 
 <script>
     $(document).ready(function () {
         $('.pagination li a').click(function () {
-            // <a> 태그의 기본 동작(페이지 이동)을 막아버림
             event.preventDefault();
 
-            // 이동할 페이지
             var target = $(this).attr('href');
             $('#page').val(target);
             $('#pageForm').submit();

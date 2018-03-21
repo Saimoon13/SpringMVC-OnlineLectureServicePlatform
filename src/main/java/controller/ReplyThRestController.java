@@ -8,6 +8,7 @@ import domain.ReplyThread;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import service.DiscussService;
 import service.ReplyThService;
@@ -38,6 +39,7 @@ public class ReplyThRestController {
      return entity;
     }
 
+    @Transactional
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Integer> createReplyThread(@RequestBody ReplyThread r, HttpSession session) {
 
@@ -82,6 +84,7 @@ public class ReplyThRestController {
         return entity;
     } // end updateReply()
 
+    @Transactional
     @RequestMapping(value = "/{replynumber}", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteReply(@PathVariable(name = "replynumber") int replynumber) {
 
