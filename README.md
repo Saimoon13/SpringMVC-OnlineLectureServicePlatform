@@ -36,17 +36,13 @@ Bootstrap4 Modal 템플릿을 사용하였으며
 
 Jsp를 이용하여 로그인 시변화하도록 구현되어있습니다.
 
-
-
-
-
 **3: 클릭 시 각 난이도에 해당하는 lecture 부분으로 이동합니다.**
 
 offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습니다.
 
 
 
-회원가입 Modal 입니다.
+* 회원가입 Modal 입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/04.png)
 
@@ -56,7 +52,7 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 정규표현식을 통과하지 못하거나, 입력데이터가 부족할 시 **2** 에 해당되는 메시지가 뜹니다.
 
 
-동영상 서비스 lecture 탭입니다.
+* 동영상 서비스 lecture 탭입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/05.png)
 
@@ -65,7 +61,7 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 **2: 구체적 강의 페이지입니다. 클릭 시 Modal 팝업이 뜹니다. 
 
 
-강의 모달입니다.
+* 강의 모달입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/06.png)
 
@@ -76,7 +72,7 @@ Enroll 버튼으로 강의 서비스 제공 페이지로 넘어갑니다.
 Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
 
 
-강의 서비스 제공 페이지입니다.
+* 강의 서비스 제공 페이지입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/07.png)
 
@@ -88,7 +84,7 @@ Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
 
 **3: DB에서 가져온 youtube url을 iframe으로 서비스 제공합니다.
 
-토론 게시판입니다.
+* 토론 게시판입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/08.png)
 
@@ -98,7 +94,7 @@ Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
 
 DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표기합니다.
 
-과목 별 게시판입니다.
+* 과목 별 게시판입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/09.png)
 
@@ -112,7 +108,7 @@ DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표
 로그인 되어 있을 때만 활성화됩니다.
 
 
-게시글 페이지 입니다.
+* 게시글 페이지 입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/10.png)
 
