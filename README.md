@@ -3,7 +3,7 @@ SpringMVC, Mybatis, WebSocket, jsp, bootstrap, HTML
 
 ## 개발동기
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
-- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `좌 - 유명 인터넷 강의 플랫폼 Udacity, 우 - 학교 토론 스레드 게시판`
+- ![#1589F0](https://placehold.it/15/1589F0/000000?text=+) `#1589F0`
 
 
 프로젝트 당시 HTML의 활용 수준이 미흡하다는 것을 깨닫고 udacity에서 제공하던 무료 HTML 강좌를 듣고 있었습니다.
