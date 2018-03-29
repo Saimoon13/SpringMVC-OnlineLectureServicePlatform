@@ -17,6 +17,7 @@ SpringMVC, Mybatis, WebSocket, jsp, bootstrap, HTML
 
 
 ## 구성
+&nbsp;
 * 메인화면
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/02.png)
