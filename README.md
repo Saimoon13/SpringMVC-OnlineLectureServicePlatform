@@ -4,8 +4,7 @@ SpringMVC, Mybatis, WebSocket, jsp, bootstrap, HTML
 ## 개발동기
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
 ```diff
-+ this will be highlighted in green
-- this will be highlighted in red
++ 좌 - 유명 인터넷 강의 플랫폼 Udacity, 우 - 학교 토론 스레드 게시판
 ```
 
 
