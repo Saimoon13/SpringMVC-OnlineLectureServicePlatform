@@ -98,7 +98,9 @@
         <div class="col-md-4">
             <div class="container">
                 <div class="card">
-                    <img class="card-img-top" src="../../resources/image/Main/basic.png">
+                    <a href="/lecture?index=basic">
+                        <img class="card-img-top" src="../../resources/image/Main/basic.png">
+                    </a>
                 </div>
                 <br>
             </div>
@@ -106,16 +108,20 @@
 
         <div class="col-md-4">
             <div class="container">
-                <div class="card">
-                    <img class="card-img-top" src="../../resources/image/Main/advanced.png">
+                <div class="card" href="/lecture?index=advanced">
+                    <a href="/lecture?index=advanced">
+                        <img class="card-img-top" src="../../resources/image/Main/advanced.png">
+                    </a>
                 </div>
             </div>
         </div> <!-- end col -->
 
         <div class="col-md-4">
             <div class="container">
-                <div class="card">
-                    <img class="card-img-top" src="../../resources/image/Main/superior.png">
+                <div class="card" href="/lecture?index=superior">
+                    <a href="/lecture?index=superior">
+                        <img class="card-img-top" src="../../resources/image/Main/superior.png">
+                    </a>
                 </div>
             </div>
         </div> <!-- end col -->

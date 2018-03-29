@@ -1,18 +1,14 @@
-@media only screen and (max-width: 550px) {
- #alignneeded {
-     list-style:none;
-     margin:0;
-     padding:0;
-     background-color: #ff4000;
-     width: 100%;
- }
-    #alignneeded li {
-        display: inline-block;
-        float: left;
-        background-color: #00aa88;
-        width: 33.3333333%;
+@media (max-width: 991px) {
+    #alignneeded {
+        flex-direction: unset !important;
     }
+
+    #alignneeded li {
+        width: 90%;
+    }
+
 }
+
 .modal-header{
     margin: 0 auto;
 }

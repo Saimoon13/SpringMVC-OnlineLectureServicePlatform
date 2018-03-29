@@ -111,45 +111,45 @@
                 </tr>
                 </tbody>
             </table>
-            <table class="table table-striped table-bordered table-responsive-lg">
-                <thead class="thead-light">
-                <tr>
-                    <th scope="col" class="topic-col" style="width: 18%">Author</th>
-                    <th scope="col" class="created-col" style="width: 72%">Message</th>
-                </tr>
-                </thead>
+            <%--<table class="table table-striped table-bordered table-responsive-lg">--%>
+                <%--<thead class="thead-light">--%>
+                <%--<tr>--%>
+                    <%--<th scope="col" class="topic-col" style="width: 18%">Author</th>--%>
+                    <%--<th scope="col" class="created-col" style="width: 72%">Message</th>--%>
+                <%--</tr>--%>
+                <%--</thead>--%>
 
-                <tbody>
-                <tr>
-                    <td class="author-col">
-                        <div>by <a href="#0">Author name</a></div>
-                    </td>
-                    <td class="post-col d-lg-flex justify-content-lg-between">
-                        <div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and
-                            long
-                            questio
-                        </div>
-                        <div><span class="font-weight-bold">Posted:</span> 05 apr 2017, 20:07</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div><span class="font-weight-bold">Joined:</span> 05 apr 2017, 20:07</div>
-                        <div><span class="font-weight-bold">Posts:</span> 123</div>
-                    </td>
-                    <td>
-                        <p>
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dddddddddddddddddddddddddddddddddddddddddddddddddd</p>
-                        <img src="https://placehold.it/600x400" class="img-flow">
-                        <p>ddddddddddddddddddddddddddddddddddddddddd
-                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                            dddddddddddddddddddddddddddddddddddddd</p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                <%--<tbody>--%>
+                <%--<tr>--%>
+                    <%--<td class="author-col">--%>
+                        <%--<div>by <a href="#0">Author name</a></div>--%>
+                    <%--</td>--%>
+                    <%--<td class="post-col d-lg-flex justify-content-lg-between">--%>
+                        <%--<div><span class="font-weight-bold">Post subject:</span>forum post title with a complex and--%>
+                            <%--long--%>
+                            <%--questio--%>
+                        <%--</div>--%>
+                        <%--<div><span class="font-weight-bold">Posted:</span> 05 apr 2017, 20:07</div>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
+                <%--<tr>--%>
+                    <%--<td>--%>
+                        <%--<div><span class="font-weight-bold">Joined:</span> 05 apr 2017, 20:07</div>--%>
+                        <%--<div><span class="font-weight-bold">Posts:</span> 123</div>--%>
+                    <%--</td>--%>
+                    <%--<td>--%>
+                        <%--<p>--%>
+                            <%--ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd--%>
+                            <%--ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd--%>
+                            <%--dddddddddddddddddddddddddddddddddddddddddddddddddd</p>--%>
+                        <%--<img src="https://placehold.it/600x400" class="img-flow">--%>
+                        <%--<p>ddddddddddddddddddddddddddddddddddddddddd--%>
+                            <%--ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd--%>
+                            <%--dddddddddddddddddddddddddddddddddddddd</p>--%>
+                    <%--</td>--%>
+                <%--</tr>--%>
+                <%--</tbody>--%>
+            <%--</table>--%>
             <div>
                 <div class="row" id="replyTh-tables">
 
@@ -157,19 +157,19 @@
             </div>
         </div>
     </div>
-    <div class="mb-3 clearfix">
-        <nav aria-label="Navigate post pages" class="float-lg-right">
-            <ul class="pagination pagination-sm mb-lg-0">
-                <li class="page-item"><a href="#0" class="page-link">1<span class="sr-only">(current)</span></a></li>
-                <li class="page-item"><a href="#0" class="page-link">2</a></li>
-                <li class="page-item"><a href="#0" class="page-link">3</a></li>
-                <li class="page-item"><a href="#0" class="page-link">4</a></li>
-                <li class="page-item"><a href="#0" class="page-link">5</a></li>
-                <li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>
-                <li class="page-item"><a href="#0" class="page-link">Next</a></li>
-            </ul>
-        </nav>
-    </div>
+    <%--<div class="mb-3 clearfix">--%>
+        <%--<nav aria-label="Navigate post pages" class="float-lg-right">--%>
+            <%--<ul class="pagination pagination-sm mb-lg-0">--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">1<span class="sr-only">(current)</span></a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">2</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">3</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">4</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">5</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">&hellip; 31</a></li>--%>
+                <%--<li class="page-item"><a href="#0" class="page-link">Next</a></li>--%>
+            <%--</ul>--%>
+        <%--</nav>--%>
+    <%--</div>--%>
     <%
         if ((Member) session.getAttribute("loginResult") != null) {
             out.print("<div class=\"form-group\">\n" +

@@ -148,7 +148,6 @@ public class DiscussController {
         System.out.println(lid+": lid");
 
         Topics topic = discussService.selectTopicByTnumber(tnumber);
-
         Member writer = memberService.select(topic.getWriter());
 
         int updateViews = discussService.updateViews(tnumber);

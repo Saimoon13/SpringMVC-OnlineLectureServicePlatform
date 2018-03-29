@@ -1,5 +1,6 @@
 package controller;
 
+import com.sun.istack.internal.Nullable;
 import domain.Lecture;
 import domain.Member;
 import domain.Payment;
@@ -20,10 +21,16 @@ public class LectureController {
 
     @Autowired private LectureService lectureService;
 
-    @RequestMapping(value = "/")
-    public String preview(Model model){
+    @RequestMapping(value = "")
+    public String preview(Model model, @Nullable String index){
         List<Lecture> list = lectureService.selectLecturePreviewlist();
         model.addAttribute(list);
+        if(index != null){
+            model.addAttribute("index", index);
+        }
+
+        System.out.println("index: " + index);
+
         return "lecture/preview";
     }
 

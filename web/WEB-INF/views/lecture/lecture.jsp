@@ -70,7 +70,7 @@
 
 </div>
 
-<jsp:include page="../subPage/footer.jsp"/>
+<%--<jsp:include page="../subPage/footer.jsp"/>--%>
 
 <script>
     $(document).ready(function () {

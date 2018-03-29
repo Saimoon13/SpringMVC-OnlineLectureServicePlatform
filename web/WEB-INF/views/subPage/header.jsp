@@ -138,7 +138,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <p class="mt-3 mr-3"><span id="signupForm">ddddddddddddddddddd</span></p>
+                    <p class="mt-3 mr-3"><span id="signupForm">Fill the blanks</span></p>
                     <input type="submit" class="btn btn-primary" data-dismiss="modal"
                            id="signupConfirm" value="Register">
                     </input>
