@@ -1,5 +1,6 @@
 # myProject2
 Environment: Tomcat 9.0, SpringMVC, Maven, MyBatis, Oracle DB, JSP
+
 Language and Library: Java, HTML, Javascript, Bootstrap 4.. etc
 
 ## 개발동기
