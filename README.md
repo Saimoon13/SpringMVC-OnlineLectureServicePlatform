@@ -44,7 +44,7 @@ SpringMVC, Mybatis, WebSocket, jsp, bootstrap, HTML
 
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/02.png)
-1: 기본적인 서비스를 제공하는 탭입니다. 
+**1: 기본적인 서비스를 제공하는 탭입니다.**
 
 
 
