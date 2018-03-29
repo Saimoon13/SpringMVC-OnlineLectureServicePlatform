@@ -42,6 +42,10 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 
 
 
+
+
+
+
 * 회원가입 Modal 입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/04.png)
@@ -50,6 +54,11 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 
 정규표현식 코드로 View에서 들어오는 데이터를 솎아냅니다.
 정규표현식을 통과하지 못하거나, 입력데이터가 부족할 시 **2** 에 해당되는 메시지가 뜹니다.
+
+
+
+
+
 
 
 * 동영상 서비스 lecture 탭입니다.
@@ -61,6 +70,11 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 **2: 구체적 강의 페이지입니다. 클릭 시 Modal 팝업이 뜹니다. 
 
 
+
+
+
+
+
 * 강의 모달입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/06.png)
@@ -70,6 +84,11 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 **2:페이지 이벤트입니다.**
 Enroll 버튼으로 강의 서비스 제공 페이지로 넘어갑니다.
 Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
+
+
+
+
+
 
 
 * 강의 서비스 제공 페이지입니다.
@@ -84,6 +103,11 @@ Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
 
 **3: DB에서 가져온 youtube url을 iframe으로 서비스 제공합니다.
 
+
+
+
+
+
 * 토론 게시판입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/08.png)
@@ -93,6 +117,11 @@ Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
 **2: Spring WebSocket을 이용하여 로그인 중인 데이터 정보를 표기하고
 
 DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표기합니다.
+
+
+
+
+
 
 * 과목 별 게시판입니다.
 
@@ -106,6 +135,10 @@ DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표
 
 **3: 새 글 쓰기 버튼입니다.** 
 로그인 되어 있을 때만 활성화됩니다.
+
+
+
+
 
 
 * 게시글 페이지 입니다.
