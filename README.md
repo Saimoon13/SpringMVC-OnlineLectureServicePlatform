@@ -56,16 +56,16 @@ offset 메소드를 이용하여, 이동하게끔 click 속성을 부여했습�
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/05.png)
 
-**1: 탭으로 각 난이도에 해당하는 뷰로 스크롤 이동이 가능합니다.
+**1: 탭으로 각 난이도에 해당하는 뷰로 스크롤 이동이 가능합니다.**
 
-**2: 구체적 강의 페이지입니다. 클릭 시 Modal 팝업이 뜹니다. 
+**2: 구체적 강의 페이지입니다. 클릭 시 Modal 팝업이 뜹니다.**
 
 &nbsp;
 * 강의 모달입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/06.png)
 
-**1: Oracle DB에서 가져온 강의 정보입니다.
+**1: Oracle DB에서 가져온 강의 정보입니다.**
 
 **2:페이지 이벤트입니다.**
 Enroll 버튼으로 강의 서비스 제공 페이지로 넘어갑니다.
@@ -80,20 +80,20 @@ Discuss 버튼은 강의 정보의 페이지로 넘어갑니다.
 
 강의마다 하나의 동영상 url을 포함한 정보를 지니고 있습니다.
 
-**2: Side-navigation bar를 여닫는 버튼입니다.
+**2: Side-navigation bar를 여닫는 버튼입니다.**
 
-**3: DB에서 가져온 youtube url을 iframe으로 서비스 제공합니다.
+**3: DB에서 가져온 youtube url을 iframe으로 서비스 제공합니다.**
 
 &nbsp;
 * 토론 게시판입니다.
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/08.png)
 
-**1: 강의의 난이도 별로 분류되어있습니다.
+**1: 강의의 난이도 별로 분류되어있습니다.**
 
-**2: Spring WebSocket을 이용하여 로그인 중인 데이터 정보를 표기하고
+**2: Spring WebSocket을 이용한 접속자 로그인 정보입니다.**
 
-DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표기합니다.
+로그인 중인 데이터 정보를 표기하고 DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표기합니다.
 
 &nbsp;
 * 과목 별 게시판입니다.
@@ -121,7 +121,7 @@ DB에서 읽어온 통계정보와 최근 3일 이내의 신회원 정보를 표
 **2: 게시글의 스레드 댓글입니다.** 
 handlebar.js 라이브러리로 구현되어 있습니다.
 
-**3: 로그인 사용자가 댓글 작성자라면 수정, 삭제 버튼이 확성화됩니다.
+**3: 로그인 사용자가 댓글 작성자라면 수정, 삭제 버튼이 확성화됩니다.**
 
 
 
