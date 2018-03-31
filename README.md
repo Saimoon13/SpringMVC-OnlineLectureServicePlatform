@@ -1,7 +1,7 @@
 # myProject2
 Environment: Tomcat 9.0, SpringMVC, Maven, MyBatis, Oracle DB, JSP
 
-Language and Library: Java, HTML, Javascript, Bootstrap 4.. etc
+Language and Library: Java, HTML, Javascript, Bootstrap 4, handlebar.js... etc
 
 ## 개발동기
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
@@ -134,7 +134,18 @@ handlebar.js 라이브러리로 구현되어 있습니다.
 **3: 로그인 사용자가 댓글 작성자라면 수정, 삭제 버튼이 확성화됩니다.**
 
 
+&nbsp;
+##  만들기 전과 다른 점
 
+프로젝트를 시작하기 전에 정말 간단하게 개요 ppt를 만들었습니다.
+
+대략적으로 구상을 해놓았습니다.
+
+밑에서도 차이점을 설명하기 위해 사용하겠지만
+
+전체를 보고싶으신 분들은 밑 주소를 참고해주세요.
+
+https://www.slideshare.net/yuwonkyun/spring-overview-roughly
 
 
 
