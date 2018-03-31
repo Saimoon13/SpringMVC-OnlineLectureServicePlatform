@@ -1,5 +1,5 @@
 # myProject2
-Environment: Tomcat 9.0, SpringMVC, Maven, MyBatis, Oracle DB, JSP
+Environment: Tomcat 9.0, SpringMVC, Maven, MyBatis, Oracle DB, JSP... etc
 
 Language and Library: Java, HTML, Javascript, Bootstrap 4, handlebar.js... etc
 
