@@ -8,7 +8,7 @@ Language and Library: Java, HTML, Javascript, Bootstrap 4, handlebar.js... etc
 
 Project Type: Spring
 
-Development period: 3 and a half
+Development period: 3 weeks and a half
 
 ## 개발동기
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
