@@ -7,12 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86e953fa-a38a-4376-9a2e-7a8edc87d7b4" name="Default" comment="test">
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/resources/imgForPort/changed/001.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/resources/imgForPort/changed/002.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/resources/imgForPort/changed/003.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/resources/imgForPort/changed/004.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/resources/imgForPort/changed/005.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/resources/imgForPort/changed/006.png" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -814,7 +808,7 @@
       <workItem from="1522286821800" duration="2821000" />
       <workItem from="1522324686299" duration="2914000" />
       <workItem from="1522408400898" duration="602000" />
-      <workItem from="1522501308375" duration="43000" />
+      <workItem from="1522501308375" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1517537962351</created>
@@ -1026,11 +1020,18 @@
       <option name="project" value="LOCAL" />
       <updated>1522327087740</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="test">
+      <created>1522501407041</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1522501407041</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="752565000" />
+    <option name="totallyTimeSpent" value="752655000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
