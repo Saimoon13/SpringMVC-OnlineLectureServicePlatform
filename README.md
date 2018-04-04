@@ -427,25 +427,25 @@ https://www.slideshare.net/yuwonkyun/spring-overview-roughly
  
 始めは、どんなお題でも書き込むことが出来る自由掲示板を作成しようと思いました。
 
-しかし、映像サービス提供プラットフォームで自由掲示板があることがぎこちないしたと感じました。
+しかし、映像サービス提供プラットフォームで自由掲示板があることがぎこちなく感じました。
 
-自由掲示板を消して、掲示板を作ることにしました。
+それで自由掲示板を消して、ディスカッション掲示板を作ることにしました。
 
 &nbsp;
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/changed/002.png?raw=true)
 
-Ajax를 이용하여 모든 input의 데이테를 확인하여
+Ajaxを利用して、すべてのinputのデータを確認して
 
-'중복된 아이디입니다.' 라는 식으로 사용하려 했지만
+「重複したIDです。」という風に使用しようとしましたが、
 
-정규표현식을 이용한 view의 활용만으로 필터처리를 했습니다.
+正規表現を利用したviewの活用だけでフィルタ処理をしました。
 
 &nbsp;
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/changed/003.png?raw=true)
 
-자유 게시판이 사라져서 쓸모없는 부분이 되어버렸습니다. 전부 지우고
+自由掲示板が消えて無駄な部分になってしまいました。
 
-토론 게시판으로 리모델링 돼었습니다.
+全て排除し、ディスカッション掲示板に改造しました。
 
 &nbsp;
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/changed/004.png?raw=true)
