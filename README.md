@@ -373,7 +373,7 @@ DBから読み取った統計情報と、過去3日以内の新会員情報を�
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/09.png)
 
-**1: 掲示板メニューです。** 
+**1: 掲示板の書き込みです。** 
 
 コメントの閲覧、最後のコメント者情報などが表記されます。
 
