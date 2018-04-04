@@ -261,3 +261,9 @@ lid(과목 아이디), lname(과목 이름) 등 과목정보는 과반 이상의
 
 </p>
 </details>
+
+<details><summary>日本語 CLICK ME</summary>
+<p>
+ｄ 
+</p>
+</details>
