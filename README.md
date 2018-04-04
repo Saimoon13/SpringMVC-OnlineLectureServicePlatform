@@ -10,14 +10,8 @@ Project Type: Spring
 
 Development period: 3 weeks and a half
 
-<details><summary>CLICK ME</summary>
+<details><summary>한국어 CLICK ME</summary>
 <p>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
 
 
 ## 개발동기
