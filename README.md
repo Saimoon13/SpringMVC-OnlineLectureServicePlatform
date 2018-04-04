@@ -8,7 +8,7 @@ Language or Library: Java, HTML, Javascript, Bootstrap 4, handlebar.js, Ajax... 
 
 Project Type: Spring
 
-Development period: 3 weeks and a half
+Total elapsed time: 3 weeks and a half
 
 <details><summary>한국어 CLICK ME</summary>
 <p>
