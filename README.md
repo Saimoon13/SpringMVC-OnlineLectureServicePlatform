@@ -19,8 +19,6 @@ Development period: 3 weeks and a half
 print("hello world!")
 ```
 
-</p>
-</details>
 
 ## 개발동기
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
@@ -265,3 +263,7 @@ lid(과목 아이디), lname(과목 이름) 등 과목정보는 과반 이상의
 이러한 경험으로 가르쳐주는 지도자 없이 스스로 해결하는 방법을 배우는 한편
 
 다시금 깨닫는 좋은 경험이었습니다.
+
+
+</p>
+</details>
