@@ -271,7 +271,7 @@ lid(과목 아이디), lname(과목 이름) 등 과목정보는 과반 이상의
 ## 開発の動機
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
 ```diff
-+左 - 有名インターネット講義プラットフォームUdacity、ウー - 学校のディスカッションスレッド掲示板
++左 - 有名インターネット講義プラットフォームUdacity、右 - 学校のディスカッションスレッド掲示板
 ```
 
 プロジェクト当時HTMLスキルレベルが良くないと思い、udacityで提供するのHTML講座を受けていました。
