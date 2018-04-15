@@ -1,4 +1,4 @@
-package socketService;
+package domain.socket;
 
 import java.util.ArrayList;
 

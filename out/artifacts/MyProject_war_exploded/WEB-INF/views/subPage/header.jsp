@@ -256,9 +256,9 @@
 
 //        회원가입
 
-        var idCheck = /^[a-z]+[a-z0-9]{5,19}$/; // 영문시작 6~20자 or 숫자
-        var pwCheck = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // 8자 이상, 최소 문자1 숫자1
-        var emCheck = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/; // 이메일
+        var idCheck = /^[a-z]+[a-z0-9]{5,19}$/; // Begin english letter between 6 and 20 or number
+        var pwCheck = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // More than 8 letters , at lease character 1 Number 1
+        var emCheck = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/; // email
 
         var signupConfirm = $('#signupConfirm'),
             id = $('#id'),

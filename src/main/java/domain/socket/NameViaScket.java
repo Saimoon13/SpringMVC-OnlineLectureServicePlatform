@@ -1,4 +1,4 @@
-package socketService;
+package domain.socket;
 
 public class NameViaScket {
 

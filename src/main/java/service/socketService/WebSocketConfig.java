@@ -1,4 +1,4 @@
-package socketService;
+package service.socketService;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

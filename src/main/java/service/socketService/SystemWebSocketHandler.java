@@ -1,6 +1,8 @@
-package socketService;
+package service.socketService;
 
 import com.google.gson.Gson;
+import domain.socket.NameViaScket;
+import domain.socket.OnlineMembers;
 import org.springframework.web.socket.*;
 
 import java.io.IOException;
