@@ -6,7 +6,7 @@ Environment: Tomcat 9.0, SpringFramework 4.3.12, Maven, MyBatis, Oracle DB, JSP.
 
 Language or Library: Java, HTML, Javascript, Bootstrap 4, handlebar.js, Ajax... etc
 
-Project Type: Spring
+Project Type: Personal Spring Project
 
 Total elapsed time: 3 weeks and a half
 
