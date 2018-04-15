@@ -1,4 +1,4 @@
-# myProject2
+# SpringMVC - OnlineLectureServicePlatform
 
 Project Name: Undecided
 
