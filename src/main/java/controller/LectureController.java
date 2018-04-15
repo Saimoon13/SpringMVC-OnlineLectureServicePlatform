@@ -36,7 +36,6 @@ public class LectureController {
 
     @RequestMapping(value = "/detail")
     public String detail(HttpSession session, Model model, String lid) {
-        String userid = ((Member)session.getAttribute("loginResult")).getUserid();
         Payment payment = lectureService.selectPaymentByLid(lid);
 
         Date date = new Date(); // real time

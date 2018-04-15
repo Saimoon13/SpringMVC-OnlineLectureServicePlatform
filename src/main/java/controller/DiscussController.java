@@ -42,7 +42,7 @@ public class DiscussController {
         if(session.getAttribute("loginResult") != null){
             model.addAttribute("userid" ,((Member)session.getAttribute("loginResult")).getUserid());
         }
-
+//test
         model.addAttribute("lectureList",list);
         model.addAttribute("memberTotalCount",memberTotalCount);
         model.addAttribute("topicTotalCount",topicTotalCount);
