@@ -1,5 +1,7 @@
 # SpringMVC - OnlineLectureServicePlatform
 
+[![WebTest](http://img.youtube.com/vi/OUt0UI3mrNM/0.jpg)](http://www.youtube.com/watch?v=OUt0UI3mrNM "WebTest")
+
 Project Name: Undecided
 
 Environment: Tomcat 9.0, SpringFramework 4.3.12, Maven, MyBatis, Oracle DB, JSP... etc
@@ -15,6 +17,7 @@ Total elapsed time: 3 weeks and a half
 
 
 ## 개발동기
+
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/01.png?raw=true)
 ```diff
 + 좌 - 유명 인터넷 강의 플랫폼 Udacity, 우 - 학교 토론 스레드 게시판
