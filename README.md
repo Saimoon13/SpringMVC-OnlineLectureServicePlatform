@@ -1,5 +1,7 @@
 # SpringMVC - OnlineLectureServicePlatform
 
+ImageClick - Demonstration of project via youtube
+
 [![WebTest](http://img.youtube.com/vi/OUt0UI3mrNM/0.jpg)](http://www.youtube.com/watch?v=OUt0UI3mrNM "WebTest")
 
 Project Name: Undecided
