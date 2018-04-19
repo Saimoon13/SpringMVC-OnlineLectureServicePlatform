@@ -316,7 +316,7 @@ Bootstrap4 Modalテンプレートを使用しました。
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/03.png)
 
-Jspを使うログイン時、変化するように作られています。
+ログイン時、変化するように作られています。
 
 **3：クリックし、各難易度に対応するlecture部分に移動します。**
 
