@@ -347,7 +347,7 @@ offsetメソッドを使い、移動するようclick属性を付与しました
 
 ![alt text](https://github.com/Saimoon13/myProject2/blob/master/web/resources/imgForPort/06.png)
 
-**1: Oracle DBから取得した講義情報です。**
+**1: Oracle DBから読み取った講義情報です。**
 
 **2:ページイベントです。**
 
@@ -366,7 +366,7 @@ Discussボタン：講義情報のページに進みます。
 
 **2: Side-navigation barを開閉するボタンです。**
 
-**3: DBから取得したyoutube urlをiframeを使って映像を映します**
+**3: DBから読み取った映像 urlを、iframeを使って映します**
 
 &nbsp;
 * ディスカッション掲示板です。
@@ -396,7 +396,7 @@ DBから読み取った統計情報と、過去3日以内の新会員情報を�
 
 **3: 新しいディスカッションのボタンです。** 
 
-ログインしている場合にのみ有効になります。
+ログインしている場合にのみ現れます。
 
 &nbsp;
 * スレッドのページです。
