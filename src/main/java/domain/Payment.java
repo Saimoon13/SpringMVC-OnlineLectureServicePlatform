@@ -4,10 +4,10 @@ import java.util.Date;
 
 public class Payment {
 
-    String userid;
-    String lid;
-    Date signdate;
-    Date expiredate;
+    private String userid;
+    private String lid;
+    private Date signdate;
+    private Date expiredate;
 
     public Payment(){}
     public Payment(String userid, String lid, Date signdate, Date expiredate) {

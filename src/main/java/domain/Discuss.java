@@ -4,16 +4,16 @@ import java.util.Date;
 
 public class Discuss {
 
-    String lid;
-    String lname;
-    String lcategory;
-    String lexplain;
-    String lecturer;
-    int rlycount;
-    int topiccount;
-    String lastwriter;
-    String lasttitle;
-    Date lasttopicdate;
+    private String lid;
+    private String lname;
+    private String lcategory;
+    private String lexplain;
+    private String lecturer;
+    private int rlycount;
+    private int topiccount;
+    private String lastwriter;
+    private String lasttitle;
+    private Date lasttopicdate;
 
     public Discuss() {}
     public Discuss(String lid, String lname, String lcategory, String lexplain, String lecturer) {
