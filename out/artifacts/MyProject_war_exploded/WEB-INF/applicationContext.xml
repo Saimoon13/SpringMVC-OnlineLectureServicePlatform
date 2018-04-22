@@ -23,15 +23,16 @@
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
 
-    <context:component-scan base-package="service, persistence, service.socketService, aspect">
+    <!-- , aspect 빠짐 -->
+    <context:component-scan base-package="service, persistence, service.socketService">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <mybatis:scan base-package="mappers"/>
     <!--이거 빼면 replyDaoImple에서 mapper 빈 못받음-->
 
-    <bean id="LoginAspect" class="controller.MemberController"/>
-    <aop:aspectj-autoproxy />
+    <!--<bean id="LoginAspect" class="controller.MemberController"/>-->
+    <!--<aop:aspectj-autoproxy />-->
 
     <bean id="transactionManager"
           class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

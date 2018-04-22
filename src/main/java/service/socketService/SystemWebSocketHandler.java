@@ -28,11 +28,8 @@ public class SystemWebSocketHandler implements WebSocketHandler {
         String messageFromClient = (String) message.getPayload();
         Gson gson = new Gson();
         NameViaScket bean = gson.fromJson(messageFromClient, NameViaScket.class);
-//        System.out.println(bean.getUsername() + ": 아이디");
-//        System.out.println(bean.getType() + ": 타입");
         String type = bean.getType();
         if (type.equals("0")) {
-//            System.out.println(session.getId() + ": 세션아이디");
             if(!bean.getUsername().equals("justCallForList")) {
                 userMaps.put(session.getId(), bean.getUsername());
             }

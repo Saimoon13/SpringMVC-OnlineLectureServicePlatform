@@ -24,9 +24,10 @@ public class MemberController {
     private MemberService service;
 
     @RequestMapping(value="/signup", method= RequestMethod.POST)
-    private String memberRegister(@ModelAttribute("Member")Member m) {
+    private String memberRegister(@ModelAttribute("Member")Member m, HttpServletRequest request) {
+        String returnURL = request.getHeader("referer").replace("http://localhost:8282","");
         service.insert(m);
-        return "index";
+        return "redirect:"+returnURL;
     }
 
     @RequestMapping(value="/login", method = RequestMethod.POST)

@@ -20,8 +20,8 @@ public class LectureDaoImple implements LectureDao {
     }
 
     @Override
-    public Payment selectPaymentByLid(String lid) {
-        return mapper.selectPaymentByLid(lid);
+    public Payment selectPaymentByLid(String lid, String userid) {
+        return mapper.selectPaymentByLid(lid, userid);
     }
 
     @Override

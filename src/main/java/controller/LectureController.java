@@ -36,8 +36,10 @@ public class LectureController {
 
     @RequestMapping(value = "/detail")
     public String detail(HttpSession session, Model model, String lid) {
-        Payment payment = lectureService.selectPaymentByLid(lid);
-
+        Payment payment = null;
+        if(session.getAttribute("loginResult") != null) {
+            payment = lectureService.selectPaymentByLid(lid, ((Member) session.getAttribute("loginResult")).getUserid());
+        }
         Date date = new Date(); // real time
         int temp = 0;
         if(payment != null) {

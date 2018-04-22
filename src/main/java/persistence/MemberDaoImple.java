@@ -29,6 +29,9 @@ public class MemberDaoImple implements MemberDao {
 
 	@Override
 	public int create(Member m) {
+		System.out.println(m.getUserid());
+		System.out.println(m.getEmail());
+		System.out.println(m.getPassword());
 		return session.insert(NAMESPACE + ".insert", m);
 	}
 

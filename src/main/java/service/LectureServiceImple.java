@@ -19,8 +19,8 @@ public class LectureServiceImple implements LectureService {
     }
 
     @Override
-    public Payment selectPaymentByLid(String lid) {
-        return lectureDao.selectPaymentByLid(lid);
+    public Payment selectPaymentByLid(String lid, String userid) {
+        return lectureDao.selectPaymentByLid(lid, userid);
     }
 
     @Override
