@@ -14,6 +14,6 @@ Project Type: Personal Spring Project
 
 Total elapsed time: 3 weeks and a half
 
-2019.06.04追加：https://www.slideshare.net/secret/5yn6G54mYwRoje　
+2019.06.04追加：https://www.slideshare.net/secret/5yn6G54mYwRoje
 
 （リファクタリング内容まとめ　一つ目のプレジェット）
